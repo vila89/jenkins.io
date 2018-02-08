@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Learning plugin development by improving the LIFX notifier plugin
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Learning plugin development by improving the LIFX notifier plugin" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Learning plugin development by improving the LIFX notifier plugin" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Learning plugin development by improving the LIFX notifier plugin" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/blog/2017/01/10/jenkins-lifx-notifier-plugin/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Learning plugin development by improving the LIFX notifier plugin" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/blog/2017/01/10/jenkins-lifx-notifier-plugin/" title="Learning plugin development by improving the LIFX notifier plugin">
+Learning plugin development by improving the LIFX notifier plugin
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2017-01-10
+by
+<a href="#about-the-author">Veaceslav Gaidarji</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/node/tags/plugins">
+plugins
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/node/tags/lifx">
+lifx
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This is a
+<a href="http://vgaidarji.me/blog/2017/01/02/jenkins-lifx-notifier-plugin/">cross
+post</a> by <a href="https://github.com/vgaidarji">Veaceslav Gaidarji</a>, open source
+developer and contributor to the Jenkins and Bitrise projects.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Some time ago I encountered a <a href="http://www.lifx.com">LIFX</a> smart bulbs.
+These are the bulbs with a chip inside - 50% bulb, 50% chip. There are mobile
+applications for easy configuration and remote control of the bulb. Nothing
+special here, it simply works and is very convenient to have such bulbs in
+dormitory.</p>
+</div>
+<div class="sect2">
+<h3 id="brilliant-idea-time"><a class="anchor" href="#brilliant-idea-time"></a>Brilliant idea time</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>99% of ideas which come to our minds either were already implemented by someone
+else or they are useless.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Veaceslav Gaidarji
+</div>
+</div>
+<div class="paragraph">
+<p>And as it always happens, the developer inside me generated an idea which, as
+it always happens, was implemented by someone else already.</p>
+</div>
+<div class="paragraph">
+<p>The idea was: to connect a LIFX bulb to Jenkins server and update the color
+according to a job&#8217;s state.</p>
+</div>
+<div class="paragraph">
+<p>Before starting to work on such Jenkins plugin, I searched for similar projects
+on Google and the first links pointed me to existing
+<a href="https://plugins.jenkins.io/lifx-notifier">LIFX notifier plugin</a>
+and a
+<a href="https://www.cloudbees.com/blog/lifx-smart-lightbulb-build-notifier-plugin">blog post</a>
+from
+<a href="https://github.com/michaelneale">Michael Neale</a>
+ who created the plugin. Michael&#8217;s post describes exactly what I had in mind.</p>
+</div>
+<div class="paragraph">
+<p>At this point I had 2 options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>forget</strong> about building something new and just use the plugin</p>
+</li>
+<li>
+<p><strong>improve</strong> existing plugin</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First option is always easy and effortless, but second one is more challenging.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="improving-an-existing-plugin"><a class="anchor" href="#improving-an-existing-plugin"></a>Improving an existing plugin</h3>
+<div class="paragraph">
+<p>The existing <a href="https://plugins.jenkins.io/lifx-notifier">LIFX notifier plugin</a>
+did its job really well and I was able to connect my bulb to Jenkins and test
+it. But it wasn&#8217;t complete and had no configurable at all, therefore no
+possibility to change the colors.</p>
+</div>
+<div class="paragraph">
+<p>First, I read Jenkins contribution guidelines, which
+<a href="https://wiki.jenkins-ci.org/display/JENKINS/Hosting+Plugins#HostingPlugins-Requesthosting">encourage</a>
+developers to improve existing plugins (if any) and not create other versions
+of plugins with similar functionality. Then I contacted the plugin author, Michael Neale,
+via email and kindly asked for the contributor access in GitHub
+for the existing plugin version. After a short discussion about my plans on this
+plugin, Michael added me as a contributor to GitHub
+<a href="https://github.com/jenkinsci/lifx-notifier-plugin">repo</a> and wished me
+good luck. Thanks Michael!</p>
+</div>
+<div class="paragraph">
+<p>I wanted to improve the LIFX notifier plugin to add the ability
+customize the colors (<code>in progress</code>, <code>build success</code> and <code>build failure</code>). This
+is not a hard task actually.
+A <a href="https://wiki.jenkins-ci.org/display/JENKINS/Plugins">1000+</a> plugins were
+developed for Jenkins by the hackers like me, which means that I should have no
+problem to do it as well.
+Fortunately for me, I have used some plugins already which had a UI similar to
+that I had planned to add to the LIFX notifier, such as:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/jenkinsci/hockeyapp-plugin">HockeyApp</a> plugin</p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/fabric-beta-publisher-plugin">Fabric Beta publisher</a> plugin</p>
+</li>
+<li>
+<p>Different <a href="https://wiki.jenkins-ci.org/display/JENKINS/Plugins#Plugins-Buildnotifiers">Build notifiers</a> plugins</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Reviewing the code for these plugins, plus Jenkins
+<a href="https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial">plugin
+development documentation</a>, and of course looking over
+<a href="http://commons.apache.org/proper/commons-jelly/">Jelly components</a> helped
+me to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Better understand the Jenkins architecture.</p>
+</li>
+<li>
+<p>Learn how Jenkins plugins work in general.</p>
+</li>
+<li>
+<p>Learn how to create the UI components for a plugin.</p>
+</li>
+<li>
+<p>Learn how to subscribe to Jenkins job state changes using appropriate
+extension points.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In a few weeks I&#8217;ve finished my plugin modifications and added unit tests for
+its major parts.  As a result, the plugin now has a UI configuration section in
+<code>Post-build Actions</code> which is self descriptive:</p>
+</div>
+<div class="imageblock center">
+<div class="content">
+<img src="/images/post-images/2017-01-02/plugin-configuration.png" alt="plugin configuration">
+</div>
+</div>
+<div class="paragraph">
+<p>The last step was to prepare new plugin version and publish it to the world!
+The Jenkins
+<a href="https://wiki.jenkins-ci.org/display/JENKINS/Hosting+Plugins">"Hosting</a> document describes step by step process of how to publish a plugin.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>This includes many steps which should be respected very carefully.</strong></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="demo"><a class="anchor" href="#demo"></a>Demo</h3>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/Zdtf8M5yCgM?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-i-ve-learned"><a class="anchor" href="#what-i-ve-learned"></a>What I&#8217;ve learned</h3>
+<div class="paragraph">
+<p>It was my first experience in Jenkins plugins development. I should say that
+<strong>steep learning curve is high enough</strong>, and sometimes is really hard to find
+answers on appearing questions. But in general it&#8217;s all about <code>Java</code>, <code>XML</code>,
+<code>Maven</code> and <strong>it&#8217;s a lot of fun</strong> developing Jenkins plugins.</p>
+</div>
+<div class="paragraph">
+<p>Check out the <a href="https://plugins.jenkins.io/lifx-notifier">LIFX notifier page</a>
+for more information about the latest releases!</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Bonus</strong>: <a href="https://bitrise.io">bitrise.io</a> users, I&#8217;ve developed <a href="https://github.com/vgaidarji/steps-lifx-notifier">step LIFX notifier</a> for bitrise as well.</p>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Veaceslav Gaidarji" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Veaceslav Gaidarji
+</b>
+<p>
+<div class="paragraph">
+<p>Veaceslav is a software developer with the main focus on Android platform.
+In his free time, he enjoys working on different open-source projects.</p>
+</div>
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/vgaidarji" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/v_gaidarji" target="_blank">
+Twitter
+</a>
+</li>
+<li class="author">
+<a href="http://vgaidarji.me" target="_blank">
+Blog
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2017/01/2017-01-10-jenkins-lifx-notifier-plugin.adoc" title="Edit /blog/2017/01/2017-01-10-jenkins-lifx-notifier-plugin.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2017/01/2017-01-10-jenkins-lifx-notifier-plugin.adoc" title="View /blog/2017/01/2017-01-10-jenkins-lifx-notifier-plugin.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/merchandise">
+Merchandise
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

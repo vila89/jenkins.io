@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Jenkins Security Advisory 2017-08-07
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Jenkins Security Advisory 2017-08-07" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Jenkins Security Advisory 2017-08-07" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Jenkins Security Advisory 2017-08-07" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/security/advisory/2017-08-07/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Jenkins Security Advisory 2017-08-07" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<style>
+  .container .row.body {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
+  .toc {
+      float: right;
+  }
+</style>
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('.container .row.body h' + i);
+    }
+  })
+</script>
+<div class="container">
+<div class="row body">
+<div class="col-md-12">
+<h1>
+Jenkins Security Advisory 2017-08-07
+</h1>
+<div class="paragraph">
+<p>This advisory announces vulnerabilities in these Jenkins plugins:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://plugins.jenkins.io/blueocean">Blue Ocean</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/config-file-provider">Config File Provider Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/datadog">Datadog Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/deploy">Deploy to container Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/dry">DRY Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/dependency-check-jenkins-plugin">OWASP Dependency-Check Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/workflow-cps">Pipeline: Groovy Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/pipeline-input-step">Pipeline: Input Step Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/script-security">Script Security Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/analysis-core">Static Analysis Utilities Plugin</a></p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="description"><a class="anchor" href="#description"></a>Description</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="persistent-xss-vulnerability-in-static-analysis-utilities-and-dry-plugins"><a class="anchor" href="#persistent-xss-vulnerability-in-static-analysis-utilities-and-dry-plugins"></a>Persistent XSS vulnerability in Static Analysis Utilities and DRY Plugins</h3>
+<div class="paragraph">
+<p><strong>SECURITY-467 / CVE-2017-1000102 (Static Analysis Utilities Plugin) / CVE-2017-1000103 (DRY Plugin)</strong></p>
+</div>
+<div class="paragraph">
+<p>The "Details" view of Static Analysis Utilities based plugins, as well as the custom "Details" view of the DRY Plugin, was vulnerable to a persisted cross-site scripting vulnerability:
+Malicious users could insert arbitrary HTML into this view if they were able to influence the input to these plugins, for example the console output which is parsed to extract build warnings (Warnings Plugin).</p>
+</div>
+<div class="paragraph">
+<p>These plugins now sanitize HTML to a safe subset in all messages on the Details view.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="users-with-overall-read-access-were-able-to-view-configuration-files-managed-by-config-file-provider-plugin"><a class="anchor" href="#users-with-overall-read-access-were-able-to-view-configuration-files-managed-by-config-file-provider-plugin"></a>Users with Overall/Read access were able to view configuration files managed by Config File Provider Plugin</h3>
+<div class="paragraph">
+<p><strong>SECURITY-513 / CVE-2017-1000104</strong></p>
+</div>
+<div class="paragraph">
+<p>The Config File Provider Plugin is used to centrally manage configuration files that may include secrets, such as passwords.</p>
+</div>
+<div class="paragraph">
+<p>Users with only Overall/Read access to Jenkins were able to access URLs directly that allowed viewing these files.</p>
+</div>
+<div class="paragraph">
+<p>Access to view these files now requires sufficient permissions to configure the provided files, view the configuration of the folder in which the configuration files are defined, or have Job/Configure permissions to a job able to use these files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy-to-container-plugin-stored-plain-text-passwords-in-job-configuration"><a class="anchor" href="#deploy-to-container-plugin-stored-plain-text-passwords-in-job-configuration"></a>Deploy to container Plugin stored plain text passwords in job configuration</h3>
+<div class="paragraph">
+<p><strong>SECURITY-559 / CVE-2017-1000113</strong></p>
+</div>
+<div class="paragraph">
+<p>The Deploy to container Plugin stored passwords unencrypted as part of its configuration.
+This allowed users with Jenkins master local file system access, or users with Extended Read access to the jobs it is used in to retrieve the password, e.g. through the <code>config.xml</code> URL.</p>
+</div>
+<div class="paragraph">
+<p>The Deploy to container Plugin now integrates with <a href="https://plugins.jenkins.io/credentials">Credentials Plugin</a> to store passwords, and automatically migrates existing passwords.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="blue-ocean-plugin-did-not-check-the-optional-run-artifacts-permission-before-granting-access-to-archived-artifacts"><a class="anchor" href="#blue-ocean-plugin-did-not-check-the-optional-run-artifacts-permission-before-granting-access-to-archived-artifacts"></a>Blue Ocean Plugin did not check the optional Run/Artifacts permission before granting access to archived artifacts</h3>
+<div class="paragraph">
+<p><strong>SECURITY-564 / CVE-2017-1000105</strong></p>
+</div>
+<div class="paragraph">
+<p>The optional Run/Artifacts permission can be enabled by setting <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">a Java system property</a>.</p>
+</div>
+<div class="paragraph">
+<p>Blue Ocean did not check this permission before providing access to archived artifacts, Item/Read permission was sufficient.</p>
+</div>
+<div class="paragraph">
+<p>Blue Ocean now correctly checks the Run/Artifacts permission if it&#8217;s enabled before providing access to artifacts.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="blue-ocean-plugin-allowed-read-write-access-to-github-repositories-in-organization-folders-using-the-permissions-of-the-user-who-created-the-pipeline"><a class="anchor" href="#blue-ocean-plugin-allowed-read-write-access-to-github-repositories-in-organization-folders-using-the-permissions-of-the-user-who-created-the-pipeline"></a>Blue Ocean Plugin allowed read/write access to GitHub repositories in organization folders using the permissions of the user who created the pipeline</h3>
+<div class="paragraph">
+<p><strong>SECURITY-565 / CVE-2017-1000106</strong></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Pipelines created in Blue Ocean for Bitbucket Cloud and Server are affected by this issue as well.
+As of publication of this advisory, no official release of Blue Ocean contains this feature, it was only released to the experimental update site as Blue Ocean 1.2.0-beta-3.
+For this reason, the description below focuses on the issue with GitHub-based pipelines.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Blue Ocean allows the creation of GitHub organization folders that are set up to scan a GitHub organization for repositories and branches containing a Jenkinsfile, and create corresponding pipelines in Jenkins.
+Its SCM content REST API supports the pipeline creation and editing feature in Blue Ocean.</p>
+</div>
+<div class="paragraph">
+<p>The SCM content REST API did not check the current user&#8217;s authentication or credentials.
+If the GitHub organization folder was created via Blue Ocean, it retained a reference to its creator&#8217;s GitHub credentials.</p>
+</div>
+<div class="paragraph">
+<p>This allowed users with read access to the GitHub organization folder to create arbitrary commits in the repositories inside the GitHub organization corresponding to the GitHub organization folder with the GitHub credentials of the creator of the organization folder.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, users with read access to the GitHub organization folder could read arbitrary file contents from the repositories inside the GitHub organization corresponding to the GitHub organization folder if the branch contained a Jenkinsfile (which could be created using the other part of this vulnerability), and they could provide the organization folder name, repository name, branch name, and file name.</p>
+</div>
+<div class="paragraph">
+<p>Blue Ocean now limits SCM content REST API access to authenticated users, and always uses the authenticated user&#8217;s credentials for editing and creation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multiple-groovy-language-features-allowed-script-security-plugin-sandbox-bypass"><a class="anchor" href="#multiple-groovy-language-features-allowed-script-security-plugin-sandbox-bypass"></a>Multiple Groovy language features allowed Script Security Plugin sandbox bypass</h3>
+<div class="paragraph">
+<p><strong>CVE-2017-1000107</strong></p>
+</div>
+<div class="paragraph">
+<p>Script Security Plugin did not apply sandbox restrictions to various types of expressions.
+This could be used to invoke arbitrary constructors and methods, bypassing sandbox protection.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This may result in existing sandboxed scripts, such as pipelines, starting to fail if they use this Groovy language feature.
+See below for examples of these expressions, and how they are handled now.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="type-coercion"><a class="anchor" href="#type-coercion"></a>Type coercion</h4>
+<div class="paragraph">
+<p><strong>SECURITY-566</strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">jenkins.model.Jenkins</span>
+
+<span style="color:#339;font-weight:bold">interface</span> I {
+  <span style="color:#0a8;font-weight:bold">Object</span> getInstance()
+}
+(Jenkins <span style="color:#080;font-weight:bold">as</span> I).getInstance()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Casts like this are now prohibited unless all interface methods are already whitelisted on the actual receiver.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="method-references"><a class="anchor" href="#method-references"></a>Method references</h4>
+<div class="paragraph">
+<p><strong>SECURITY-567</strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">jenkins.model.Jenkins</span>
+(Jenkins.&amp;getInstance)()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Method reference invocations are now subject to sandbox protection.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="positional-constructor-arguments-lists"><a class="anchor" href="#positional-constructor-arguments-lists"></a>Positional constructor arguments lists</h4>
+<div class="paragraph">
+<p><strong>SECURITY-580</strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> f = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/tmp</span><span style="color:#710">'</span></span>] <span style="color:#080;font-weight:bold">as</span> <span style="color:#0a8;font-weight:bold">File</span>
+<span style="color:#0a8;font-weight:bold">File</span> f = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/tmp</span><span style="color:#710">'</span></span>]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Constructor invocations via positional argument list are now subject to sandbox protection.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="super-constructor-calls"><a class="anchor" href="#super-constructor-calls"></a>Super constructor calls</h4>
+<div class="paragraph">
+<p><strong>SECURITY-582</strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span> <span style="color:#088;font-weight:bold">extends</span> <span style="color:#0a8;font-weight:bold">File</span> {
+    <span style="color:#088;font-weight:bold">public</span> Foo(<span style="color:#0a8;font-weight:bold">String</span> f) {
+        <span style="color:#950">super</span>(f)
+    }
+}
+
+<span style="color:#080;font-weight:bold">new</span> Foo(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/tmp</span><span style="color:#710">'</span></span>)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Invocations of the <code>super</code> constructor are now subject to sandbox protection.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="pipeline-input-step-plugin-allows-users-with-read-access-to-interact-with-the-step-by-default"><a class="anchor" href="#pipeline-input-step-plugin-allows-users-with-read-access-to-interact-with-the-step-by-default"></a>Pipeline: Input Step Plugin allows users with read access to interact with the step by default</h3>
+<div class="paragraph">
+<p><strong>SECURITY-576 / CVE-2017-1000108</strong></p>
+</div>
+<div class="paragraph">
+<p>The Pipeline: Input Step Plugin by default allowed users with Item/Read access to a pipeline to interact with the step to provide input.</p>
+</div>
+<div class="paragraph">
+<p>This has been changed, and now users are required to have the Item/Build permission by default.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="persistent-xss-vulnerability-in-owasp-dependency-check-plugin"><a class="anchor" href="#persistent-xss-vulnerability-in-owasp-dependency-check-plugin"></a>Persistent XSS vulnerability in OWASP Dependency-Check Plugin</h3>
+<div class="paragraph">
+<p><strong>SECURITY-577 / CVE-2017-1000109</strong></p>
+</div>
+<div class="paragraph">
+<p>The "Details" view of the OWASP Dependency-Check Plugin, which is based on Static Analysis Utilities, was vulnerable to a persisted cross-site scripting vulnerability:
+The plugin showed issue descriptions verbatim without sanitizing or escaping, so that "sample" cross-site scripting exploits as part of an identified issue&#8217;s description were actually being executed.</p>
+</div>
+<div class="paragraph">
+<p>The plugin now escapes HTML in all messages on the Details view.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="datadog-plugin-showed-plain-text-api-key-in-configuration-form-field"><a class="anchor" href="#datadog-plugin-showed-plain-text-api-key-in-configuration-form-field"></a>Datadog Plugin showed plain text API key in configuration form field</h3>
+<div class="paragraph">
+<p><strong>SECURITY-579 / CVE-2017-1000114</strong></p>
+</div>
+<div class="paragraph">
+<p>The Datadog Plugin stores an API key to access the Datadog service in the global Jenkins configuration.</p>
+</div>
+<div class="paragraph">
+<p>While the API key is stored encrypted on disk, it was transmitted in plain text as part of the configuration form.
+This could result in exposure of the API key through browser extensions, cross-site scripting vulnerabilities, and similar situations.</p>
+</div>
+<div class="paragraph">
+<p>The Datadog Plugin now encrypts the API key transmitted to administrators viewing the global configuration form.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="blue-ocean-allows-unauthorized-users-to-reconfigure-existing-pipelines-and-obtain-github-access-tokens"><a class="anchor" href="#blue-ocean-allows-unauthorized-users-to-reconfigure-existing-pipelines-and-obtain-github-access-tokens"></a>Blue Ocean allows unauthorized users to reconfigure existing pipelines and obtain GitHub access tokens</h3>
+<div class="paragraph">
+<p><strong>SECURITY-587 / CVE-2017-1000110</strong></p>
+</div>
+<div class="paragraph">
+<p>Blue Ocean allows the creation of GitHub organization folders that are set up to scan a GitHub organization for repositories and branches containing a Jenkinsfile, and create corresponding pipelines in Jenkins.</p>
+</div>
+<div class="paragraph">
+<p>It did not properly check the current user&#8217;s authentication and authorization when configuring existing GitHub organization folders.</p>
+</div>
+<div class="paragraph">
+<p>This allowed users with read access to the GitHub organization folder to reconfigure it, including changing the GitHub API endpoint for the organization folder to an attacker-controlled server to obtain the GitHub access token, if the organization folder was initially created using Blue Ocean.</p>
+</div>
+<div class="paragraph">
+<p>Blue Ocean now limits configuration of GitHub organization folders to users with the Item/Create permission.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="severity"><a class="anchor" href="#severity"></a>Severity</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>SECURITY-467: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N">medium</a></p>
+</li>
+<li>
+<p>SECURITY-513: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">medium</a></p>
+</li>
+<li>
+<p>SECURITY-559: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N">medium</a></p>
+</li>
+<li>
+<p>SECURITY-564: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N">low</a></p>
+</li>
+<li>
+<p>SECURITY-565: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:H/A:N">high</a></p>
+</li>
+<li>
+<p>SECURITY-566: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">high</a></p>
+</li>
+<li>
+<p>SECURITY-567: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">high</a></p>
+</li>
+<li>
+<p>SECURITY-576: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N">medium</a></p>
+</li>
+<li>
+<p>SECURITY-577: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:N/A:N">low</a></p>
+</li>
+<li>
+<p>SECURITY-579: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N">low</a></p>
+</li>
+<li>
+<p>SECURITY-580: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">high</a></p>
+</li>
+<li>
+<p>SECURITY-582: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">high</a></p>
+</li>
+<li>
+<p>SECURITY-587: <a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N">medium</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="affected-versions"><a class="anchor" href="#affected-versions"></a>Affected versions</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Blue Ocean:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>GitHub Pipeline for Blue Ocean up to and including 1.1.5, 1.2.0 beta releases up to and including 1.2.0-beta-3</p>
+</li>
+<li>
+<p>REST Implementation for Blue Ocean up to and including 1.1.5, 1.2.0 beta releases and up to and including 1.2.0-beta-3</p>
+</li>
+<li>
+<p>Bitbucket Pipeline for Blue Ocean 1.2.0-beta-3</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Config File Provider Plugin up to and including 2.16.1</p>
+</li>
+<li>
+<p>Datadog Plugin up to and including 0.5.6</p>
+</li>
+<li>
+<p>Deploy to container Plugin up to and including 1.12</p>
+</li>
+<li>
+<p>DRY Plugin up to and including 2.48</p>
+</li>
+<li>
+<p>OWASP Dependency-Check Plugin up to and including 2.0.1.1</p>
+</li>
+<li>
+<p>Pipeline: Groovy Plugin up to and including 2.38</p>
+</li>
+<li>
+<p>Pipeline: Input Step Plugin up to and including 2.7</p>
+</li>
+<li>
+<p>Script Security Plugin up to and including 1.30</p>
+</li>
+<li>
+<p>Static Analysis Utilities Plugin up to and including 1.91</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fix"><a class="anchor" href="#fix"></a>Fix</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Blue Ocean should be updated to version 1.1.6</p>
+</li>
+<li>
+<p>Config File Provider Plugin should be updated to version 2.16.2</p>
+</li>
+<li>
+<p>Datadog Plugin should be updated to version 0.5.7</p>
+</li>
+<li>
+<p>Deploy to container Plugin should be updated to version 1.13</p>
+</li>
+<li>
+<p>DRY Plugin should be updated to version 2.49</p>
+</li>
+<li>
+<p>OWASP Dependency-Check Plugin should be updated to version 2.0.1.2</p>
+</li>
+<li>
+<p>Pipeline: Groovy Plugin should be updated to version 2.39</p>
+</li>
+<li>
+<p>Pipeline: Input Step Plugin should be updated to version 2.8</p>
+</li>
+<li>
+<p>Script Security Plugin should be updated to version 1.31</p>
+</li>
+<li>
+<p>Static Analysis Utilities Plugin should be updated to version 1.92</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These versions include fixes to the vulnerabilities described above.
+All prior versions are considered to be affected by these vulnerabilities unless otherwise indicated.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="credit"><a class="anchor" href="#credit"></a>Credit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Jenkins project would like to thank the reporters for discovering and <a href="/security/#reporting-vulnerabilities">reporting</a> these vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alvin Huang, FireEye Inc.</strong> for SECURITY-579</p>
+</li>
+<li>
+<p><strong>Cliff Meyers, CloudBees, Inc.</strong> for SECURITY-565, SECURITY-587</p>
+</li>
+<li>
+<p><strong>Daniel Beck, CloudBees, Inc.</strong> for SECURITY-582</p>
+</li>
+<li>
+<p><strong>Dheeraj Joshi</strong> for SECURITY-577</p>
+</li>
+<li>
+<p><strong>James Nord, CloudBees, Inc.</strong> for SECURITY-564</p>
+</li>
+<li>
+<p><strong>Jesse Glick, CloudBees, Inc.</strong> for SECURITY-559, SECURITY-580</p>
+</li>
+<li>
+<p><strong>Oleg Nenashev, CloudBees, Inc.</strong> for SECURITY-467</p>
+</li>
+<li>
+<p><strong>Simon St John-Green</strong> for SECURITY-566, SECURITY-567</p>
+</li>
+<li>
+<p><strong>R. Tyler Croy, CloudBees, Inc.</strong> for SECURITY-576</p>
+</li>
+<li>
+<p><strong>Thanh Ha</strong> for SECURITY-513</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//security/advisory/2017-08-07.adoc" title="Edit /security/advisory/2017-08-07.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//security/advisory/2017-08-07.adoc" title="View /security/advisory/2017-08-07.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-461-update-imagesdir-references/merchandise">
+Merchandise
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>
