@@ -603,7 +603,7 @@ an automatically-generated password.</p>
 browse to <code>http://localhost:8080</code> and wait until the <strong>Unlock Jenkins</strong> page
 appears.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/setup-jenkins-01-unlock-jenkins-page.jpg" alt="Unlock Jenkins page" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/setup-jenkins-01-unlock-jenkins-page.jpg" alt="Unlock Jenkins page" width="100%"></span></p>
 </div>
 </li>
 <li>
@@ -611,7 +611,7 @@ appears.</p>
 automatically-generated alphanumeric password (between the 2 sets of
 asterisks).</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/setup-jenkins-02-copying-initial-admin-password.png" alt="Copying initial admin password" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/setup-jenkins-02-copying-initial-admin-password.png" alt="Copying initial admin password" width="100%"></span></p>
 </div>
 </li>
 <li>
@@ -782,7 +782,7 @@ access token.</p>
 <p>Back in Blue Ocean, paste the access token into the <strong>Your GitHub access token</strong>
 field and click <strong>Connect</strong>.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-01-connecting-to-github.png" alt="Connecting to GitHub" width="80%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-01-connecting-to-github.png" alt="Connecting to GitHub" width="80%"></span><br>
   <a id="choose-github-account"></a>Jenkins now has access to your GitHub account
   (provided by your access token).</p>
 </div>
@@ -819,14 +819,14 @@ at least one Jenkinsfile in any branch of your repository.</p>
 editor, select <strong>docker</strong> from the <strong>Agent</strong> dropdown in the <strong>Pipeline Settings</strong>
 panel on the right.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-11-initial-pipeline-editor-page.png" alt="Initial to GitHub" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-11-initial-pipeline-editor-page.png" alt="Initial to GitHub" width="100%"></span></p>
 </div>
 </li>
 <li>
 <p>In the <strong>Image</strong> and <strong>Args</strong> fields that appear, specify <code>node:6-alpine</code> and
 <code>-p 3000:3000</code> respectively.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-12-agent-section.png" alt="Configuring the agent" width="50%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-12-agent-section.png" alt="Configuring the agent" width="50%"></span><br>
   <strong>Note:</strong> For an explanation of these values, refer to annotations <strong>1</strong> and <strong>2</strong>
   of the Declarative Pipeline in the
   <a href="../build-a-node-js-and-react-app-with-npm/#create-your-initial-pipeline-as-a-jenkinsfile">&#8220;Create
@@ -838,14 +838,14 @@ panel on the right.<br></p>
 <p>Back in the main Pipeline editor, click the <strong>+</strong> icon, which opens the new
 stage panel on the right.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-13-add-build-stage.png" alt="Add <em>Build</em> stage" width="30%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-13-add-build-stage.png" alt="Add <em>Build</em> stage" width="30%"></span></p>
 </div>
 </li>
 <li>
 <p>In this panel, type <code>Build</code> in the <strong>Name your stage</strong> field and then click the
 <strong>Add Step</strong> button below, which opens the <strong>Choose step type</strong> panel.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-14-adding-the-build-stage.png" alt="Adding the Build stage" width="50%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-14-adding-the-build-stage.png" alt="Adding the Build stage" width="50%"></span></p>
 </div>
 </li>
 <li>
@@ -853,7 +853,7 @@ stage panel on the right.<br></p>
 step type), which opens the <strong>Build / Shell Script</strong> panel, where you can enter
 this step&#8217;s values.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-15-choosing-a-step-type.png" alt="Choosing a step type" width="50%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-15-choosing-a-step-type.png" alt="Choosing a step type" width="50%"></span><br>
   <strong>Tip:</strong> The most commonly used step types appear closest to the top of this
   list. To find other steps further down this list, you can filter this list
   using the <strong>Find steps by name</strong> option.</p>
@@ -863,7 +863,7 @@ this step&#8217;s values.</p>
 <p>In the <strong>Build / Shell Script</strong> panel, specify <code>npm
 install</code>.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16-specifying-a-shell-step-value.png" alt="Specifying a shell step value" width="80%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16-specifying-a-shell-step-value.png" alt="Specifying a shell step value" width="80%"></span><br>
   <strong>Note:</strong> For an explanation of this step, refer to annotation <strong>4</strong> of the
   Declarative Pipeline in the
   <a href="../build-a-node-js-and-react-app-with-npm/#create-your-initial-pipeline-as-a-jenkinsfile">&#8220;Create
@@ -873,7 +873,7 @@ install</code>.<br></p>
 </li>
 <li>
 <p>( <em>Optional</em> ) Click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
 </li>
 <li>
 <p>Click the <strong>Save</strong> button at the top right to begin saving your new Pipeline
@@ -883,7 +883,7 @@ with its "Build" stage.</p>
 <p>In the <strong>Save Pipeline</strong> dialog box, specify the commit message in the
 <strong>Description</strong> field (e.g. <code>Add initial Pipeline (Jenkinsfile)</code>).</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-18-save-pipeline-dialog-box.png" alt="Save Pipeline dialog box" width="70%"></span><br></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-18-save-pipeline-dialog-box.png" alt="Save Pipeline dialog box" width="70%"></span><br></p>
 </div>
 </li>
 <li>
@@ -913,7 +913,7 @@ container. (During this time, <code>npm</code> downloads many dependencies neces
 run your Node.js and React application, which will ultimately be stored in
 the local <code>node_modules</code> directory within the Jenkins home directory).</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-19-initial-pipeline-downloading-npm-dependencies.png" alt="Downloading <em>npm</em> dependencies" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-19-initial-pipeline-downloading-npm-dependencies.png" alt="Downloading <em>npm</em> dependencies" width="100%"></span></p>
 </div>
 </li>
 </ol>
@@ -923,13 +923,13 @@ the local <code>node_modules</code> directory within the Jenkins home directory)
 successfully.</p>
 </div>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-19a-initial-pipeline-runs-successfully.png" alt="Initial Pipeline runs successfully" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-19a-initial-pipeline-runs-successfully.png" alt="Initial Pipeline runs successfully" width="100%"></span></p>
 </div>
 </li>
 <li>
 <p>Click the <strong>X</strong> at the top-right to return to the main Blue Ocean interface.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-19b-main-blue-ocean-interface.png" alt="Main Blue Ocean interface" width="100%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-19b-main-blue-ocean-interface.png" alt="Main Blue Ocean interface" width="100%"></span><br>
   <strong>Note:</strong> Before continuing on, you can check that Jenkins has created a
   <code>Jenkinsfile</code> for you at the root of your forked GitHub repository (in the
   repository&#8217;s sole <code>master</code> branch).</p>
@@ -947,12 +947,12 @@ successfully.</p>
 access your respository&#8217;s branches page, where you can access the <code>master</code>
 branch.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-21-repository-branches-page.png" alt="Repository branches page" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-21-repository-branches-page.png" alt="Repository branches page" width="100%"></span></p>
 </div>
 </li>
 <li>
 <p>Click the <code>master</code> branch&#8217;s "Edit Pipeline" icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-21a-edit-pipeline-on-branch.png" alt="Edit Pipeline on branch" width="3%"></span>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-21a-edit-pipeline-on-branch.png" alt="Edit Pipeline on branch" width="3%"></span>
 to open the Pipeline editor for this branch.<br></p>
 </li>
 <li>
@@ -960,7 +960,7 @@ to open the Pipeline editor for this branch.<br></p>
 stage you created <a href="#create-your-initial-pipeline">above</a> to open the new stage
 panel on the right.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-22-add-test-stage.png" alt="Add <em>Test</em> stage" width="45%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-22-add-test-stage.png" alt="Add <em>Test</em> stage" width="45%"></span></p>
 </div>
 </li>
 <li>
@@ -973,7 +973,7 @@ panel on the right.<br></p>
 <li>
 <p>In the resulting <strong>Test / Shell Script</strong> panel, specify
 <code>./jenkins/scripts/test.sh</code> and then click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the Pipeline stage editor.<br></p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the Pipeline stage editor.<br></p>
 </li>
 <li>
 <p>At the lower-right of the panel, click <strong>Settings</strong> to reveal this section of
@@ -987,7 +987,7 @@ configure an environment directive).</p>
 <p>In the <strong>Name</strong> and <strong>Value</strong> fields that appear, specify <code>CI</code> and <code>true</code>,
 respectively.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-23-environment-directive.png" alt="Environment directive" width="50%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-23-environment-directive.png" alt="Environment directive" width="50%"></span><br>
   <strong>Note:</strong> For an explanation of this directive and its step, refer to
   annotations <strong>1</strong> and <strong>3</strong> of the Declarative Pipeline in the
   <a href="../build-a-node-js-and-react-app-with-npm/#add-a-test-stage-to-your-pipeline">&#8220;Add
@@ -997,7 +997,7 @@ respectively.</p>
 </li>
 <li>
 <p>( <em>Optional</em> ) Click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
 </li>
 <li>
 <p>Click the <strong>Save</strong> button at the top right to begin saving your Pipeline with
@@ -1022,7 +1022,7 @@ If your amended Pipeline ran successfully, here&#8217;s what the Blue Ocean
 interface should look like. Notice the additional "Test" stage. You can click
 on the previous "Build" stage circle to access the output from that stage.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-24-test-stage-runs-successfully-with-output.png" alt="Test stage runs successfully (with output)" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-24-test-stage-runs-successfully-with-output.png" alt="Test stage runs successfully (with output)" width="100%"></span></p>
 </div>
 </li>
 <li>
@@ -1041,7 +1041,7 @@ access your respository&#8217;s <code>master</code> branch.</p>
 </li>
 <li>
 <p>Click the <code>master</code> branch&#8217;s "Edit Pipeline" icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-21a-edit-pipeline-on-branch.png" alt="Edit Pipeline on branch" width="3%"></span>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-21a-edit-pipeline-on-branch.png" alt="Edit Pipeline on branch" width="3%"></span>
 to open the Pipeline editor for this branch.</p>
 </li>
 <li>
@@ -1049,7 +1049,7 @@ to open the Pipeline editor for this branch.</p>
 stage you created <a href="#add-a-test-stage-to-your-pipeline">above</a> to open the new
 stage panel.<br></p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-31-add-deliver-stage.png" alt="Add <em>Deliver</em> stage" width="60%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-31-add-deliver-stage.png" alt="Add <em>Deliver</em> stage" width="60%"></span></p>
 </div>
 </li>
 <li>
@@ -1062,9 +1062,9 @@ the <strong>Add Step</strong> button below to open the <strong>Choose step type<
 <li>
 <p>In the resulting <strong>Deliver / Shell Script</strong> panel, specify
 <code>./jenkins/scripts/deliver.sh</code> and then click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the Pipeline stage editor.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the Pipeline stage editor.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-32-add-next-step.png" alt="Add next step" width="50%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-32-add-next-step.png" alt="Add next step" width="50%"></span><br>
   <strong>Note:</strong> For an explanation of this step, refer to the <code>deliver.sh</code> file itself
   located in the <code>jenkins/scripts</code> of your forked repository on GitHub.</p>
 </div>
@@ -1076,7 +1076,7 @@ the <strong>Add Step</strong> button below to open the <strong>Choose step type<
 <p>In the <strong>Choose step type</strong> panel, type <code>input</code> into the <strong>Find steps by name</strong>
 field.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-33-choosing-input-step-type.png" alt="Choosing the input step type" width="50%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-33-choosing-input-step-type.png" alt="Choosing the input step type" width="50%"></span></p>
 </div>
 </li>
 <li>
@@ -1086,9 +1086,9 @@ field.</p>
 <p>In the resulting <strong>Deliver / Wait for interactive input</strong> panel, specify
 <code>Finished using the web site? (Click "Proceed" to continue)</code> in the <strong>Message</strong>
 field and then click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the Pipeline stage editor.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the Pipeline stage editor.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-34-specifying-input-step-message-value.png" alt="Specifying input step message value" width="55%"></span><br>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-34-specifying-input-step-message-value.png" alt="Specifying input step message value" width="55%"></span><br>
   <strong>Note:</strong> For an explanation of this step, refer to annotation <strong>4</strong> of the
   Declarative Pipeline in the
   <a href="../build-a-node-js-and-react-app-with-npm/#add-a-final-deliver-stage-to-your-pipeline">&#8220;Add
@@ -1110,7 +1110,7 @@ located in the <code>jenkins/scripts</code> of your forked repository on GitHub.
 </li>
 <li>
 <p>( <em>Optional</em> ) Click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
 </li>
 <li>
 <p>Click the <strong>Save</strong> button at the top right to begin saving your Pipeline with
@@ -1132,7 +1132,7 @@ interface should look like. Notice the additional "Deliver" stage. Click on
 the previous "Test" and "Build" stage circles to access the outputs from those
 stages.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-35-deliver-stage-pauses-for-user-input.png" alt="Deliver stage pauses for user input" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-35-deliver-stage-pauses-for-user-input.png" alt="Deliver stage pauses for user input" width="100%"></span></p>
 </div>
 </li>
 <li>
@@ -1140,7 +1140,7 @@ stages.</p>
 the green <strong><code>./jenkins/scripts/deliver.sh</code></strong> step to expand its content and
 scroll down until you see the <code>http://localhost:3000</code> link.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-36-deliver-stage-opened-deliver-sh-step.png" alt="Deliver stage output only" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-36-deliver-stage-opened-deliver-sh-step.png" alt="Deliver stage output only" width="100%"></span></p>
 </div>
 </li>
 <li>
@@ -1152,14 +1152,14 @@ see a page/site with the title <strong>Welcome to React</strong> on it.</p>
 <p>When you are finished viewing the page/site, click the <strong>Proceed</strong> button to
 complete the Pipeline&#8217;s execution.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-37-deliver-stage-runs-successfully.png" alt="Deliver stage runs successfully" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-37-deliver-stage-runs-successfully.png" alt="Deliver stage runs successfully" width="100%"></span></p>
 </div>
 </li>
 <li>
 <p>Click the <strong>X</strong> at the top-right to return to the main Blue Ocean interface,
 which lists your previous Pipeline runs in reverse chronological order.</p>
 <div class="paragraph boxshadow">
-<p><span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-38-main-blue-ocean-interface-with-all-previous-runs-displayed.png" alt="Main Blue Ocean interface with all previous runs displayed" width="100%"></span></p>
+<p><span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-38-main-blue-ocean-interface-with-all-previous-runs-displayed.png" alt="Main Blue Ocean interface with all previous runs displayed" width="100%"></span></p>
 </div>
 </li>
 </ol>
@@ -1189,7 +1189,7 @@ access your respository&#8217;s <code>master</code> branch.</p>
 </li>
 <li>
 <p>Click the <code>master</code> branch&#8217;s "Edit Pipeline" icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-21a-edit-pipeline-on-branch.png" alt="Edit Pipeline on branch" width="3%"></span> to open the Pipeline editor for this branch.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-21a-edit-pipeline-on-branch.png" alt="Edit Pipeline on branch" width="3%"></span> to open the Pipeline editor for this branch.</p>
 </li>
 <li>
 <p>In the main Pipeline editor, click the <strong>Test</strong> stage you created
@@ -1205,7 +1205,7 @@ created earlier) to delete it.</p>
 </li>
 <li>
 <p>Click the top-left back arrow icon
-<span class="image"><img src="/doc/book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
+<span class="image"><img src="../../book/resources/tutorials/pipeline-in-blueocean-16a-return-from-step-icon.png" alt="Return from step icon" width="3%"></span> to return to the main Pipeline editor.</p>
 </li>
 <li>
 <p>In the <strong>Pipeline Settings</strong> panel, click the <strong>+</strong> icon at the right of the
