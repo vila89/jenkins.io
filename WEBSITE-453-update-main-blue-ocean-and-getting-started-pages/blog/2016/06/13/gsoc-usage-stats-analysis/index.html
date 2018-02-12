@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+GSoC Project Intro: Usage Statistics Analysis
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="GSoC Project Intro: Usage Statistics Analysis" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="GSoC Project Intro: Usage Statistics Analysis" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="GSoC Project Intro: Usage Statistics Analysis" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2016/06/13/gsoc-usage-stats-analysis/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="GSoC Project Intro: Usage Statistics Analysis" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2016/06/13/gsoc-usage-stats-analysis/" title="GSoC Project Intro: Usage Statistics Analysis">
+GSoC Project Intro: Usage Statistics Analysis
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2016-06-13
+by
+<a href="#about-the-author">Payal Priyadarshini</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/usage-statistics">
+usage-statistics
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/gsoc">
+gsoc
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-myself"><a class="anchor" href="#about-myself"></a>About myself</h3>
+<div class="paragraph">
+<p>Hello, my name is Payal Priyadarshini.  I am pursing my major in Computer
+Science &amp; Engineering at the Indian Institute of Technology Kharagpur, India.  I
+am very proficient in writing code in Python, C++, Java and currently getting
+familiar and hopefully good in Groovy too.</p>
+</div>
+<div class="paragraph">
+<p>I have internship experiences in renowned institutions like Google and VMware
+where I worked with some exciting technologies for example Knowledge Graphs,
+BigTable, SPARQL, RDF in Google. I am a passionate computer science student who
+is always interested in learning and looking for new challenges and
+technologies.That’s how I came across to Google Summer of Code where I am
+working on some exciting data mining problems which you are going to encounter
+below in this blog.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="project-overview"><a class="anchor" href="#project-overview"></a>Project Overview</h3>
+<div class="paragraph">
+<p>Jenkins has collected anonymous usage information of more than 100,000
+installations which includes set of plugins and their versions etc and also
+release history information of the upgrades. This data collection can be used
+for various data mining experiments. The main goal of this project is to perform
+various analysis and studies over the available dataset to discover trends
+in data usage. This project will help us to learn more about the Jenkins
+usage by solving various problems, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Plugin versions installation trends</em>, will let us know about the versions installation behaviour of a given plugin.</p>
+</li>
+<li>
+<p><em>Spotting downgrades</em>, which will warn us that something is wrong with the version from which downgrading was performed.</p>
+</li>
+<li>
+<p><em>Correlating</em> what users are saying (community rating) with what users are doing (upgrades/downgrades).</p>
+</li>
+<li>
+<p><em>Distribution of cluster size</em>, where clusters represents jobs, nodes count which approximates the size of installation.</p>
+</li>
+<li>
+<p><em>Finding set of plugins which are likely to be used together</em>, will setup pillar for plugin recommendation system.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As a part of the <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> 2016, I will be working on the above
+mentioned problems. My mentors for the project are Kohsuke Kawaguchi and Daniel Beck. Some <a href="http://stats.jenkins-ci.org/jenkins-stats/svg/svgs.html">analyses</a> has already been done over this
+data but those are outdated as charts can be more clearer and interactive. This project aims to improvise existing
+statistics and generating new ones discussed above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-cases"><a class="anchor" href="#use-cases"></a>Use Cases</h3>
+<div class="paragraph">
+<p>This project covers wide-range of the use-cases that has been derived from the
+problems mentioned above.</p>
+</div>
+<div class="sect3">
+<h4 id="use-case-1-upgrade-downgrade-analysis"><a class="anchor" href="#use-case-1-upgrade-downgrade-analysis"></a>Use Case 1: Upgrade/Downgrade Analysis</h4>
+<div class="paragraph">
+<p>Understanding the trend in upgrades and downgrades have lots of utilities, some
+of them have already been explained earlier which includes measuring the
+popularity, spotting downgrades, giving warning about the wrong versions quickly
+etc.</p>
+</div>
+<div class="sect4">
+<h5 id="use-case-1-1-plugin-versions-installation-trends"><a class="anchor" href="#use-case-1-1-plugin-versions-installation-trends"></a>Use Case 1.1: Plugin versions installation trends</h5>
+<div class="paragraph">
+<p>Here we are analysing the trend in the different version installations for a
+given plugin. This use-case will help us to know about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Trend in the upgrade to the latest version released for a given plugin.</p>
+</li>
+<li>
+<p>Trend in the popularity decrement of the previous versions after new version release.</p>
+</li>
+<li>
+<p>Find the most popular plugin version at any given point of time.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-1-2-spotting-dowgrades"><a class="anchor" href="#use-case-1-2-spotting-dowgrades"></a>Use Case 1.2: Spotting dowgrades</h5>
+<div class="paragraph">
+<p>Here we are interested to know, how many installations are downgraded from any
+given version to previously used version. Far fetched goal of this analysis is
+to give warning when something goes wrong with the new version release, which
+can be sensed using downgrades performed by users. This analysis can be
+accomplished by studying the monotonic property of the version number vs.
+timestamp graph for a given plugin.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-1-3-correlation-with-the-perceived-quality-of-jenkins-release"><a class="anchor" href="#use-case-1-3-correlation-with-the-perceived-quality-of-jenkins-release"></a>Use Case 1.3: Correlation with the perceived quality of Jenkins release</h5>
+<div class="paragraph">
+<p>To correlate what users are saying to what users are doing, we have community
+ratings which tells us about the ratings and reviews of the releases and has
+following parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Used the release on production site w/o major issues.</p>
+</li>
+<li>
+<p>Don’t recommend to other.</p>
+</li>
+<li>
+<p>Tried but rolled it back to the previous version.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First parameters can be calculated from the Jenkins usage data and third
+parameter is basically spotting downgrades(use case 1.2). But the second
+parameter is basically an expression which is not possible to calculate. This
+analysis is just to get a subjective idea about the correlation.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-case-2-plugin-recommendation-system"><a class="anchor" href="#use-case-2-plugin-recommendation-system"></a>Use Case 2: Plugin Recommendation System</h4>
+<div class="paragraph">
+<p>This section involves setting up ground work for the plugin recommendation
+system. The idea is to find out the set of plugins which are most likely to be
+used together. Here we will be following both content based filtering as well as
+collaborative filtering approach.</p>
+</div>
+<div class="sect4">
+<h5 id="a-href-https-en-wikipedia-org-wiki-recommender_system-collaborative_filtering-collaborative-filtering-a"><a class="anchor" href="#a-href-https-en-wikipedia-org-wiki-recommender_system-collaborative_filtering-collaborative-filtering-a"></a><a href="https://en.wikipedia.org/wiki/Recommender_system#Collaborative_filtering">Collaborative Filtering</a></h5>
+<div class="paragraph">
+<p>This approach is based upon analysing large amount of information on
+installation&#8217;s behaviours and activities. We have implicit form of the data
+about the plugins, that is for every install ids, we know the set of plugins
+installed. We can use this information to construct plugin usage graph where
+nodes are the plugins and the edges between them is the number of installations
+in which both plugins are installed together.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="a-href-http-recommender-systems-org-content-based-filtering-content-based-filtering-a"><a class="anchor" href="#a-href-http-recommender-systems-org-content-based-filtering-content-based-filtering-a"></a><a href="http://recommender-systems.org/content-based-filtering/">Content-based Filtering</a></h5>
+<div class="paragraph">
+<p>This method is based on a properties or the content of the item for example
+recommending items that are similar to the those that a user liked in the past
+or examining in the present based upon some properties. Here, we are utilizing
+<a href="http://stats.jenkins-ci.org/jenkins-stats/jenkinsgraph.html?filter=kohsuke">Jenkins
+plugin dependency graph</a> to learn about the properties of a plugin. This graph
+tells us about dependent plugins on a given plugin as well as its dependencies
+on others. Here is an example to show, how this graph is use for content based
+filetring, suppose if a user is using “CloudBees Cloud Connector”, then we can
+recommend them for “CloudBees Registration Plugin” as both plugins are dependent
+on “CloudBees Credentials Plugin”.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="additional-details"><a class="anchor" href="#additional-details"></a>Additional Details</h3>
+<div class="paragraph">
+<p>You may find the complete project proposal along with the detailed design of the
+use-cases with their implementation details here in the
+<a href="https://docs.google.com/document/d/1ZSVDzYChadUcmsLpI274t36kHJAIE03IDkxBLiVVylM/edit?usp=sharing">design
+document</a>.</p>
+</div>
+<div class="paragraph">
+<p>A complete version of the <strong>use-case 1: Upgrade &amp; Downgrade Analysis</strong> should be
+available in late June and basic version of plugin recommendation system will be
+available in late July.</p>
+</div>
+<div class="paragraph">
+<p>I do appreciate any kind of feedback and suggestions.  You may add comments in
+the
+<a href="https://docs.google.com/document/d/1ZSVDzYChadUcmsLpI274t36kHJAIE03IDkxBLiVVylM/edit?usp=sharing">design
+doc</a>.  I will be posting updates about the statistics generation status on the
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">jenkins-dev</a> mailing
+list and <a href="http://lists.jenkins-ci.org/mailman/listinfo/jenkins-infra">jenkins-infra</a> mailing list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="links"><a class="anchor" href="#links"></a>Links:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.google.com/document/d/1ZSVDzYChadUcmsLpI274t36kHJAIE03IDkxBLiVVylM/edit?usp=sharing">Design Doc</a></p>
+</li>
+<li>
+<p><a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/infra-statistics">Github infra-stats</a></p>
+</li>
+<li>
+<p><a href="http://stats.jenkins-ci.org/jenkins-stats/svg/svgs.html">Jenkins statistics</a></p>
+</li>
+<li>
+<p><a href="http://stats.jenkins-ci.org/jenkins-stats/jenkinsgraph.html?filter=kohsuke">Jenkins Plugin Dependency Graph</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Payal94/GSoC-Jenkins-Usage-Statistics-Analysis">Github GSoC Jenkins Usage Statistics Analysis</a></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Payal Priyadarshini" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Payal Priyadarshini
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/payal94" target="_blank">
+GitHub
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2016/2016-06-13-gsoc-usage-stats-analysis.adoc" title="Edit /blog/2016/2016-06-13-gsoc-usage-stats-analysis.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2016/2016-06-13-gsoc-usage-stats-analysis.adoc" title="View /blog/2016/2016-06-13-gsoc-usage-stats-analysis.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

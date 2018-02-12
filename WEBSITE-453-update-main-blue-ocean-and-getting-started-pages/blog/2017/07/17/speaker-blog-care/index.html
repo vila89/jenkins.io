@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Indispensable, Disposable Jenkins
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Indispensable, Disposable Jenkins" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Indispensable, Disposable Jenkins" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Indispensable, Disposable Jenkins" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/07/17/speaker-blog-care/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Indispensable, Disposable Jenkins" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/07/17/speaker-blog-care/" title="Indispensable, Disposable Jenkins">
+Indispensable, Disposable Jenkins
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2017-07-17
+by
+<a href="#about-the-author">Hannah Inman</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/event">
+event
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/JenkinsWorld">
+JenkinsWorld
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is a guest post by Mandy Hubbard, Software Engineer/QA Architect at
+<a href="https://www.care.com">Care.com</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Imagine this: It’s 4:30pm on a Friday,
+you have a major release on Monday, and your Jenkins server goes down.
+It doesn&#8217;t matter if it experienced a hardware failure,
+fell victim to a catastrophic
+<a href="https://en.wikipedia.org/wiki/Fat-finger_error">fat-finger error</a>,
+or just got hit by a meteor - your Jenkins server is toast.
+How long did it take to perfect your Pipeline,
+all your Continuous Delivery jobs, plugins, and credentials?
+Hopefully you at least have a recent backup of your Jenkins home directory,
+but you’re still going have to work over the weekend with IT to procure a new server,
+install it, and do full regression testing to be up and running by Monday morning.
+Go ahead and take a moment, go to your car and just scream.
+It will help &#8230;&#8203; a little.</p>
+</div>
+<div class="paragraph">
+<p>But what if you could have a Jenkins environment that is completely disposable,
+one that could be easily rebuilt at any time?
+Using <a href="https://www.docker.com/">Docker</a> and Joyent’s
+<a href="https://www.joyent.com/containerpilot">ContainerPilot</a>, the team at
+<a href="https://www.care.com/homepay">Care.com HomePay</a>
+has created a production Jenkins environment that is completely software-defined.
+Everything required to set up a new Jenkins environment is stored in source control,
+versioned, and released just like any other software.
+At Jenkins World, I’ll do a developer deep-dive into this approach during my technical session,
+<a href="https://jenkinsworld20162017.sched.com/event/ALPr/disposable-jenkins">Indispensable, Disposable Jenkins</a>,
+including a demo of bringing up a fully configured Jenkins server in a Docker container.
+For now, let me give you a basic outline of what we&#8217;ve done.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Mandy will be
+<a href="https://jenkinsworld20162017.sched.com/event/ALPr/disposable-jenkins">presenting</a>
+more on this topic at
+<a href="https://www.cloudbees.com/jenkinsworld/home">Jenkins World</a> in August,
+register with the code <code>JWFOSS</code> for a 30% discount off your pass.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>First, we add ContainerPilot to our Jenkins image by including it in the <code>Dockerfile</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Dockerfile</div>
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code>## ContainerPilot
+
+ENV CONTAINERPILOT_VERSION 2.7.0
+ENV CONTAINERPILOT_SHA256 3cf91aabd3d3651613942d65359be9af0f6a25a1df9ec9bd9ea94d980724ee13
+ENV CONTAINERPILOT file:///etc/containerpilot/containerpilot.json
+
+RUN curl -Lso /tmp/containerpilot.tar.gz https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/containerpilot-${CONTAINERPILOT_VERSION}.tar.gz &amp;&amp; \
+    echo "${CONTAINERPILOT_SHA256}  /tmp/containerpilot.tar.gz" | sha256sum -c &amp;&amp; \
+    tar zxf /tmp/containerpilot.tar.gz -C /bin &amp;&amp; \
+rm /tmp/containerpilot.tar.gz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we specify <code>containerpilot</code> as the Docker command in the <code>docker-compose.yml</code>
+and pass the Jenkins startup script as an argument.
+This allows ContainerPilot to perform our preStart business before starting the Jenkins server.</p>
+</div>
+<div class="listingblock">
+<div class="title">docker-compose.yml</div>
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="yaml"><span style="color:#606">jenkins</span>:
+    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">devmandy/auto-jenkins:latest</span></span>
+    <span style="color:#606">restart</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">always</span></span>
+    <span style="color:#606">mem_limit</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">8g</span></span>
+    <span style="color:#606">ports</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">80</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">22</span></span>
+    <span style="color:#606">dns</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">8.8.8.8</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">127.0.0.1</span></span>
+    <span style="color:#606">env_file</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">_env</span></span>
+    <span style="color:#606">volumes</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">/var/run/docker.sock:/var/run/docker.sock</span></span>
+    <span style="color:#606">environment</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">CONSUL=consul</span></span>
+    <span style="color:#606">links</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">consul:consul</span></span>
+    <span style="color:#606">ports</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">8080:80</span><span style="color:#710">&quot;</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2222:22</span><span style="color:#710">&quot;</span></span>
+    <span style="color:#606">command</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&gt;</span><span style="color:#D20">
+      containerpilot
+      /usr/local/bin/jenkins.sh</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration data is read from a Docker Compose <code>_env</code> file,
+as specified in the <code>docker-compose.yml</code> file,
+and stored in environment variables inside the container.
+This is an example of our _env file:</p>
+</div>
+<div class="listingblock">
+<div class="title">_env</div>
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code>GITHUB_TOKEN=&lt;my Github user token&gt;
+GITHUB_USERNAME=DevMandy
+GITHUB_ORGANIZATION=DevMandy
+DOCKERHUB_ORGANIZATION=DevMandy
+DOCKERHUB_USERNAME=DevMandy
+DOCKERHUB_PASSWORD=&lt;my Dockerhub password&gt;
+DOCKER_HOST=&lt;my Docker host, or localhost&gt;
+SLACK_TEAM_DOMAIN=DevMandy
+SLACK_CHANNEL=jenkinsbuilds
+SLACK_TOKEN=&lt;my Slack token&gt;
+BASIC_AUTH=&lt;my basic auth token&gt;
+AD_NAME=&lt;my AD domain&gt;
+AD_SERVER=&lt;my AD server&gt;
+PRIVATE_KEY=&lt;my ssh private key, munged by a setup script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jenkins stores its credentials and plugin information in various xml files.
+The <code>preStart</code> script modifies the relevant files,
+substituting the environment variables as appropriate,
+using a set of command line utilities called <code>xmlstarlet</code>.
+Here is an example method from our <code>preStart</code> script that configures Github credentials:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="bash">github_credentials_setup() {
+    ## Setting Up Github username in credentials.xml file
+    echo
+    echo -e &quot;Adding Github username to credentials.xml file for SSH key&quot;
+    xmlstarlet \
+        ed \
+        --inplace \
+        -u '//com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey[id=&quot;github&quot;]/username' \
+        -v ${GITHUB_USERNAME} \
+        ${JENKINS_HOME}/credentials.xml
+
+    echo -e &quot;Adding Github username to credentials.xml file for Github token&quot;
+    xmlstarlet \
+        ed \
+         --inplace \
+        -u '//com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl[id=&quot;github_token&quot;]/username' \
+        -v ${GITHUB_USERNAME} \
+        ${JENKINS_HOME}/credentials.xml
+
+    PASSWORD=${GITHUB_TOKEN}
+    echo -e &quot;Adding Github token to credentials.xml&quot;
+    xmlstarlet \
+        ed \
+        --inplace \
+        -u '//com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl[id=&quot;github_token&quot;]/password' \
+        -v ${PASSWORD} \
+        ${JENKINS_HOME}/credentials.xml
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This approach can be used to automate all things Jenkins.
+These are just a few of the things I’ll show you in my Jenkins World session,
+which you can build on to automate anything else your Jenkins environment needs.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creation of credentials sets for interacting with third party services
+like Github, Docker Hub and Slack</p>
+</li>
+<li>
+<p>Configuration of the <a href="https://plugins.jenkins.io/active-directory">Active Directory plugin</a>
+and setup of matrix-based security</p>
+</li>
+<li>
+<p>Configuration of the <a href="https://plugins.jenkins.io/github-organization-folder">Github Organization plugin</a>,
+which results in the automatic creation of all Jenkins pipeline jobs
+by scanning the organization for all repositories containing a <code>Jenkinsfile</code></p>
+</li>
+<li>
+<p>Configuration of the
+<a href="https://plugins.jenkins.io/docker-workflow">Docker Pipeline plugin</a>, including creating templates for all custom build agents</p>
+</li>
+<li>
+<p>Configuration of the <a href="https://plugins.jenkins.io/workflow-cps-global-lib">Global Pipeline Libraries plugin</a></p>
+</li>
+<li>
+<p>Configuration of the <a href="https://plugins.jenkins.io/slack">Slack Notifier plugin</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With software-defined Jenkins, pipeline infrastructure
+gains the same flexibility and resiliency as the rest of the development pipeline.
+If we decide to change our Jenkins configuration in any way –
+for example installing a new plugin or upgrading an existing one,
+adding a new global library, or adding new Docker images for build slaves –
+we simply edit our <code>preStart</code> script to include these changes, build a new Docker image,
+and the Jenkins environment is automatically reconfigured when we start a new container.
+Because the entire configuration specification lives in a Github repository,
+changes are merged to the "master" branch using pull requests,
+and our Jenkins Docker image is tagged using
+<a href="http://semver.org/">semantic versioning</a> just like any other component.
+Jenkins can be both indispensable and completely disposable at the same time.</p>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Hannah Inman" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Hannah Inman
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2017/07/2017-07-17-speaker-blog-care.adoc" title="Edit /blog/2017/07/2017-07-17-speaker-blog-care.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2017/07/2017-07-17-speaker-blog-care.adoc" title="View /blog/2017/07/2017-07-17-speaker-blog-care.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

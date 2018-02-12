@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Pipeline Workshop & Hackergarten @ ToulouseJAM Feedback
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Pipeline Workshop &amp; Hackergarten @ ToulouseJAM Feedback" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Pipeline Workshop &amp; Hackergarten @ ToulouseJAM Feedback" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Pipeline Workshop &amp; Hackergarten @ ToulouseJAM Feedback" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/03/21/toulousejam-pipeline-workshop/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Pipeline Workshop &amp; Hackergarten @ ToulouseJAM Feedback" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/03/21/toulousejam-pipeline-workshop/" title="Pipeline Workshop &amp; Hackergarten @ ToulouseJAM Feedback">
+Pipeline Workshop & Hackergarten @ ToulouseJAM Feedback
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2017-03-21
+by
+<a href="#about-the-author">Baptiste Mathus</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/hackergarten">
+hackergarten
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/jam">
+jam
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/meetup">
+meetup
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/feedback">
+feedback
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>Earlier this month, a full-day event about Jenkins Pipeline was organized in <a href="https://www.google.fr/maps/place/Toulouse/@43.6006786,1.3628012,12z/data=!3m1!4b1!4m5!3m4!1s0x12aebb6fec7552ff:0x406f69c2f411030!8m2!3d43.604652!4d1.444209">Toulouse, France</a> with the <a href="https://www.meetup.com/fr-FR/Toulouse-Jenkins-Area-Meetup/events/237089783/">Toulouse JAM</a>.</p>
+</div>
+<div class="paragraph">
+<p>After a warm-up on the previous Tuesday where Michaël Pailloncy had given a talk at the local <a href="https://www.meetup.com/fr-FR/Toulouse-DevOps/events/237859268/">Toulouse Devops user group about Jenkins Pipeline ecosystem</a>, we were ready for more digging :-).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/images/post-images/2017-03-toulousejam-workshop/workshop-overview-1.jpg" alt="workshop overview 1" width="30%"></span>
+<span class="image"><img src="/images/post-images/2017-03-toulousejam-workshop/workshop-overview-2.jpg" alt="workshop overview 2" width="30%"></span>
+<span class="image"><img src="/images/post-images/2017-03-toulousejam-workshop/workshop-overview-3.jpg" alt="workshop overview 3" width="30%"></span></p>
+</div>
+<div class="sect1">
+<h2 id="the-agenda"><a class="anchor" href="#the-agenda"></a>The agenda</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We had planned the day in two parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Morning would be a more driven workshop with slides &amp; exercises to be completed</p>
+</li>
+<li>
+<p>Pizzas &amp; beverages to split the day :-)</p>
+</li>
+<li>
+<p>Afternoon would be somehow like an <a href="https://en.wikipedia.org/wiki/Unconference">Unconference</a>, where people basically decide by themselves what they want to work on.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We planned to have 30 attendees. We ended up having 25.
+We considered having more people, but finally decided that for a first time it would be better to start not too big.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="infrastructure"><a class="anchor" href="#infrastructure"></a>Infrastructure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Infrastructure was sponsored by <a href="https://www.digitalocean.com/">DigitalOcean</a>.</p>
+</div>
+<div class="paragraph">
+<p>For each attendee, <a href="https://github.com/ToulouseJAM/jam-workshop-infra">we provisioned</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One Master, preconfigured to be able to dynamically provision agents.</p>
+</li>
+<li>
+<p>One staging <em>environment</em></p>
+</li>
+<li>
+<p>One production <em>environment</em>
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
+</li>
+<li>
+<p>One SonarQube instance</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workshop-content-infrastructure"><a class="anchor" href="#workshop-content-infrastructure"></a>Workshop content &amp; infrastructure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After an initial quick <a href="https://docs.google.com/presentation/d/1FKkraQdr4oxRephVnItUmOUe9pBeC0dRfZXCxqoubg0/edit">presentation to settle context and remind some general things about Continuous Delivery and Jenkins</a>, we started the workshop per se.</p>
+</div>
+<div class="paragraph">
+<p>It is composed of 3 parts, <a href="https://github.com/ToulouseJAM/workshop-resources">which are readable here</a> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>, but very few people were able to start the part 3.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hackergarten-unconference"><a class="anchor" href="#hackergarten-unconference"></a>Hackergarten / Unconference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So we let people decide what they wanted to work on during the afternoon.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="/images/post-images/2017-03-toulousejam-workshop/subdividing-per-interest.jpg" alt="subdividing per interest" width="50%"></span> We decided to use post-its: each attendee would write down what they wanted to work on, one idea per post-it (max 2 per person).
+Then, we dropped those onto a white-board and tried grouping those by theme.</p>
+</div>
+<div class="paragraph">
+<p>In the end, overall, the following themes went out:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hack on Jenkins development &amp; Contribute to Jenkins</p>
+</li>
+<li>
+<p>Complete the workshops</p>
+</li>
+<li>
+<p>Work on use-case oriented things</p>
+</li>
+<li>
+<p>Work on Docker &amp; Pipeline join usages</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="hackergarten"><a class="anchor" href="#hackergarten"></a>Hackergarten</h3>
+<div class="paragraph">
+<p><span class="image right"><img src="/images/post-images/2017-03-toulousejam-workshop/hackergarten.jpg" alt="hackergarten" width="40%"></span></p>
+</div>
+<div class="paragraph">
+<p>Many <a href="https://accounts.jenkins.io/">Jenkins accounts</a> were created, and many JIRA and pull requests were filed.
+It was nice to see people asking questions like: "so, should I create a JIRA issue for this?" or "how do I interact with people".
+Pretty generic "how do I work on open source software" questions sometimes, but important because you felt like people were genuinely interested and needed not much to start contributing.</p>
+</div>
+<div class="paragraph">
+<p>Here are the pull requests filed during this afternoon:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/jenkinsci/blueocean-pipeline-editor-plugin/pull/30">blueocean-pipeline-editor-plugin#30</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/jenkins/pull/2785/">jenkins#2785</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/jenkins/pull/2786/">jenkins#2786</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/jenkins/pull/2787/">jenkins#2787</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/jenkins/pull/2788/">jenkins#2788</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can see that though most of the PRs were typo-related, the one that got merged first was the one about code :-).</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="/images/post-images/2017-03-toulousejam-workshop/bobblehead.jpg" alt="bobblehead" width="30%"></span> So, <a href="https://github.com/jviolas">Jeremie Violas</a> wins the Bobble Head as <a href="https://twitter.com/toulousejam/status/839606221338464256">promised</a>!</p>
+</div>
+<div class="sect3">
+<h4 id="why-so-many-typo-related-prs"><a class="anchor" href="#why-so-many-typo-related-prs"></a>Why so many typo-related PRs?</h4>
+<div class="paragraph">
+<p>Simply because people were somehow encouraged to find some to get used to the
+round trip of: fixing an issue and filing the associated pull request, rinse &amp;
+repeat.</p>
+</div>
+<div class="paragraph">
+<p>I do think this is also a pretty nice and simple first step to understand how
+to build Jenkins and start interacting with the community.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-result"><a class="anchor" href="#the-result"></a>The result</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>People seemed pretty happy and we got some nice comments like "now I have a clearer vision of what this Pipeline thing is about".
+Some attendees also dropped nice comments on the meetup page.
+So it&#8217;s cool because when you&#8217;re doing such things on your free time, it&#8217;s the main reward you can get.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re an attendee to such events, don&#8217;t forget to thank people organizing
+those, and more importantly to provide constructive feedback.  We are generally
+eager to know what could be done better for next time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conclusion"><a class="anchor" href="#conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Overall we are very happy with the energy of that day, and we definitely plan to set up a new session in the next few months, probably with a bit more people.</p>
+</div>
+<div class="paragraph">
+<p>Some thoughts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Infrastructure: when you plan to have many VM per attendee, double-check the limits your Cloud Provider may have by default. I had bumped it to 250 the day before the workshop, and asked for another one to 500 <strong>during</strong> the workshop (though in the end, 250 was probably enough, but this&#8217;ll give room for the next time with more people :-)).</p>
+</li>
+<li>
+<p>Logistics: warning, secret ahead: this is very time consuming.
+Not necessarily the amount of work itself, more that it implies very big latency.
+For instance, give it 2 to 3 weeks minimum to have answers about sponsoring in general. Pinging again in case of no answer after 2 days would probably be seen as rude, and possibly lead to make things worse for obvious reasons, so plan ahead.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="thank-you"><a class="anchor" href="#thank-you"></a>Thank you</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.digitalocean.com">DigitalOcean</a> for sponsoring the Infrastructure</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We got way more than 100 VMs running at the same time during the day thanks to their help!</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="http://www.harrycow.com/">HarryCow Coworking</a> for hosting the event</p>
+</li>
+<li>
+<p>To <a href="https://www.cloudbees.com/">CloudBees</a> for sponsoring the food for all the participants</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Also for providing a bunch of goodies: stickers and T-Shirts for everybody</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/">GitHub</a> for providing stickers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. For the sake of the simplicity of the workshop, those <em>environments</em> were actually a single VM: the goal was here to illustrate what we could do using Jenkins Pipeline, discussing scalability or more involved deployment techniques was obviously out of scope.
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. in French only for now, but translating it into English to make it possibly shared and reusable among JAMs is being discussed
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Baptiste Mathus" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Baptiste Mathus
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/batmat" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/bmathus" target="_blank">
+Twitter
+</a>
+</li>
+<li class="author">
+<a href="http://batmat.net" target="_blank">
+Blog
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2017/03/2017-03-21-toulousejam-pipeline-workshop.adoc" title="Edit /blog/2017/03/2017-03-21-toulousejam-pipeline-workshop.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2017/03/2017-03-21-toulousejam-pipeline-workshop.adoc" title="View /blog/2017/03/2017-03-21-toulousejam-pipeline-workshop.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

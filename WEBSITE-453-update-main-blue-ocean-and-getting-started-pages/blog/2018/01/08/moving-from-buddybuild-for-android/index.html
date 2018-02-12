@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Moving from buddybuild to Jenkins for Android Developers
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Moving from buddybuild to Jenkins for Android Developers" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Moving from buddybuild to Jenkins for Android Developers" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Moving from buddybuild to Jenkins for Android Developers" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/08/moving-from-buddybuild-for-android/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Moving from buddybuild to Jenkins for Android Developers" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/08/moving-from-buddybuild-for-android/" title="Moving from buddybuild to Jenkins for Android Developers">
+Moving from buddybuild to Jenkins for Android Developers
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2018-01-08
+by
+<a href="#about-the-author">Christopher Orr</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/android">
+android
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/plugins">
+plugins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>Last week, buddybuild — a hosted continuous integration service focused on mobile apps — announced that it had been <a href="https://www.buddybuild.com/blog/buddybuild-is-now-part-of-apple">acquired by Apple</a>, and consequently its complete Android offering, along with its free tier for iOS users, will be discontinued at the beginning of March.</p>
+</div>
+<div class="paragraph">
+<p>This was a fairly undesirable way to start 2018 for buddybuild&#8217;s Android users and, with less than two months to find an alternative, many took to Twitter to simultaneously <a href="https://twitter.com/K4KYA/status/948465314047635456">congratulate buddybuild on their acquisition</a>, and commiserate with others who have to find a new way to build and test their app.</p>
+</div>
+<div class="paragraph">
+<p>While Jenkins is usually deployed as a self-hosted solution (with over <a href="http://stats.jenkins.io/">150k installs</a>), rather than a hosted service like buddybuild, we thought this would be a good time to highlight — thanks to the <a href="https://plugins.jenkins.io/">rich plugin ecosystem</a> of Jenkins — some of the possibilities offered to Android developers by Jenkins.</p>
+</div>
+<div class="sect2">
+<h3 id="common-workflows"><a class="anchor" href="#common-workflows"></a>Common workflows</h3>
+<div class="paragraph">
+<p>Android projects are fundamentally no different from how other types of software development projects might make use of a Continuous Integration &amp; Continuous Delivery system (CI/CD) such as Jenkins: Android developers will collaborate using a source control management system (SCM) such as <a href="https://plugins.jenkins.io/git">Git</a> or <a href="https://plugins.jenkins.io/mercurial">Mercurial</a>; they will create Pull Requests, which should be automatically verified; they expect to get feedback on test failures and code quality (e.g. via email or Slack); and they should be able to easily deploy new versions of their app to beta testers or end users.</p>
+</div>
+<div class="paragraph">
+<p>To this end, Jenkins lets you define your <a href="/doc/book/pipeline/">build and deployment pipelines</a> in a structured and auditable fashion (via <code>Jenkinsfile</code>), supports a multitude of SCMs, while the <a href="/doc/tutorials/build-a-multibranch-pipeline-project/">multibranch Pipeline</a> feature automatically creates new Jenkins jobs for every new Pull Request in your repository, and cleans them up as branches get merged.  The <a href="/projects/blueocean/">Blue Ocean user interface</a> ties these features together in a clean, modern UI.</p>
+</div>
+<div class="paragraph boxshadow">
+<p><span class="image center"><img src="/images/post-images/2018-01-08/blue-ocean-screenshot.png" alt="Blue Ocean build screenshot"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="building-android-apps"><a class="anchor" href="#building-android-apps"></a>Building Android Apps</h3>
+<div class="paragraph">
+<p>To build an Android app, you need the Java development tools (JDK), which Jenkins can <a href="https://wiki.jenkins.io/display/JENKINS/Tool+Auto-Installation">automatically install</a> for you, plus the Android SDK, which you can also install on individual build agents using a <a href="https://wiki.jenkins.io/display/JENKINS/Tool+Auto-Installation">tool installer</a>, or you can use a <a href="https://docker.com/">Docker container</a> with the Android SDK Tools preinstalled, for example.</p>
+</div>
+<div class="paragraph">
+<p>Then, you can use your SCM plugin of choice to fetch your source code, and build the app using the Android Gradle Plugin via the <a href="https://docs.gradle.org/4.4.1/userguide/gradle_wrapper.html">Gradle Wrapper</a> — in most cases this is as simple as running <code>./gradlew assembleDebug</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once your app has been built and packaged into a <code>.apk</code> file, you can use the <a href="/doc/pipeline/steps/workflow-basic-steps/#code-archive-code-archive-artifacts"><code>archiveArtifacts</code></a> build step, storing the APK, enabling colleagues to download APKs directly from Jenkins, so that they can try out the latest build.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-android-apps"><a class="anchor" href="#testing-android-apps"></a>Testing Android Apps</h3>
+<div class="paragraph">
+<p>The Android SDK supports two types of test: unit tests, which run on the JVM, and instrumentation tests, which have to run on an Android device or emulator.  Both types of test can be executed using Jenkins and, since the Android Gradle Plugin writes the test results to disk in JUnit XML format, the <a href="https://plugins.jenkins.io/junit">JUnit Plugin</a> for Jenkins can be used to parse the results, enabling you see a test report, and to be notified of test failures.</p>
+</div>
+<div class="paragraph">
+<p>Compiling and executing the unit tests for your app is as simple as adding another build step which runs <code>./gradlew testDebugUnitTest</code>.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, instrumentation tests can be compiled and executed via the <code>connectedDebugAndroidTest</code> task in Gradle.  However, before you do this, you should ensure that an Android device is connected to your Jenkins build agent, or you can make use of the <a href="https://plugins.jenkins.io/android-emulator">Android Emulator Plugin</a> to automatically download, create, and start an emulator for you during a build.  There are also plugins for cloud testing services such as <a href="https://github.com/jenkinsci/aws-device-farm-plugin">AWS Device Farm</a>.</p>
+</div>
+<div class="paragraph">
+<p>Once you have finished executing the tests, you can use the <a href="/doc/pipeline/steps/junit/#code-junit-code-archive-junit-formatted-test-results"><code>junit</code></a> step to analyse the results: <code>junit '**/TEST-*.xml'</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="static-analysis"><a class="anchor" href="#static-analysis"></a>Static Analysis</h3>
+<div class="paragraph">
+<p>Similar to other Java or Kotlin projects, you can scan your codebase using static analysis tools like FindBugs or Checkstyle.  Once again, Jenkins has <a href="https://plugins.jenkins.io/analysis-core">analysis plugins</a> which can parse the output of these tools, and present you with the results and trend graphs, or optionally flag the build as unstable or failed if too many problems have been detected.</p>
+</div>
+<div class="paragraph">
+<p>The Android SDK provides a further useful static analysis tool called <a href="https://developer.android.com/studio/write/lint.html">Lint</a>.  The output of this tool can be parsed by the <a href="https://plugins.jenkins.io/android-lint">Android Lint Plugin</a>, which will analyse the issues found, and provide you with a detailed report within Jenkins.  This functionality was <a href="https://www.youtube.com/watch?v=Erd2k6EKxCQ&amp;t=53m32s">demonstrated by the Android Tools Team</a> at the Google I/O conference a few years back.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="securely-signing-and-deploying-android-apps"><a class="anchor" href="#securely-signing-and-deploying-android-apps"></a>Securely signing and deploying Android apps</h3>
+<div class="paragraph">
+<p>In order to distribute an Android app, it needs to be signed with a private key, which you should keep safe (losing it means you won&#8217;t be able to publish updates to your app!), and as secure as possible.</p>
+</div>
+<div class="paragraph">
+<p>Instead of developers having to keep the signing keystore on their development machines, you can securely store the keystore and/or its passphrase on Jenkins using the <a href="https://plugins.jenkins.io/credentials">Credentials Plugin</a>.  This avoids having to hardcode the passphrase into your <code>build.gradle</code>, or have it otherwise checked into your SCM.</p>
+</div>
+<div class="paragraph">
+<p>The Credentials Plugin allows you to store secrets in Jenkins — which will be stored encrypted on disk when not in use — and those secrets can temporarily be made available during a build, either as a file in the build workspace, or exposed as an environment variable.</p>
+</div>
+<div class="paragraph">
+<p>You can use such environment variables in a <code>signingConfig</code> block within your <code>build.gradle</code>, or you can make use of the <a href="https://plugins.jenkins.io/android-signing">Android Signing Plugin</a> to sign your APK for you.</p>
+</div>
+<div class="paragraph">
+<p>Once you have your production-ready APK built and signed, you can automatically upload it to Google Play using the <a href="https://plugins.jenkins.io/google-play-android-publisher">Google Play Android Publisher plugin</a>.  The benefit of using this plugin is that it supports multiple APK upload, expansion files, uploading of ProGuard mapping files, promotion of builds from alpha, to beta, to production — and once again, your Google Play credentials are securely stored on Jenkins thanks to integration with the Credentials Plugin.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sample-pipeline"><a class="anchor" href="#sample-pipeline"></a>Sample Pipeline</h3>
+<div class="paragraph">
+<p>Here&#8217;s a straightforward example of a <code>Jenkinsfile</code> defining a pipeline to build, test, and optionally deploy an Android app, from a multibranch Pipeline job.
+It requires the Pipeline, JUnit, Android Lint, Google Play Android Publisher, and Mailer plugins to be installed.</p>
+</div>
+<div class="listingblock">
+<div class="title">Jenkinsfile</div>
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy">pipeline {
+  agent {
+    <span style="color:#777">// Run on a build agent where we have the Android SDK installed</span>
+    label <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">android</span><span style="color:#710">'</span></span>
+  }
+  options {
+    <span style="color:#777">// Stop the build early in case of compile or test failures</span>
+    skipStagesAfterUnstable()
+  }
+  stages {
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Compile</span><span style="color:#710">'</span></span>) {
+      steps {
+        <span style="color:#777">// Compile the app and its dependencies</span>
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./gradlew compileDebugSources</span><span style="color:#710">'</span></span>
+      }
+    }
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Unit test</span><span style="color:#710">'</span></span>) {
+      steps {
+        <span style="color:#777">// Compile and run the unit tests for the app and its dependencies</span>
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./gradlew testDebugUnitTest testDebugUnitTest</span><span style="color:#710">'</span></span>
+
+        <span style="color:#777">// Analyse the test results and update the build result as appropriate</span>
+        junit <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">**/TEST-*.xml</span><span style="color:#710">'</span></span>
+      }
+    }
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Build APK</span><span style="color:#710">'</span></span>) {
+      steps {
+        <span style="color:#777">// Finish building and packaging the APK</span>
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./gradlew assembleDebug</span><span style="color:#710">'</span></span>
+
+        <span style="color:#777">// Archive the APKs so that they can be downloaded from Jenkins</span>
+        archiveArtifacts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">**/*.apk</span><span style="color:#710">'</span></span>
+      }
+    }
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Static analysis</span><span style="color:#710">'</span></span>) {
+      steps {
+        <span style="color:#777">// Run Lint and analyse the results</span>
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./gradlew lintDebug</span><span style="color:#710">'</span></span>
+        androidLint <span style="color:#606">pattern</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">**/lint-results-*.xml</span><span style="color:#710">'</span></span>
+      }
+    }
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Deploy</span><span style="color:#710">'</span></span>) {
+      when {
+        <span style="color:#777">// Only execute this stage when building from the `beta` branch</span>
+        branch <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">beta</span><span style="color:#710">'</span></span>
+      }
+      environment {
+        <span style="color:#777">// Assuming a file credential has been added to Jenkins, with the ID 'my-app-signing-keystore',</span>
+        <span style="color:#777">// this will export an environment variable during the build, pointing to the absolute path of</span>
+        <span style="color:#777">// the stored Android keystore file.  When the build ends, the temporarily file will be removed.</span>
+        SIGNING_KEYSTORE = credentials(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">my-app-signing-keystore</span><span style="color:#710">'</span></span>)
+
+        <span style="color:#777">// Similarly, the value of this variable will be a password stored by the Credentials Plugin</span>
+        SIGNING_KEY_PASSWORD = credentials(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">my-app-signing-password</span><span style="color:#710">'</span></span>)
+      }
+      steps {
+        <span style="color:#777">// Build the app in release mode, and sign the APK using the environment variables</span>
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./gradlew assembleRelease</span><span style="color:#710">'</span></span>
+
+        <span style="color:#777">// Archive the APKs so that they can be downloaded from Jenkins</span>
+        archiveArtifacts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">**/*.apk</span><span style="color:#710">'</span></span>
+
+        <span style="color:#777">// Upload the APK to Google Play</span>
+        androidApkUpload <span style="color:#606">googleCredentialsId</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Google Play</span><span style="color:#710">'</span></span>, <span style="color:#606">apkFilesPattern</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">**/*-release.apk</span><span style="color:#710">'</span></span>, <span style="color:#606">trackName</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">beta</span><span style="color:#710">'</span></span>
+      }
+      post {
+        success {
+          <span style="color:#777">// Notify if the upload succeeded</span>
+          mail <span style="color:#606">to</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">beta-testers@example.com</span><span style="color:#710">'</span></span>, <span style="color:#606">subject</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">New build available!</span><span style="color:#710">'</span></span>, <span style="color:#606">body</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Check it out!</span><span style="color:#710">'</span></span>
+        }
+      }
+    }
+  }
+  post {
+    failure {
+      <span style="color:#777">// Notify developer team of the failure</span>
+      mail <span style="color:#606">to</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">android-devs@example.com</span><span style="color:#710">'</span></span>, <span style="color:#606">subject</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Oops!</span><span style="color:#710">'</span></span>, <span style="color:#606">body</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Build </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">${</span>env.BUILD_NUMBER<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> failed; </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">${</span>env.BUILD_URL<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="not-just-for-android"><a class="anchor" href="#not-just-for-android"></a>Not just for Android</h3>
+<div class="paragraph">
+<p>While buddybuild concentrated on Android and iOS apps, thanks to the <a href="https://wiki.jenkins.io/display/JENKINS/Distributed+builds">distributed build agent architecture</a> of Jenkins, you can automate any type of project.</p>
+</div>
+<div class="paragraph">
+<p>For example, you can expand the capabilities of Jenkins by adding macOS (or Windows, Linux, BSD…) agents; you can dynamically spin up agents on <a href="https://plugins.jenkins.io/ec2">AWS EC2 instances</a>, <a href="https://plugins.jenkins.io/azure-vm-agents">Microsoft Azure VMs</a>, or <a href="https://plugins.jenkins.io/azure-container-agents">Azure Container Instances</a>; you can create agents using <a href="https://plugins.jenkins.io/vsphere-cloud">VMware</a>, and so on.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="conclusion"><a class="anchor" href="#conclusion"></a>Conclusion</h3>
+<div class="paragraph">
+<p>Thousands of Jenkins instances are already using the various Android-related plugins, and Pipeline along with the Blue Ocean User Interface make using Jenkins simpler than it&#8217;s ever been.</p>
+</div>
+<div class="paragraph">
+<p>Give Jenkins a try for building your Android projects, check out the <a href="/doc/tutorials/">tutorials</a>, and get in touch via the <a href="/mailing-lists/">users' mailing list</a>, or <a href="/chat/">IRC</a>.</p>
+</div>
+<div class="paragraph">
+<p>Finally, as with Jenkins itself, all <a href="https://plugins.jenkins.io/">plugins</a> distributed are <a href="https://github.com/jenkinsci">open-source</a>, so feel free to <a href="/participate/">contribute</a>!</p>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Christopher Orr" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Christopher Orr
+</b>
+<p>
+<div class="paragraph">
+<p>Chris has been hanging around the Jenkins project since 2008, working on
+plugins, helping out folk on IRC, and speaking to people at conferences about
+Jenkins.  He maintains several Android-related plugins, and contributes to a few
+others.</p>
+</div>
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/orrc" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/orrc" target="_blank">
+Twitter
+</a>
+</li>
+<li class="author">
+<a href="https://chris.orr.me.uk/" target="_blank">
+Blog
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2018/01/2018-01-08-moving-from-buddybuild-for-android.adoc" title="Edit /blog/2018/01/2018-01-08-moving-from-buddybuild-for-android.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2018/01/2018-01-08-moving-from-buddybuild-for-android.adoc" title="View /blog/2018/01/2018-01-08-moving-from-buddybuild-for-android.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>
