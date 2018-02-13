@@ -3,13 +3,13 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/</id>
 <title>Jenkins Blog</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <link rel="self" type="application/atom+xml" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/rss.xml" />
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/" />
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/02/05/security-updates/</id>
 <title>Security updates for multiple Jenkins plugins</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-02-05T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/02/05/security-updates/" />
 <author>
@@ -79,7 +79,7 @@ Subscribe to the jenkinsci-advisories mailing list to receive important future n
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/26/fosdem-hackaton/</id>
 <title>You are invited to the Post-FOSDEM 2018 Jenkins Hackfest</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-26T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/26/fosdem-hackaton/" />
 <author>
@@ -217,7 +217,7 @@ Bring your own computer.&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/21/overhaul-of-manage-jenkins-page/</id>
 <title>Overhaul of Manage Jenkins page</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-21T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/21/overhaul-of-manage-jenkins-page/" />
 <author>
@@ -482,7 +482,7 @@ Information about how...
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/17/jenkins-world-cfp-open/</id>
 <title>Jenkins World 2018: Call for Papers is Open</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-17T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/17/jenkins-world-cfp-open/" />
 <author>
@@ -617,7 +617,7 @@ Marketing &amp;amp; Community Programs at &lt;a href=&quot;http://cloudbees.com&
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/13/jep-200/</id>
 <title>JEP-200: Remoting / XStream whitelist integrated into Jenkins core</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-13T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/13/jep-200/" />
 <author>
@@ -818,7 +818,7 @@ you then have several choices for fixing the problem:&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/08/moving-from-buddybuild-for-android/</id>
 <title>Moving from buddybuild to Jenkins for Android Developers</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-08T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/08/moving-from-buddybuild-for-android/" />
 <author>
@@ -1029,7 +1029,7 @@ It requires the Pipeline, JUnit, Android Lint, Google Play Android Publisher, an
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/06/gsoc2018-call-for-mentors/</id>
 <title>Google Summer Of Code 2018: Call for mentors</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-06T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/06/gsoc2018-call-for-mentors/" />
 <author>
@@ -1260,7 +1260,7 @@ We kindly ask that you to do it before Jan 17, 2017 so that we can add it to the
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/03/fosdem-2018/</id>
 <title>FOSDEM 2018!</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2018-01-03T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2018/01/03/fosdem-2018/" />
 <author>
@@ -1374,7 +1374,7 @@ Those who would like to join us for the hackfest 5 Feb 2018 should register for 
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/31/new-year/</id>
 <title>Happy New Year!</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-12-31T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/31/new-year/" />
 <author>
@@ -1558,7 +1558,7 @@ and currently we are &lt;a href=&quot;https://groups.google.com/forum/#!topic/je
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/15/auto-convert-freestyle-jenkins-jobs-to-coded-pipeline/</id>
 <title>Auto-Convert Freestyle Jobs to Jenkins Pipeline</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-12-15T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/15/auto-convert-freestyle-jenkins-jobs-to-coded-pipeline/" />
 <author>
@@ -1724,7 +1724,7 @@ to watch the webinar replay on-demand.&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/14/security-update/</id>
 <title>Security updates for Jenkins core</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-12-14T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/14/security-update/" />
 <author>
@@ -1771,7 +1771,7 @@ We have chosen not to do so in this case for two reasons:&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/04/jenkins-user-conference-china-recap/</id>
 <title>Jenkins User Conference China Recap</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-12-04T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/12/04/jenkins-user-conference-china-recap/" />
 <author>
@@ -1902,7 +1902,7 @@ The report shows that Jenkins is the most popular tool for DevOps and CD in Chin
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/11/27/tutorials-in-the-jenkins-user-documentation/</id>
 <title>Introducing Tutorials in the Jenkins User Documentation</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-11-27T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/11/27/tutorials-in-the-jenkins-user-documentation/" />
 <author>
@@ -2065,7 +2065,7 @@ Gaskell, Nicholae Pascu, Michael Neale and James Dumay&lt;/em&gt;&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/11/08/security-updates/</id>
 <title>Security updates for Jenkins core</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-11-08T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/11/08/security-updates/" />
 <author>
@@ -2099,7 +2099,7 @@ For an overview on the possible impact of these changes on upgrading Jenkins LTS
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/25/jenkins-user-conference-china/</id>
 <title>Jenkins User Conference China</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-10-25T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/25/jenkins-user-conference-china/" />
 <author>
@@ -2220,7 +2220,7 @@ at Jenkins User Conference China.&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/23/security-updates/</id>
 <title>Security updates for multiple Jenkins plugins</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-10-23T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/23/security-updates/" />
 <author>
@@ -2305,7 +2305,7 @@ It should be available on update sites later today.&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/16/jenkins-world-session-videos-are-available/</id>
 <title>Jenkins World 2017 Session Videos are Available</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-10-16T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/16/jenkins-world-session-videos-are-available/" />
 <author>
@@ -2380,7 +2380,7 @@ Marketing &amp;amp; Community Programs at &lt;a href=&quot;http://cloudbees.com&
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/11/security-updates/</id>
 <title>Important security updates for Jenkins core and plugins</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-10-11T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/11/security-updates/" />
 <author>
@@ -2425,7 +2425,7 @@ Its distribution has been suspended.&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/06/hacktoberfest/</id>
 <title>Hacktoberfest. Contribute to Jenkins!</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-10-06T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/06/hacktoberfest/" />
 <author>
@@ -2650,7 +2650,7 @@ in the email subject.&lt;/p&gt;
 <entry>
 <id>https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/02/pipeline-templates-with-shared-libraries/</id>
 <title>Share a standard Pipeline across multiple projects with Shared Libraries</title>
-<updated>2018-02-08T05:43:11+00:00</updated>
+<updated>2018-02-13T03:16:40+00:00</updated>
 <published>2017-10-02T00:00:00+00:00</published>
 <link rel="alternate" type="text/html" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2017/10/02/pipeline-templates-with-shared-libraries/" />
 <author>

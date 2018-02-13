@@ -12,9 +12,40 @@ https://jenkins.io/changelog
 Changelog for Jenkins weekly releases
 </description>
 <lastBuildDate>
-Mon, 12 Feb 2018 00:00:00 +0000
+Tue, 13 Feb 2018 00:00:00 +0000
 </lastBuildDate>
 <!-- starting partial changelog-changes.xml.haml -->
+<item>
+<title>Jenkins 2.106</title>
+<link>
+https://jenkins.io/changelog//#v2.106
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Update Remoting library from 3.16 to 3.17 to improve diagnostic logging for channel read/write events and JEP-200 related class filtering.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Integrate SSHD module 2.4 which updates Apache Mina SSHD Core from 1.6.0 to 1.7.0.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal/API: Add &lt;code&gt;DataBoundConstructor&lt;/code&gt; to &lt;code&gt;LegacySecurityRealm&lt;/code&gt; to facilitate reflective instantiation in Jenkins-related tools and frameworks.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.106
+</guid>
+<pubDate>
+Sun, 11 Feb 2018 00:00:00 +0000
+</pubDate>
+</item>
 <item>
 <title>Jenkins 2.105</title>
 <link>

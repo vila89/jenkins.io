@@ -173,6 +173,9 @@ Security
 <a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
 Press
 </a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
 <a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
 Conduct
 </a>
@@ -403,10 +406,10 @@ Getting started with Blue Ocean
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#installing">Installing</a>
+<li><a href="#installing-blue-ocean">Installing Blue Ocean</a>
 <ul class="sectlevel2">
-<li><a href="#in-an-existing-jenkins-environment">In an Existing Jenkins Environment</a></li>
-<li><a href="#blueocean-docker">With Docker</a></li>
+<li><a href="#on-an-existing-jenkins-instance">On an existing Jenkins instance</a></li>
+<li><a href="#as-part-of-jenkins-in-docker">As part of Jenkins in Docker</a></li>
 </ul>
 </li>
 <li><a href="#start-blueocean">Starting Blue Ocean</a></li>
@@ -417,53 +420,94 @@ Getting started with Blue Ocean
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section will show how to start using Blue Ocean.
-It will include instructions for installing and configuring the Blue Ocean plugin,
-and how to get switch into and out of the Blue Ocean UI.</p>
+<p>This section describes how to get started with Blue Ocean in Jenkins. It
+includes instructions for setting up Blue Ocean on your Jenkins instance as well
+as how to access the Blue Ocean UI and return to the Jenkins classic UI.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing"><a class="anchor" href="#installing"></a>Installing</h2>
+<h2 id="installing-blue-ocean"><a class="anchor" href="#installing-blue-ocean"></a>Installing Blue Ocean</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Blue Ocean can be installed in an existing Jenkins environment or be run
-<a href="#blueocean-docker">with Docker</a>.</p>
+<p>Blue Ocean can be installed using the following methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As a suite of plugins on an
+<a href="#on-an-existing-jenkins-instance">existing Jenkins instance</a>, or</p>
+</li>
+<li>
+<p>As part of <a href="#as-part-of-jenkins-in-docker">Jenkins in Docker</a>.</p>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="in-an-existing-jenkins-environment"><a class="anchor" href="#in-an-existing-jenkins-environment"></a>In an Existing Jenkins Environment</h3>
+<h3 id="on-an-existing-jenkins-instance"><a class="anchor" href="#on-an-existing-jenkins-instance"></a>On an existing Jenkins instance</h3>
 <div class="paragraph">
-<p>To start using the <a href="https://plugins.jenkins.io/blueocean">Blue Ocean plugin</a> in an existing Jenkins
-environment, it must be running Jenkins 2.7.x or later.:</p>
+<p>When Jenkins is installed on most platforms, the
+<a href="https://plugins.jenkins.io/blueocean">Blue Ocean plugin</a> and all its other dependent plugins (which
+form the Blue Ocean "suite of plugins") are not installed by default.</p>
+</div>
+<div class="paragraph">
+<p>To install the Blue Ocean suite of plugins on an existing Jenkins instance, your
+Jenkins instance must be running Jenkins 2.7.x or later.</p>
+</div>
+<div class="paragraph">
+<p>Plugins can be installed on a Jenkins instance by any Jenkins user who has the
+<strong>Administer</strong> permission (set through <strong>Matrix-based security</strong>). Jenkins users
+with this permission can also configure the permissions of other users on their
+system. Read more about this in the
+<a href="/doc/book/managing/security/#authorization">Authorization</a> section of
+<a href="/doc/book/managing/security">Managing Security</a>.</p>
+</div>
+<div class="paragraph">
+<p>To install the Blue Ocean suite of plugins to your Jenkins instance:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Login to your Jenkins server</p>
+<p>If required, ensure you are logged in to Jenkins (as a user with the
+<strong>Administer</strong> permission).</p>
 </li>
 <li>
-<p>Click <strong>Manage Jenkins</strong> in the sidebar then <strong>Manage Plugins</strong></p>
+<p>From the Jenkins home page (i.e. the Dashboard of the Jenkins classic UI),
+click <strong>Manage Jenkins</strong> on the left and then <strong>Manage Plugins</strong> in the center.</p>
 </li>
 <li>
-<p>Choose the <strong>Available</strong> tab and use the search bar to find <strong>Blue Ocean</strong></p>
+<p>Click the <strong>Available</strong> tab and type <code>blue ocean</code> into the <strong>Filter</strong> text
+box, which filters the list of plugins to those whose name and/or description
+contains the words "blue" and "ocean".</p>
+<div class="paragraph boxshadow">
+<p><span class="image"><img src="../../resources/blueocean/intro/blueocean-plugins-filtered.png" alt="Blue Ocean plugins filtered" width="100%"></span></p>
+</div>
 </li>
 <li>
-<p>Click the checkbox in the Install column</p>
+<p>Select the <strong>Blue Ocean</strong> plugin&#8217;s check box near the top of the the
+<strong>Install</strong> column and then click either the <strong>Download now and install after
+restart</strong> button (recommended) or the <strong>Install without restart</strong> one at the
+end of the page.<br>
+<strong>Notes:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>You do not need to select the check boxes of the other Blue Ocean-filtered
+plugins because the main <strong>Blue Ocean</strong> plugin has other plugin dependencies
+(i.e. the suite of plugins) which will automatically be selected and
+installed when you click one of these "Install" buttons.</p>
 </li>
 <li>
-<p>Click either <strong>Install without restart</strong> or <strong>Download now and install after
-restart</strong></p>
+<p>If you chose the <strong>Install without restart</strong> button, you may need to restart
+Jenkins in order to gain full Blue Ocean funtionality.</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
-<div class="imageblock center">
-<div class="content">
-<img src="../../resources/blueocean/intro/plugin-install.png" alt="Installing Blue Ocean">
-</div>
-</div>
 <div class="paragraph">
-<p>For in-depth description on how to install and manage plugins,
-refer to the <a href="../../managing/plugins/">Managing Plugins</a> section.</p>
+<p>Read more about how to install and manage plugins in the <a href="../../managing/plugins">Managing Plugins</a> section.</p>
 </div>
 <div class="paragraph">
 <p>The majority of Blue Ocean requires no additional configuration after
@@ -474,7 +518,7 @@ GitHub) in order to create pipelines based on those repositories.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="blueocean-docker"><a class="anchor" href="#blueocean-docker"></a>With Docker</h3>
+<h3 id="as-part-of-jenkins-in-docker"><a class="anchor" href="#as-part-of-jenkins-in-docker"></a>As part of Jenkins in Docker</h3>
 <div class="paragraph">
 <p>Read more about this in the <a href="../../installing/#docker">Docker</a> section of the
 <a href="../../installing">Installing Jenkins</a> page.</p>
@@ -836,6 +880,11 @@ Reddit
 <li>
 <a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
 Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
 </a>
 </li>
 </ul>

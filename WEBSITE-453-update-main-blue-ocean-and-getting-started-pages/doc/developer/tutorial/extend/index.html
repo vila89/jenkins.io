@@ -173,6 +173,9 @@ Security
 <a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
 Press
 </a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
 <a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
 Conduct
 </a>
@@ -270,7 +273,7 @@ While possible to follow with a plain text editor, this section is much easier t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight nowrap"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">org.jenkinsci.plugins.sample</span>;
+<pre class="CodeRay highlight nowrap"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">io.jenkins.plugins.sample</span>;
 
 <span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">hudson.model.Action</span>;
 
@@ -371,9 +374,9 @@ Whenever changing the Java source code or adding or removing resource files, you
         <span style="color:#070;font-weight:bold">&lt;hudson.model.Cause_-UserIdCause</span><span style="color:#070;font-weight:bold">/&gt;</span>
       <span style="color:#070;font-weight:bold">&lt;/causes&gt;</span>
     <span style="color:#070;font-weight:bold">&lt;/hudson.model.CauseAction&gt;</span>
-    <span style="color:#070;font-weight:bold">&lt;org.jenkinsci.plugins.sample.HelloWorldAction</span> <span style="color:#b48">plugin</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">demo@1.0-SNAPSHOT</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+    <span style="color:#070;font-weight:bold">&lt;io.jenkins.plugins.sample.HelloWorldAction</span> <span style="color:#b48">plugin</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">demo@1.0-SNAPSHOT</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span> <i class="conum" data-value="2"></i><b>(2)</b>
       <span style="color:#070;font-weight:bold">&lt;name&gt;</span>Jenkins<span style="color:#070;font-weight:bold">&lt;/name&gt;</span> <i class="conum" data-value="3"></i><b>(3)</b>
-    <span style="color:#070;font-weight:bold">&lt;/org.jenkinsci.plugins.sample.HelloWorldAction&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;/io.jenkins.plugins.sample.HelloWorldAction&gt;</span>
   <span style="color:#070;font-weight:bold">&lt;/actions&gt;</span>
   (...)
 <span style="color:#070;font-weight:bold">&lt;/build&gt;</span></code></pre>
@@ -458,7 +461,8 @@ It has many features useful for this purpose: It
 * can be used to define reusable UI components</p>
 </div>
 <div class="paragraph">
-<p>In the directory <code>src/main/resources/org/jenkinsci/plugins/sample/</code>, we need to create a new directory called <code>HelloWorldAction/</code>. This directory corresponds to the <code>HelloWorldAction</code> class and contains related resources.</p>
+<p>In the directory <code>src/main/resources/io/jenkins/plugins/sample/</code>, we need to create a new directory called <code>HelloWorldAction/</code>.
+This directory corresponds to the <code>HelloWorldAction</code> class and contains related resources.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -479,13 +483,18 @@ This is a directory in <code>src/main/resources</code>, not <code>src/main/java<
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-We can see that resources related to the build step <code>HelloWorldBuilder</code> are stored in the <code>src/main/resources/org/jenkinsci/plugins/sample/HelloWorldBuilder/</code> directory: <code>config.jelly</code> is the build step configuration form, the various <code>config*.properties</code> files contain the localizations for the build step configuration and the <code>help*.html</code> files provide the localized inline help for the configuration.
+We can see that resources related to the build step <code>HelloWorldBuilder</code> are stored in the <code>src/main/resources/io/jenkins/plugins/sample/HelloWorldBuilder/</code> directory:
+<code>config.jelly</code> is the build step configuration form,
+the various <code>config*.properties</code> files contain the localizations for the build step configuration
+and the <code>help*.html</code> files provide the localized inline help for the configuration.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Create a file named <code>index.jelly</code> in <code>src/main/resources/org/jenkinsci/plugins/sample/HelloWorldAction/</code>. This will be what gets shown at the <code>http://<em>JENKINS</em>/job/<em>JOBNAME</em>/<em>BUILDNUMBER</em>/greeting/</code> URL. Add the following content:</p>
+<p>Create a file named <code>index.jelly</code> in <code>src/main/resources/io/jenkins/plugins/sample/HelloWorldAction/</code>.
+This will be what gets shown at the <code>http://<em>JENKINS</em>/job/<em>JOBNAME</em>/<em>BUILDNUMBER</em>/greeting/</code> URL.
+Add the following content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -821,6 +830,11 @@ Reddit
 <li>
 <a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
 Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
 </a>
 </li>
 </ul>
