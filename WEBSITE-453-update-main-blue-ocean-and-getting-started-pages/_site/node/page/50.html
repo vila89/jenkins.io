@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Jenkins Community Blog
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Jenkins Community Blog" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Jenkins Community Blog" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Jenkins Community Blog" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/50.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Jenkins Community Blog" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-8 main-content with-sidebar" id="content">
+<div id="content-top">
+<h2>
+Jenkins Community Blog
+</h2>
+</div>
+<div class="blogintro">
+The Jenkins project has a lot going on between core/plugin development,
+events and other open source automation related activities. To keep up with
+it subscribe to our
+<a href="https://feeds.feedburner.com/ContinuousBlog/">
+RSS feed
+</a>
+or
+<a href="https://twitter.com/jenkinsci">
+follow us on Twitter
+</a>
+</div>
+<!-- starting partial blogcardlist.html.haml -->
+<div class="content blog-posts">
+<div class="item-list">
+<ul class="ji-blog-list ji-item-list">
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/03/13/why-does-jenkins-have-blue-balls/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+13
+</div>
+</div>
+<h5 class="title">
+Why does Jenkins have blue balls?
+</h5>
+</div>
+<p class="teaser">
+It is interesting having an open source project that is sufficiently old to start generating "lore" of some form or another. Jenkins is starting to get to be that age, having been started over 6 years ago.
+
+One of the most commonly asked questions, is about Jenkins' use of "blue balls" to indicate success by default. This is enough of an "issue" for some users...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/rtyler">R. Tyler Croy</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/general">
+general
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/just for fun">
+just for fun
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/jenkinsci">
+jenkinsci
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/03/06/critical-security-advisory-in-jenkins-core/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+06
+</div>
+</div>
+<h5 class="title">
+Critical security advisory in Jenkins core
+</h5>
+</div>
+<p class="teaser">
+We've identified and fixed a critical security vulnerabilities in 
+Jenkins core. This affects all the releases of Jenkins to date (main line releases up to 1.452 and LTS up to 1.424.3.) Please upgrade to the new releases at your earliest convenience, especially if your Jenkins is internet facing.
+
+For more details about the vulnerabilities, affected versions, and so on, please consult the security advisory.
+
+(See our...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/kohsuke">Kohsuke Kawaguchi</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/development">
+development
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/core">
+core
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/02/21/sponsor-a-jenkins-user-conference/">
+<div class="header">
+<div class="date">
+<div class="month">
+Feb
+</div>
+<div class="day">
+21
+</div>
+</div>
+<h5 class="title">
+Sponsor a Jenkins User Conference!
+</h5>
+</div>
+<p class="teaser">
+With the JUC Paris 2012 call for papers open, it's important to mention that we are also looking for sponsors for the various Jenkins User Conferences that are being planned around the world right now!
+
+Currently there are four conferences being put together right now:
+
+
+  JUC Paris
+  JUC New York
+  JUC San Francisco
+  JUC Antwerp
+
+
+If your company is heavily invested in...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/rtyler">R. Tyler Croy</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/general">
+general
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/juc">
+juc
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/02/21/fosdem-2012-recap/">
+<div class="header">
+<div class="date">
+<div class="month">
+Feb
+</div>
+<div class="day">
+21
+</div>
+</div>
+<h5 class="title">
+FOSDEM 2012 Recap
+</h5>
+</div>
+<p class="teaser">
+(Editor's note: Apologies for the delay in getting this wrap-up out, it's been quite a busy month!)
+
+This year has already been full of milestones, the first of which being our first birthday as an open source project. The second major milestone for the project was that we went to FOSDEM 2012, arguably the largest volunteer-organized and operated open source conference on the planet.
+
+We had...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/rtyler">R. Tyler Croy</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/general">
+general
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/meetup">
+meetup
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/news">
+news
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/02/13/jenkins-user-conference-2012-paris/">
+<div class="header">
+<div class="date">
+<div class="month">
+Feb
+</div>
+<div class="day">
+13
+</div>
+</div>
+<h5 class="title">
+Jenkins User Conference 2012 Paris
+</h5>
+</div>
+<p class="teaser">
+(English text follows the French text)
+
+
+Après le succès de la   Jenkins User Conference l’an dernier à San Francisco et à l’intérêt qu’elle a soulevé, nous organisons cette année la JUC dans quatre grande villes à travers le monde. La premiére étape de cette tournée est la JUC 2012 à Paris, le 17 avril. La conférence aura lieu la veille de Devoxx France...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+ndeloof
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/general">
+general
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/juc">
+juc
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/02/02/happy-birthday-jenkins/">
+<div class="header">
+<div class="date">
+<div class="month">
+Feb
+</div>
+<div class="day">
+02
+</div>
+</div>
+<h5 class="title">
+Happy birthday Jenkins!
+</h5>
+</div>
+<p class="teaser">
+On February 2nd, 2011 the first release of Jenkins, version 1.396, was made available for public consumption. Thus marking a new beginning for many of us who had come to rely on this very versatile piece of software and wanted to see it continue to thrive.
+
+Along with some other bug fixes, the 1.396 release of Jenkins included a very important changelog item:
+
+
+  Fixed...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/rtyler">R. Tyler Croy</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/general">
+general
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/core">
+core
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/01/20/highlight-video-from-juc-2011/">
+<div class="header">
+<div class="date">
+<div class="month">
+Jan
+</div>
+<div class="day">
+20
+</div>
+</div>
+<h5 class="title">
+Highlight video from JUC 2011
+</h5>
+</div>
+<p class="teaser">
+A slick highlight video from the Jenkins User Conference, 2011 was posted recently which captures some great quotes from a number of the fantastic speakers who participated in the inaugural JUC.
+
+I've embedded the video below, enjoy!...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/rtyler">R. Tyler Croy</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/general">
+general
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/juc">
+juc
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2012/01/05/thank-you-page-for-windows-os-x-installers/">
+<div class="header">
+<div class="date">
+<div class="month">
+Jan
+</div>
+<div class="day">
+05
+</div>
+</div>
+<h5 class="title">
+"Thank you" page for Windows/OS X installers
+</h5>
+</div>
+<p class="teaser">
+I've tweaked the website so that downloading the Windows and Mac installers will navigate the browser to "thank you/what's next" page. These pages have links to Wiki that educate the users on where/how the installer will run Jenkins.
+
+Hopefully this makes it little easier for new users to get started on Jenkins. I've tested the new mechanism with IE, Safari, and Firefox, but if you...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/kohsuke">Kohsuke Kawaguchi</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/infrastructure">
+infrastructure
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/core">
+core
+</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- ending partial blogcardlist.html.haml -->
+<div>
+<nav>
+<ul class="pagination">
+<li class='13470980: 16967820: 17526460: 17902680: 18815520: 18966120: 23839720: 24578440: :change_frequency=&gt;"never", :lastmod=&gt;"2018-02-13", :layout=&gt;"default", :paginate_generated=&gt;true, :posts=&gt;[Awestruct::Page{ :priority=&gt;0.1, :section=&gt;"blog", :selected_tag=&gt;nil, :title=&gt;"Jenkins :url=&gt;"/node/page/49.html"} Awestruct::Page{ Blog", Community layout=&gt;post output_path=&gt;/blog/2012/03/26/announcing-the-jenkins-cia/index.html, output_path=&gt;/blog/2012/04/13/continuous-information-vol-2/index.html, output_path=&gt;/blog/2012/05/10/jenkins-user-conference-paris-summary/index.html, output_path=&gt;/blog/2012/05/21/nyc-jenkins-user-conference-recap/index.html, output_path=&gt;/blog/2012/05/28/jenkins-a-besoin-de-vous/index.html, output_path=&gt;/blog/2012/06/19/jenkins-and-bioinformatics-catch-us-at-bosc-2012/index.html, output_path=&gt;/blog/2012/06/22/intro-to-jenkins-meetup-in-copenhagen/index.html, output_path=&gt;/blog/2012/07/23/jenkins-user-conference-israel/index.html, page-item source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-03-26-announcing-the-jenkins-cia.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-04-13-continuous-information-vol-2.html, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-05-10-jenkins-user-conference-paris-summary.html, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-05-21-nyc-jenkins-user-conference-recap.html, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-05-28-jenkins-a-besoin-de-vous.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-06-19-jenkins-and-bioinformatics-catch-us-at-bosc-2012.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-06-22-intro-to-jenkins-meetup-in-copenhagen.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-07-23-jenkins-user-conference-israel.html, {:__is_layout=&gt;false, }, }],'>
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/49.html">
+&laquo;
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+1
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/2.html">
+2
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/3.html">
+3
+</a>
+</li>
+<li class="page-item disabled">
+<a class="page-link" href="#">
+...
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/5.html">
+5
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/6.html">
+6
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/7.html">
+7
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/8.html">
+8
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/9.html">
+9
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/10.html">
+10
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/11.html">
+11
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/12.html">
+12
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/13.html">
+13
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/14.html">
+14
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/15.html">
+15
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/16.html">
+16
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/17.html">
+17
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/18.html">
+18
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/19.html">
+19
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/20.html">
+20
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/21.html">
+21
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/22.html">
+22
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/23.html">
+23
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/24.html">
+24
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/25.html">
+25
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/26.html">
+26
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/27.html">
+27
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/28.html">
+28
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/29.html">
+29
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/30.html">
+30
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/31.html">
+31
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/32.html">
+32
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/33.html">
+33
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/34.html">
+34
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/35.html">
+35
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/36.html">
+36
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/37.html">
+37
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/38.html">
+38
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/39.html">
+39
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/40.html">
+40
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/41.html">
+41
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/42.html">
+42
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/43.html">
+43
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/44.html">
+44
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/45.html">
+45
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/46.html">
+46
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/47.html">
+47
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/48.html">
+48
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/49.html">
+49
+</a>
+</li>
+<li class="active page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/50.html">
+50
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/51.html">
+51
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/52.html">
+52
+</a>
+</li>
+<li class="page-item disabled">
+<a class="page-link" href="#">
+...
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/66.html">
+66
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/67.html">
+67
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/68.html">
+68
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/69.html">
+69
+</a>
+</li>
+<li class='12667660: 13068280: 17261980: 27812540: 28130680: 28551060: 28937800: 9351720: :change_frequency=&gt;"never", :lastmod=&gt;"2018-02-13", :layout=&gt;"default", :paginate_generated=&gt;true, :posts=&gt;[Awestruct::Page{ :priority=&gt;0.1, :section=&gt;"blog", :selected_tag=&gt;nil, :title=&gt;"Jenkins :url=&gt;"/node/page/51.html"} Awestruct::Page{ Blog", Community layout=&gt;post output_path=&gt;/blog/2011/11/15/the-beginning-of-a-new-era-ruby-plugins-now-a-reality/index.html, output_path=&gt;/blog/2011/12/02/community-contributed-localizations-to-be-bundled-in-jenkins-1-443/index.html, output_path=&gt;/blog/2011/12/05/holiday-appeal-please-help-jenkins-pay-the-project-expense/index.html, output_path=&gt;/blog/2011/12/19/fundraising-drive-update-thank-you-everyone/index.html, output_path=&gt;/blog/2011/12/20/thanks-for-the-support-pagerduty/index.html, output_path=&gt;/blog/2011/12/23/jenkins-survey-result-and-what-ui-improvement-would-you-like/index.html, output_path=&gt;/blog/2011/12/28/adding-diagrams-to-wiki/index.html, output_path=&gt;/blog/2012/01/04/building-jenkins-plugins-with-gradle/index.html, page-item source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-11-15-the-beginning-of-a-new-era-ruby-plugins-now-a-reality.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-12-02-community-contributed-localizations-to-be-bundled-in-jenkins-1-443.html, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-12-05-holiday-appeal-please-help-jenkins-pay-the-project-expense.html, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-12-19-fundraising-drive-update-thank-you-everyone.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-12-20-thanks-for-the-support-pagerduty.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-12-23-jenkins-survey-result-and-what-ui-improvement-would-you-like.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2011/2011-12-28-adding-diagrams-to-wiki.md, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2012/2012-01-04-building-jenkins-plugins-with-gradle.md, {:__is_layout=&gt;false, }, }],'>
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/page/51.html">
+&raquo;
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-md-4 events vertical">
+<div class="content">
+<!-- starting partial events.html.haml -->
+<div class="item-list">
+<ul class="ji-date-list ji-item-list">
+</ul>
+</div>
+
+<!-- ending partial events.html.haml -->
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//node/index.html.haml" title="Edit /node/index.html.haml on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//node/index.html.haml" title="View /node/index.html.haml history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

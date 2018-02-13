@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+What JVM versions are running Jenkins? 2016 Update!
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="What JVM versions are running Jenkins? 2016 Update!" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="What JVM versions are running Jenkins? 2016 Update!" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="What JVM versions are running Jenkins? 2016 Update!" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2016/11/22/what-jvm-versions-are-running-jenkins-the-return/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="What JVM versions are running Jenkins? 2016 Update!" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2016/11/22/what-jvm-versions-are-running-jenkins-the-return/" title="What JVM versions are running Jenkins? 2016 Update!">
+What JVM versions are running Jenkins? 2016 Update!
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2016-11-22
+by
+<a href="#about-the-author">Baptiste Mathus</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/statistics">
+statistics
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>Like for <a href="/blog/2015/11/03/what-jvm-versions-are-running-jenkins/">last year&#8217;s article about the same subject</a>, yet another <a href="https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!msg/jenkinsci-dev/fo5nKLhZK5U/Zb9jHpBJBQAJ">recent discussion about finally requiring Java 8 to run future versions Jenkins</a> pushed me to gather some more factual data around it.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+What follows contains some opinions or statements which may not be seen as purely factual or neutral. Note that this represents by no mean the general position of the Jenkins governance board. This is solely my opinion as a contributor based on the data I gathered, and what I feel from the feedback of the community at large.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect1">
+<h2 id="java-8-now-the-most-used-version-and-growing"><a class="anchor" href="#java-8-now-the-most-used-version-and-growing"></a>Java 8 now the most used version, and growing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If we look at the global numbers, Java 8 runtimes now represent 52.8% of the Jenkins instances running, which have not opted out of anonymous usage statistics.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/images/post-images/2016-jvm-versions/2016-jvm-stats-all.png" alt="2016 jvm stats all"></span></p>
+</div>
+<div class="paragraph">
+<p>And if you look at the trend, Java 8 is clearly growing fast.</p>
+</div>
+<div class="sect2">
+<h3 id="zooming-into-the-jenkins-2-x-instances-subset"><a class="anchor" href="#zooming-into-the-jenkins-2-x-instances-subset"></a>Zooming into the Jenkins 2.x instances subset</h3>
+<div class="paragraph">
+<p>Now, if you look at that picture, though already interesting and showing a clear trend towards Java 8 runtime adoption, some might argue it&#8217;s being too nice to older JREs.
+The reasoning could be: instances running (very) old Jenkins versions may not be the ones you want to look at when trying to plan the future of an opensource project:
+those are indeed probably not going to upgrade in general anyway, or when they do, upgrading the JRE would be a small thing compared to the rest to be tested with such a gap.</p>
+</div>
+<div class="paragraph">
+<p>So, if we only keep the instances running Jenkins 2.x, then the proportion of Java 8 goes to almost 70% compared to Java 7 (Jenkins 2.x requires Java 7)
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/images/post-images/2016-jvm-versions/2016-jvm-stats-only-2.x.png" alt="2016 jvm stats only 2.x"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conclusion"><a class="anchor" href="#conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java 8 adoption numbers are getting bigger, while every other JREs are going down.</p>
+</div>
+<div class="paragraph">
+<p>If you are still using a JRE 7 to run Jenkins, it is seriously time to think
+about upgrading to 8.  Knowing that it&#8217;s definitely not a bleeding-edge path
+might help you go that way, especially if you generally do not like upgrades.
+Also, as a reminder, the most used JDK,
+<a href="https://java.com/en/download/faq/java_7.xml">Oracle JDK 7 now got end-of-lifed more than 18 months ago</a>.</p>
+</div>
+<div class="paragraph">
+<p>Contrary to the past attempts the previous years, the discussion on the Jenkins
+development mailing list did not trigger strong rebutals by many people.</p>
+</div>
+<div class="paragraph">
+<p>Perhaps it&#8217;s finally time for Mr. Jenkins to upgrade to Java 8!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+All numbers shown below are derived from the new <a href="http://stats.jenkins.io/plugin-installation-trend/jvms.json"><code>jvms.json</code></a> file now generated automatically every month, after the two related pull-requests  <a href="https://github.com/jenkins-infra/infra-statistics/pull/21">1</a> and <a href="https://github.com/jenkins-infra/infra-statistics/pull/22">2</a> got merged.
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. 69% for October, 67% in September
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. You are more than welcome to review those Pull-Requests and shout if you see something wrong in the calculations.
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Baptiste Mathus" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Baptiste Mathus
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/batmat" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/bmathus" target="_blank">
+Twitter
+</a>
+</li>
+<li class="author">
+<a href="http://batmat.net" target="_blank">
+Blog
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2016/2016-11-22-what-jvm-versions-are-running-jenkins-the-return.adoc" title="Edit /blog/2016/2016-11-22-what-jvm-versions-are-running-jenkins-the-return.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2016/2016-11-22-what-jvm-versions-are-running-jenkins-the-return.adoc" title="View /blog/2016/2016-11-22-what-jvm-versions-are-running-jenkins-the-return.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

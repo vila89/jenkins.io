@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2016/09/19/blueocean-beta-declarative-pipeline-pipeline-editor/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/blog/2016/09/19/blueocean-beta-declarative-pipeline-pipeline-editor/" title="Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor">
+Announcing the Blue Ocean beta, Declarative Pipeline and Pipeline Editor
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2016-09-19
+by
+<a href="#about-the-author">James Dumay</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/blueocean">
+blueocean
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/ux">
+ux
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/pipeline">
+pipeline
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/jenkinsworld">
+jenkinsworld
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node/tags/jenkinsworld2016">
+jenkinsworld2016
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>At Jenkins World on Wednesday 14th of September, the Jenkins project was happy to
+introduce the beta release of Blue Ocean. Blue Ocean is the new user experience
+for Jenkins, built from the ground up to take advantage of Jenkins Pipeline.
+It is an entire rethink of the the way that modern developers will use Jenkins.</p>
+</div>
+<div class="paragraph">
+<p>Blue Ocean is available today via the Jenkins Update Center for Jenkins users
+running 2.7.1 and above.</p>
+</div>
+<div class="sect2">
+<h3 id="get-the-beta"><a class="anchor" href="#get-the-beta"></a>Get the beta</h3>
+<div class="paragraph">
+<p>Just search for <em>BlueOcean beta</em> in the Update Center, install it,
+browse to the dashboard, and then click the <em>Try BlueOcean UI</em> button on the dashboard.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="whats-included"><a class="anchor" href="#whats-included"></a>Whats included?</h3>
+<div class="paragraph">
+<p><a href="/blog/2016/05/26/introducing-blue-ocean/">Back in April we open sourced Blue Ocean</a>
+and shared our vision with the community. We&#8217;re very happy that all the things we showed you then have
+shipped in the beta (software projects run <strong>on time</strong>?!).</p>
+</div>
+<div class="paragraph">
+<p>For a refresher on Blue Ocean, watch this short video:</p>
+</div>
+<center>
+<iframe width="853" height="480"
+src="https://www.youtube-nocookie.com/embed/3dITffteCD4?rel=0" frameborder="0"
+allowfullscreen></iframe>
+</center>
+</div>
+<div class="sect2">
+<h3 id="declarative-pipeline"><a class="anchor" href="#declarative-pipeline"></a>Declarative Pipeline</h3>
+<div class="paragraph">
+<p>We have heard from the community about the usability of <a href="/doc/pipeline">Jenkins
+Pipeline</a>. Much of the feedback we received was to a desire to
+<strong>configure</strong> Pipelines rather than <strong>script</strong> them, and to make it easy for beginners
+to get started with their first Pipeline.</p>
+</div>
+<div class="paragraph">
+<p>This is how <strong>Declarative Pipeline</strong> was born. We&#8217;ve introduced a new method whereby
+you declare how you want your Pipeline to look rather than using Pipeline Script
+ - it&#8217;s configuration rather than code.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a small example of a Declarative Pipeline for nodejs that runs the whole
+Pipeline inside a Docker container:</p>
+</div>
+<div class="pipeline-block">  <div class="listingblock pipeline-declarative">
+    <div class="title">Jenkinsfile (Declarative Pipeline)</div>
+    <div class="content">
+  <pre class="CodeRay highlight nowrap"><code class="language-groovy" data-lang="groovy">pipeline {
+  agent <span style="color:#606">docker</span>:<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">node:6.3</span><span style="color:#710">'</span></span>
+  stages {
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">build</span><span style="color:#710">'</span></span>) {
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">npm --version</span><span style="color:#710">'</span></span>
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">npm install</span><span style="color:#710">'</span></span>
+    }
+    stage (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">test</span><span style="color:#710">'</span></span>) {
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">npm test</span><span style="color:#710">'</span></span>
+    }
+  }
+}</code></pre>
+</div></div>  <div class="pipeline-script-expand">
+    <a href="#" onclick="javascript:$(this).parent().siblings('.pipeline-script').toggle(); return false;">Toggle Scripted Pipeline</a>
+    <em>(Advanced)</em>
+  </div>
+  <div class="listingblock pipeline-script"
+        style="display: none">
+    <div class="title">Jenkinsfile (Scripted Pipeline)</div>
+    <div class="content">
+  <pre class="CodeRay highlight nowrap"><code class="language-groovy" data-lang="groovy">node(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">docker</span><span style="color:#710">'</span></span>) {
+  docker.image(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">node:6.3</span><span style="color:#710">'</span></span>).inside {
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">build</span><span style="color:#710">'</span></span>) {
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">npm --version</span><span style="color:#710">'</span></span>
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">npm install</span><span style="color:#710">'</span></span>
+    }
+
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">test</span><span style="color:#710">'</span></span>) {
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">npm test</span><span style="color:#710">'</span></span>
+    }
+  }
+}</code></pre>
+</div></div></div>
+<div class="paragraph">
+<p>Docker support in Declarative Pipeline allows you to version your application code,
+Jenkins Pipeline configuration, and the environment where your pipeline will run,
+all in a single repository. It&#8217;s a crazy powerful combination.</p>
+</div>
+<div class="paragraph">
+<p>Declarative Pipeline introduces the <code>postBuild</code> section that makes it
+easy to run things conditionally at the end of your Pipeline without the
+complexity of the <code>try... catch</code> of Pipeline script.</p>
+</div>
+<div class="pipeline-block">  <div class="listingblock pipeline-declarative">
+    <div class="title">Jenkinsfile (Declarative Pipeline)</div>
+    <div class="content">
+  <pre class="CodeRay highlight nowrap"><code class="language-groovy" data-lang="groovy">postBuild {
+  always {
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will always run&quot;</span><span style="color:#710">'</span></span>
+  }
+  success {
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if successful&quot;</span><span style="color:#710">'</span></span>
+  }
+  failure {
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if failed&quot;</span><span style="color:#710">'</span></span>
+  }
+  unstable {
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if the run was marked as unstable&quot;</span><span style="color:#710">'</span></span>
+  }
+  changed {
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if the state of the Pipeline has changed&quot;</span><span style="color:#710">'</span></span>
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;For example, the Pipeline was previously failing but is now successful&quot;</span><span style="color:#710">'</span></span>
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;... or the other way around :)&quot;</span><span style="color:#710">'</span></span>
+  }
+}
+</code></pre>
+</div></div>  <div class="pipeline-script-expand">
+    <a href="#" onclick="javascript:$(this).parent().siblings('.pipeline-script').toggle(); return false;">Toggle Scripted Pipeline</a>
+    <em>(Advanced)</em>
+  </div>
+  <div class="listingblock pipeline-script"
+        style="display: none">
+    <div class="title">Jenkinsfile (Scripted Pipeline)</div>
+    <div class="content">
+  <pre class="CodeRay highlight nowrap"><code class="language-groovy" data-lang="groovy">node(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">docker</span><span style="color:#710">'</span></span>) {
+  <span style="color:#080;font-weight:bold">try</span> {
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">build</span><span style="color:#710">'</span></span>) {
+      <span style="color:#777">/* .. snip .. */</span>
+    }
+    stage(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">test</span><span style="color:#710">'</span></span>) {
+      <span style="color:#777">/* .. snip .. */</span>
+    }
+
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if successful&quot;</span><span style="color:#710">'</span></span>
+  }
+  <span style="color:#080;font-weight:bold">catch</span> (exc) {
+    <span style="color:#080;font-weight:bold">if</span> (currentBuild.result == <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">UNSTABLE</span><span style="color:#710">'</span></span>) {
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if the run was marked as unstable&quot;</span><span style="color:#710">'</span></span>
+    }
+    <span style="color:#080;font-weight:bold">if</span> (currentBuild.result == <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FAILURE</span><span style="color:#710">'</span></span>) {
+      sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will run only if failed&quot;</span><span style="color:#710">'</span></span>
+    }
+  }
+  <span style="color:#080;font-weight:bold">finally</span> {
+    sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">echo &quot;This will always run&quot;</span><span style="color:#710">'</span></span>
+  }
+}</code></pre>
+</div></div></div>
+<div class="paragraph">
+<p>And there is so much more!</p>
+</div>
+<div class="paragraph">
+<p>If you have the Blue Ocean beta installed you already have Declarative Pipeline.
+While Declarative Pipeline is still alpha at the moment, we do encourage you to
+<a href="https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/getting%20started">follow our getting started guide</a>,
+ give us feedback on the <a href="/content/mailing-lists/">Jenkins Users mailing list</a>
+ or file bugs <a href="https://issues.jenkins-ci.org">against the <em>pipeline-model-definition</em> component in JIRA</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="introducing-the-pipeline-editor"><a class="anchor" href="#introducing-the-pipeline-editor"></a>Introducing the Pipeline Editor</h3>
+<div class="paragraph">
+<p>The Pipeline Editor is a graphical user interface that gives Jenkins users the
+simplest way yet to get started with creating Pipelines in Jenkins. It will also
+save a lot of time for intermediate and advanced Jenkins users as a way to author
+Pipelines.</p>
+</div>
+<div class="paragraph">
+<p>When you build your Pipeline in the Editor and click the save button, the editor
+will commit a new <strong>Jenkinsfile</strong> back to your repository in the form of the new
+Declarative Pipeline. When you want to edit again, Jenkins will read it from
+your repository exactly how you saw it previously.</p>
+</div>
+<div class="paragraph">
+<p>The Pipeline Editor is a work in progress and should arrive in a beta release soon.</p>
+</div>
+<div class="paragraph">
+<p><span class="image center"><img src="/images/post-images/blueocean/pipeline-editor.png" alt="Personalized dashboard"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thank-you"><a class="anchor" href="#thank-you"></a>Thank you</h3>
+<div class="paragraph">
+<p>Thanks for reading our news from Jenkins World and be sure to check the blog
+for regular updates!</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;d also like to thank our amazing community for their feedback and support
+as we change the way software teams around the world use Jenkins. We couldn&#8217;t
+do this without you.</p>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="James Dumay" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+James Dumay
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/i386" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/i386" target="_blank">
+Twitter
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2016/2016-09-19-blueocean-beta-declarative-pipeline-pipeline-editor.adoc" title="Edit /blog/2016/2016-09-19-blueocean-beta-declarative-pipeline-pipeline-editor.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2016/2016-09-19-blueocean-beta-declarative-pipeline-pipeline-editor.adoc" title="View /blog/2016/2016-09-19-blueocean-beta-declarative-pipeline-pipeline-editor.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

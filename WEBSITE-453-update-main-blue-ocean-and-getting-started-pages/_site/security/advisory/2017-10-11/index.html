@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Jenkins Security Advisory 2017-10-11
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Jenkins Security Advisory 2017-10-11" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Jenkins Security Advisory 2017-10-11" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Jenkins Security Advisory 2017-10-11" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security/advisory/2017-10-11/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Jenkins Security Advisory 2017-10-11" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<style>
+  .container .row.body {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
+  .toc {
+      float: right;
+  }
+</style>
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('.container .row.body h' + i);
+    }
+  })
+</script>
+<div class="container">
+<div class="row body">
+<div class="col-md-12">
+<h1>
+Jenkins Security Advisory 2017-10-11
+</h1>
+<div class="paragraph">
+<p>This advisory announces multiple vulnerabilities in Jenkins (weekly and LTS), and these plugins:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://plugins.jenkins.io/maven-plugin">Maven Plugin</a></p>
+</li>
+<li>
+<p><a href="https://plugins.jenkins.io/swarm">Swarm Plugin</a> Client</p>
+</li>
+<li>
+<p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Hudson+Speaks!+Plugin">Speaks! Plugin</a></p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="description"><a class="anchor" href="#description"></a>Description</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="arbitrary-shell-command-execution-on-master-by-users-with-agent-related-permissions"><a class="anchor" href="#arbitrary-shell-command-execution-on-master-by-users-with-agent-related-permissions"></a>Arbitrary shell command execution on master by users with Agent-related permissions</h3>
+<div class="paragraph">
+<p><strong>SECURITY-478 / CVE-2017-1000393</strong></p>
+</div>
+<div class="paragraph">
+<p>Users with permission to create or configure agents in Jenkins could configure a <em>launch method</em> called <em>Launch agent via execution of command on master</em>.
+This allowed them to run arbitrary shell commands on the master node whenever the agent was supposed to be launched.</p>
+</div>
+<div class="paragraph">
+<p>Configuration of this launch method now requires the <em>Run Scripts</em> permission typically only granted to administrators.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A known limitation of this fix is that users without the <em>Run Scripts</em> permission are no longer able to configure agents with this launch method at all, even if the launch method remains unchanged.</p>
+</div>
+<div class="paragraph">
+<p>A future release of Jenkins will move this launch method into a separate plugin.
+That plugin will depend on Script Security Plugin to secure this field and restore the ability of users without the <em>Run Scripts</em> permission to configure an agent with this launch method.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jenkins-core-bundled-vulnerable-version-of-the-commons-fileupload-library"><a class="anchor" href="#jenkins-core-bundled-vulnerable-version-of-the-commons-fileupload-library"></a>Jenkins core bundled vulnerable version of the commons-fileupload library</h3>
+<div class="paragraph">
+<p><strong>SECURITY-490 / CVE-2017-1000394</strong></p>
+</div>
+<div class="paragraph">
+<p>Jenkins bundled a version of the commons-fileupload library with the denial-of-service vulnerability known as CVE-2016-3092.</p>
+</div>
+<div class="paragraph">
+<p>The fix for that vulnerability has been backported to the version of the library bundled with Jenkins.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-remote-api-disclosed-users-email-addresses"><a class="anchor" href="#user-remote-api-disclosed-users-email-addresses"></a>"User" remote API disclosed users' email addresses</h3>
+<div class="paragraph">
+<p><strong>SECURITY-514 / CVE-2017-1000395</strong></p>
+</div>
+<div class="paragraph">
+<p>Information about Jenkins user accounts is generally available to anyone with Overall/Read permissions via the <code>/user/(username)/api</code> remote API.
+This included e.g. Jenkins users' email addresses if the <a href="https://plugins.jenkins.io/mailer">Mailer Plugin</a> is installed.</p>
+</div>
+<div class="paragraph">
+<p>The remote API now no longer includes information beyond the most basic (user ID and name) unless the user requesting it is a Jenkins administrator or the user themselves.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jenkins-core-bundled-vulnerable-version-of-the-commons-httpclient-library"><a class="anchor" href="#jenkins-core-bundled-vulnerable-version-of-the-commons-httpclient-library"></a>Jenkins core bundled vulnerable version of the commons-httpclient library</h3>
+<div class="paragraph">
+<p><strong>SECURITY-555 / CVE-2017-1000396</strong></p>
+</div>
+<div class="paragraph">
+<p>Jenkins bundled a version of the commons-httpclient library with the vulnerability <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6153">CVE-2012-6153</a> that incorrectly verified SSL certificates, making it susceptible to man-in-the-middle attacks.</p>
+</div>
+<div class="paragraph">
+<p>This library is widely used as a transitive dependency in Jenkins plugins.</p>
+</div>
+<div class="paragraph">
+<p>The fix for CVE-2012-6153 was backported to the version of commons-httpclient that is bundled in core and made available to plugins.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="maven-plugin-bundled-vulnerable-version-of-the-commons-httpclient-library"><a class="anchor" href="#maven-plugin-bundled-vulnerable-version-of-the-commons-httpclient-library"></a>Maven Plugin bundled vulnerable version of the commons-httpclient library</h3>
+<div class="paragraph">
+<p><strong>SECURITY-557 / CVE-2017-1000397</strong></p>
+</div>
+<div class="paragraph">
+<p>Maven Plugin bundled a version of the commons-httpclient library with the vulnerability <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6153">CVE-2012-6153</a> that incorrectly verified SSL certificates, making it susceptible to man-in-the-middle attacks.</p>
+</div>
+<div class="paragraph">
+<p>Maven Plugin 3.0 no longer has a dependency on commons-httpclient.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="swarm-plugin-client-bundled-vulnerable-version-of-the-commons-httpclient-library"><a class="anchor" href="#swarm-plugin-client-bundled-vulnerable-version-of-the-commons-httpclient-library"></a>Swarm Plugin Client bundled vulnerable version of the commons-httpclient library</h3>
+<div class="paragraph">
+<p><strong>SECURITY-597 / CVE-2017-1000402</strong></p>
+</div>
+<div class="paragraph">
+<p>Swarm Plugin Client bundled a version of the commons-httpclient library with the vulnerability <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6153">CVE-2012-6153</a> that incorrectly verified SSL certificates, making it susceptible to man-in-the-middle attacks.</p>
+</div>
+<div class="paragraph">
+<p>The fix for CVE-2012-6153 was backported to the version of commons-httpclient bundled in Swarm Plugin Client.</p>
+</div>
+<div class="paragraph">
+<p>IMPORTANT:
+Please note that Swarm Plugin Client needs to be updated independently from the plugin.
+Updating just the plugin will not resolve the security vulnerability.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="computer-remote-api-disclosed-information-about-inaccessible-jobs"><a class="anchor" href="#computer-remote-api-disclosed-information-about-inaccessible-jobs"></a>"Computer" remote API disclosed information about inaccessible jobs</h3>
+<div class="paragraph">
+<p><strong>SECURITY-611 / CVE-2017-1000398</strong></p>
+</div>
+<div class="paragraph">
+<p>The remote API at <code>/computer/(agent-name)/api</code> showed information about tasks (typically builds) currently running on that agent.
+This included information about tasks that the current user otherwise has no access to, e.g. due to lack of Job/Read permission.</p>
+</div>
+<div class="paragraph">
+<p>This has been fixed, and the API now only shows information about accessible tasks.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="queue-item-remote-api-disclosed-information-about-inaccessible-jobs"><a class="anchor" href="#queue-item-remote-api-disclosed-information-about-inaccessible-jobs"></a>"Queue Item" remote API disclosed information about inaccessible jobs</h3>
+<div class="paragraph">
+<p><strong>SECURITY-618 / CVE-2017-1000399</strong></p>
+</div>
+<div class="paragraph">
+<p>The remote API at <code>/queue/item/(ID)/api</code> showed information about tasks in the queue (typically builds waiting to start).
+This included information about tasks that the current user otherwise has no access to, e.g. due to lack of Job/Read permission.</p>
+</div>
+<div class="paragraph">
+<p>This has been fixed, and the API endpoint is now only available for tasks that the current user has access to.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="job-remote-api-disclosed-information-about-inaccessible-upstream-downstream-jobs"><a class="anchor" href="#job-remote-api-disclosed-information-about-inaccessible-upstream-downstream-jobs"></a>"Job" remote API disclosed information about inaccessible upstream/downstream jobs</h3>
+<div class="paragraph">
+<p><strong>SECURITY-617 / CVE-2017-1000400</strong></p>
+</div>
+<div class="paragraph">
+<p>The remote API at <code>/job/(job-name)/api</code> contained information about upstream and downstream projects.
+This included information about tasks that the current user otherwise has no access to, e.g. due to lack of Job/Read permission.</p>
+</div>
+<div class="paragraph">
+<p>This has been fixed, and the API now only lists upstream and downstream projects that the current user has access to.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="form-validation-for-password-fields-was-sent-via-get"><a class="anchor" href="#form-validation-for-password-fields-was-sent-via-get"></a>Form validation for password fields was sent via GET</h3>
+<div class="paragraph">
+<p><strong>SECURITY-616 / CVE-2017-1000401</strong></p>
+</div>
+<div class="paragraph">
+<p>The Jenkins default form control for passwords and other secrets, <code>&lt;f:password/&gt;</code>, supports form validation (e.g. for API keys).
+The form validation AJAX requests were sent via GET, which could result in secrets being logged to a HTTP access log in non-default configurations of Jenkins, and made available to users with access to these log files.</p>
+</div>
+<div class="paragraph">
+<p>Form validation for <code>&lt;f:password/&gt;</code> is now always sent via POST, with the password in the request body, which is typically not logged.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="arbitrary-code-execution-vulnerability-in-speaks-plugin"><a class="anchor" href="#arbitrary-code-execution-vulnerability-in-speaks-plugin"></a>Arbitrary code execution vulnerability in Speaks! Plugin</h3>
+<div class="paragraph">
+<p><strong>SECURITY-623 / CVE-2017-1000403</strong></p>
+</div>
+<div class="paragraph">
+<p>This plugin allows users with Job/Configure permission to run arbitrary Groovy code inside the Jenkins JVM, effectively elevating privileges to Overall/Run Scripts.</p>
+</div>
+<div class="paragraph">
+<p>As of publication of this advisory, there is no fix.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="severity"><a class="anchor" href="#severity"></a>Severity</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>SECURITY-478: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">high</a></strong></p>
+</li>
+<li>
+<p>SECURITY-490: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">high</a></strong></p>
+</li>
+<li>
+<p>SECURITY-514: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-555: <strong><a href="https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?name=CVE-2012-6153&amp;vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-557: <strong><a href="https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?name=CVE-2012-6153&amp;vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-597: <strong><a href="https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?name=CVE-2012-6153&amp;vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-611: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-616: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:N">low</a></strong></p>
+</li>
+<li>
+<p>SECURITY-617: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-618: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N">medium</a></strong></p>
+</li>
+<li>
+<p>SECURITY-623: <strong><a href="http://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H">high</a></strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="affected-versions"><a class="anchor" href="#affected-versions"></a>Affected versions</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Jenkins weekly up to and including 2.83</p>
+</li>
+<li>
+<p>Jenkins LTS up to and including 2.73.1</p>
+</li>
+<li>
+<p>Maven Plugin up to and including 2.17</p>
+</li>
+<li>
+<p>All versions of Speaks! Plugin</p>
+</li>
+<li>
+<p>Swarm Plugin (Client) up to and including 3.4</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fix"><a class="anchor" href="#fix"></a>Fix</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Jenkins weekly should be updated to 2.84</p>
+</li>
+<li>
+<p>Jenkins LTS should be updated to 2.73.2</p>
+</li>
+<li>
+<p>Maven Plugin should be updated to 3.0</p>
+</li>
+<li>
+<p>Swarm Plugin (Client) should be updated to 3.5</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These versions include fixes to the vulnerabilities described above.
+All prior versions are affected by these vulnerabilities unless otherwise indicated.</p>
+</div>
+<div class="paragraph">
+<p>As of publication of this advisory, there is no fix available for Speaks! Plugin.
+Its distribution has been suspended.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="credit"><a class="anchor" href="#credit"></a>Credit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Jenkins project would like to thank the reporters for discovering and <a href="/security/#reporting-vulnerabilities">reporting</a> these vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ben Walding, CloudBees, Inc.</strong> for SECURITY-616</p>
+</li>
+<li>
+<p><strong>Daniel Beck, CloudBees, Inc.</strong> for SECURITY-478, SECURITY-611, SECURITY-623</p>
+</li>
+<li>
+<p><strong>Jesse Glick, CloudBees, Inc.</strong> for SECURITY-617, SECURITY-618</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="other-resources"><a class="anchor" href="#other-resources"></a>Other Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/blog/2017/10/11/security-updates/">Announcement blog post</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//security/advisory/2017-10-11.adoc" title="Edit /security/advisory/2017-10-11.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//security/advisory/2017-10-11.adoc" title="View /security/advisory/2017-10-11.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>
