@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-Create a Pipeline
+Creating a Pipeline
 </title>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <meta content="Jenkins is an open source automation server" name="description">
@@ -16,20 +16,20 @@ Create a Pipeline
 <link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
 <link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
 <link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
-<meta content="Create a Pipeline" name="apple-mobile-web-app-title">
+<meta content="Creating a Pipeline" name="apple-mobile-web-app-title">
 <!-- Twitter Card data -->
 <meta content="summary_large_image" name="twitter:card">
 <meta content="@JenkinsCI" name="twitter:site">
-<meta content="Create a Pipeline" name="twitter:title">
+<meta content="Creating a Pipeline" name="twitter:title">
 <meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
 <meta content="@JenkinsCI" name="twitter:creator">
 <!-- Twitter Summary card images must be at least 120x120px -->
 <!-- Open Graph data -->
-<meta content="Create a Pipeline" property="og:title">
+<meta content="Creating a Pipeline" property="og:title">
 <meta content="article" property="og:type">
 <meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/book/blueocean/creating-pipelines/index.html" property="og:url">
 <meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
-<meta content="Create a Pipeline" property="og:site_name">
+<meta content="Creating a Pipeline" property="og:site_name">
 <link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
 <link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
 <link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
@@ -294,7 +294,7 @@ User Handbook
 <a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/book/blueocean/getting-started" class="">Getting started with Blue Ocean</a>
 </li>
 <li>
-<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/book/blueocean/creating-pipelines" class="active">Create a Pipeline</a>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/book/blueocean/creating-pipelines" class="active">Creating a Pipeline</a>
 </li>
 <li>
 <a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/book/blueocean/dashboard" class="">Dashboard</a>
@@ -404,12 +404,12 @@ Dashboard ⇒
 <div class="row body">
 <div class="section">
 <h1>
-Create a Pipeline
+Creating a Pipeline
 </h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#set-up-your-pipeline-project">Set up your Pipeline project</a>
+<li><a href="#setting-up-your-pipeline-project">Setting up your Pipeline project</a>
 <ul class="sectlevel2">
 <li><a href="#for-a-git-repository">For a Git repository</a>
 <ul class="sectlevel3">
@@ -439,26 +439,27 @@ Create a Pipeline
 </div>
 <div class="paragraph">
 <p>A Pipeline can be generated from an existing <code>Jenkinsfile</code> in source control, or
-you can use the <a href="../pipeline-editor/">Blue Ocean Pipeline editor</a> to create a new
-Pipeline for you (as a <code>Jenkinsfile</code> that will be committed to source control).</p>
+you can use the <a href="../pipeline-editor">Blue Ocean Pipeline editor</a> to create a
+new Pipeline for you (as a <code>Jenkinsfile</code> that will be committed to source
+control).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="set-up-your-pipeline-project"><a class="anchor" href="#set-up-your-pipeline-project"></a>Set up your Pipeline project</h2>
+<h2 id="setting-up-your-pipeline-project"><a class="anchor" href="#setting-up-your-pipeline-project"></a>Setting up your Pipeline project</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To start setting up your Pipeline project in Blue Ocean, at the top-right of the
-<a href="../dashboard/">Blue Ocean Dashboard</a>, click the <strong>New Pipeline</strong> button.</p>
+<a href="../dashboard">Blue Ocean Dashboard</a>, click the <strong>New Pipeline</strong> button.</p>
 </div>
 <div class="paragraph boxshadow">
 <p><span class="image"><img src="../../resources/blueocean/creating-pipelines/new-pipeline-button.png" alt="<em>New Pipeline Button</em>" width="50%"></span></p>
 </div>
 <div class="paragraph">
-<p>On a new Jenkins instance or if Jenkins has no existing jobs or Pipelines and
-the Dashboard is empty, Blue Ocean will also display a message box on which you
-can click the <strong>Create a New Pipeline</strong> button to start setting up your Pipeline
-project.</p>
+<p>If your Jenkins instance is new or has no Pipeline projects or other items
+configured (and the Dashboard is empty), Blue Ocean displays a <strong>Welcome to
+Jenkins</strong> message box on which you can click the <strong>Create a new Pipeline</strong> button
+to start setting up your Pipeline project.</p>
 </div>
 <div class="paragraph boxshadow">
 <p><span class="image"><img src="../../resources/blueocean/creating-pipelines/create-a-new-pipeline-box.png" alt="<em>Welcome to Jenkins - Create a New Pipeline message box</em>" width="50%"></span></p>
@@ -505,8 +506,8 @@ project.</p>
 <h4 id="local-repository"><a class="anchor" href="#local-repository"></a>Local repository</h4>
 <div class="paragraph">
 <p>If your URL is a local directory path (e.g. beginning with a forward slash <code>/</code>
-such as <code>/home/cloned-git-repositories/my-git-repository.git</code>), you can proceed
-to click the <strong>Create Pipeline</strong> button.</p>
+such as <code>/home/cloned-git-repos/my-git-repo.git</code>), you can proceed to click the
+<strong>Create Pipeline</strong> button.</p>
 </div>
 <div class="paragraph">
 <p>Blue Ocean will then scan your local repository&#8217;s branches for a <code>Jenkinsfile</code>
@@ -530,12 +531,12 @@ the URL, starting with either:</p>
 <ul>
 <li>
 <p><code>ssh://</code> - e.g.
-<code>ssh://gituser@server-url/git-server-repositories/my-git-repository.git</code><br>
+<code>ssh://gituser@git-server-url/git-server-repos-group/my-git-repo.git</code><br>
 or</p>
 </li>
 <li>
 <p><code>user@host:path/to/git/repo.git</code> - e.g.
-<code>gituser@server-url:git-server-repositories/my-git-repository.git</code>,</p>
+<code>gituser@git-server-url:git-server-repos-group/my-git-repo.git</code>,</p>
 </li>
 </ul>
 </div>
@@ -574,9 +575,8 @@ account (e.g. within the <code>authorized_keys</code> file of the machine&#8217;
 <strong>Note:</strong> This process allows your Jenkins user to access the repositories that
 your Git server&#8217;s user account (e.g. <code>gituser</code>) has access to. Read more about
 this in
-<a href="https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server">Setting
-Up the Server</a> of the <a href="https://git-scm.com/book/en/v2/">Pro Git
-documentation</a>.</p>
+<a href="https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server">Setting Up the Server</a>
+of the <a href="https://git-scm.com/book/en/v2/">Pro Git documentation</a>.</p>
 </li>
 <li>
 <p>When done, return to the Blue Ocean interface.</p>
@@ -590,7 +590,7 @@ documentation</a>.</p>
 <p>Blue Ocean will then scan your local repository&#8217;s branches for a <code>Jenkinsfile</code>
 and will commence a Pipeline run for each branch containing a <code>Jenkinsfile</code>. If
 Blue Ocean cannot find any <code>Jenkinsfile</code>, you will be prompted to begin creating
-one through the <a href="../pipeline-editor/">Pipeline editor</a>.</p>
+one through the <a href="../pipeline-editor">Pipeline editor</a>.</p>
 </div>
 </div>
 </div>
@@ -608,16 +608,16 @@ one through the <a href="../pipeline-editor/">Pipeline editor</a>.</p>
 <strong>Your GitHub access token</strong> field.<br>
 If you previously configured Blue Ocean to connect to GitHub using a personal
 access token, Blue Ocean takes you directly to the
-<a href="#choose-your-github-account-organization-and-repository">choosing your GitHub
-account/organization and repository</a> steps below.</p>
+<a href="#choose-your-github-account-organization-and-repository">choosing your GitHub account/organization and repository</a>
+steps below.</p>
 </div>
 <div class="paragraph boxshadow">
 <p><span class="image"><img src="../../resources/blueocean/creating-pipelines/connect-to-github.png" alt="<em>Connect to GitHub</em>" width="70%"></span></p>
 </div>
 <div class="paragraph">
 <p>If you do not have a GitHub access token, click the <strong>Create an access key here</strong>
-link to open GitHub to the <strong><a href="#create-your-access-token">New personal access
-token</a></strong> page.</p>
+link to open GitHub to the
+<strong><a href="#create-your-access-token">New personal access token</a></strong> page.</p>
 </div>
 <div class="sect3">
 <h4 id="create-your-access-token"><a class="anchor" href="#create-your-access-token"></a>Create your access token</h4>
@@ -646,8 +646,7 @@ access token.</p>
 field and click <strong>Connect</strong>.<br>
 Your current/logged in Jenkins user now has access to your GitHub account
 (provided by your access token), so you can now
-<a href="#choose-your-github-account-organization-and-repository">choose your GitHub
-account/organization and repository</a>.<br>
+<a href="#choose-your-github-account-organization-and-repository">choose your GitHub account/organization and repository</a>.<br>
 Jenkins registers this credential with the following details
 for this Jenkins user:</p>
 <div class="ulist">
@@ -686,8 +685,8 @@ either:</p>
 repositories or one which you have forked from elsewhere on GitHub.</p>
 </li>
 <li>
-<p>An organization you are a member of to create a Pipeline project for a
-GitHub repository located within this organization.</p>
+<p>An organization you are a member of to create a Pipeline project for a GitHub
+repository located within this organization.</p>
 </li>
 </ul>
 </div>
@@ -706,7 +705,7 @@ the <strong>Search</strong> option.</p>
 Blue Ocean will then scan your local repository&#8217;s branches for a <code>Jenkinsfile</code>
 and will commence a Pipeline run for each branch containing a <code>Jenkinsfile</code>.
 If Blue Ocean cannot find any <code>Jenkinsfile</code>, you will be prompted to begin
-creating one through the <a href="../pipeline-editor/">Pipeline editor</a> (by clicking
+creating one through the <a href="../pipeline-editor">Pipeline editor</a> (by clicking
 <strong>Create Pipeline</strong> again).<br>
 <strong>Note:</strong> Under the hood, a Pipeline project created through Blue Ocean is
 actually "multibranch Pipeline". Therefore, Jenkins looks for the presence of
@@ -733,10 +732,10 @@ password into the <strong>Username</strong> and <strong>Password</strong> fields
 <div class="ulist">
 <ul>
 <li>
-<p>If you previously configured Blue Ocean to connect to Bitbucket with your email
-address and password, Blue Ocean takes you directly to the
-<a href="#choose-your-bitbucket-account-team-and-repository">choosing your Bitbucket
-account/team and repository</a> steps below.</p>
+<p>If you previously configured Blue Ocean to connect to Bitbucket with your
+email address and password, Blue Ocean takes you directly to the
+<a href="#choose-your-bitbucket-account-team-and-repository">choosing your Bitbucket account/team and repository</a>
+steps below.</p>
 </li>
 <li>
 <p>If you entered these credentials, Jenkins registers them with the following
@@ -805,7 +804,7 @@ the <strong>Search</strong> option.</p>
 Blue Ocean will then scan your local repository&#8217;s branches for a <code>Jenkinsfile</code>
 and will commence a Pipeline run for each branch containing a <code>Jenkinsfile</code>.
 If Blue Ocean cannot find any <code>Jenkinsfile</code>, you will be prompted to begin
-creating one through the <a href="../pipeline-editor/">Pipeline editor</a> (by clicking
+creating one through the <a href="../pipeline-editor">Pipeline editor</a> (by clicking
 <strong>Create Pipeline</strong> again).<br>
 <strong>Note:</strong> Under the hood, a Pipeline project created through Blue Ocean is
 actually "multibranch Pipeline". Therefore, Jenkins looks for the presence of

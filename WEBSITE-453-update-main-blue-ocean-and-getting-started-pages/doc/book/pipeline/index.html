@@ -524,7 +524,7 @@ reference of all Declarative Pipeline syntax.</p>
 </div>
 <div class="paragraph">
 <p>For an overview of content in the Jenkins User Handbook, see
-<a href="../getting-started/">User Handbook overview</a>.</p>
+<a href="getting-started">User Handbook overview</a>.</p>
 </div>
 </div>
 </div>
@@ -537,23 +537,24 @@ which supports implementing and integrating <em>continuous delivery pipelines</e
 Jenkins.</p>
 </div>
 <div class="paragraph">
-<p>A <em>continuous delivery (CD) pipeline</em> is an automated expression of your process for
-getting software from version control right through to your users and customers.
-Every change to your software (committed in source control) goes through a
-complex process on its way to being released. This process involves building the
-software in a reliable and repeatable manner, as well as progressing the built
-software (called a "build") through multiple stages of testing and deployment.</p>
+<p>A <em>continuous delivery (CD) pipeline</em> is an automated expression of your process
+for getting software from version control right through to your users and
+customers. Every change to your software (committed in source control) goes
+through a complex process on its way to being released. This process involves
+building the software in a reliable and repeatable manner, as well as
+progressing the built software (called a "build") through multiple stages of
+testing and deployment.</p>
 </div>
 <div class="paragraph">
 <p>Pipeline provides an extensible set of tools for modeling simple-to-complex
 delivery pipelines "as code" via the
-<a href="../pipeline/syntax/">Pipeline domain-specific language (DSL) syntax</a>.
+<a href="syntax">Pipeline domain-specific language (DSL) syntax</a>.
 <sup class="footnote" id="_footnote_dsl">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>The definition of a Jenkins Pipeline is written into a text file (called a
-<a href="../pipeline/jenkinsfile/"><code>Jenkinsfile</code></a>) which in turn can be committed to a
-project&#8217;s source control repository.
+<a href="jenkinsfile"><code>Jenkinsfile</code></a>) which in turn can be committed to a project&#8217;s
+source control repository.
 <sup class="footnote" id="_footnote_scm">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>
 This is the foundation of "Pipeline-as-code"; treating the CD pipeline a part of
 the application to be versioned and reviewed like any other code.</p>
@@ -610,9 +611,8 @@ Declarative Pipeline is a more recent feature of Jenkins Pipeline which:</p>
 <div class="paragraph">
 <p>Many of the individual syntactical components (or "steps") written into a
 <code>Jenkinsfile</code>, however, are common to both Declarative and Scripted Pipeline.
-Read more about how these two types of syntax differ in
-<a href="#pipeline-concepts">Pipeline concepts</a> and
-<a href="#pipeline-syntax-overview">Pipeline syntax overview</a> below.</p>
+Read more about how these two types of syntax differ in <a href="#pipeline-concepts">Pipeline concepts</a>
+and <a href="#pipeline-syntax-overview">Pipeline syntax overview</a> below.</p>
 </div>
 </div>
 </div>
@@ -660,8 +660,8 @@ Jenkins.</p>
 </div>
 <div class="paragraph">
 <p>Building on the core Jenkins value of extensibility, Pipeline is also extensible
-both by users with <a href="../pipeline/shared-libraries/">Pipeline Shared Libraries</a> and
-by plugin developers.
+both by users with <a href="shared-libraries">Pipeline Shared Libraries</a> and by
+plugin developers.
 <sup class="footnote" id="_footnote_ghof">[<a id="_footnoteref_5" class="footnote" href="#_footnote_5" title="View footnote.">5</a>]</sup></p>
 </div>
 <div class="paragraph">
@@ -730,7 +730,8 @@ implemented a new <em>step</em>.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following Pipeline code skeletons illustrate the fundamental differences
-between Declarative Pipeline syntax and Scripted Pipeline syntax.</p>
+between <a href="#declarative-pipeline-fundamentals">Declarative Pipeline syntax</a> and
+<a href="#scripted-pipeline-fundamentals">Scripted Pipeline syntax</a>.</p>
 </div>
 <div class="paragraph">
 <p>Be aware that both <a href="#stage">stages</a> and <a href="#step">steps</a> (above) are common
@@ -935,39 +936,39 @@ Pipeline</strong> link below:</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><a href="../pipeline/syntax/#declarative-pipeline"><code>pipeline</code></a> is Declarative
+<td><a href="syntax#declarative-pipeline"><code>pipeline</code></a> is Declarative
 Pipeline-specific syntax that defines a "block" containing all content and
 instructions for executing the entire Pipeline.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><a href="../pipeline/syntax/#agent"><code>agent</code></a> is Declarative Pipeline-specific syntax
-that instructs Jenkins to allocate an executor (on a node) and workspace for the
+<td><a href="syntax#agent"><code>agent</code></a> is Declarative Pipeline-specific syntax that
+instructs Jenkins to allocate an executor (on a node) and workspace for the
 entire Pipeline.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td><code>stage</code> is a syntax block that describes a
-<a href="#stage">stage of this Pipeline</a>. Read more about <code>stage</code> blocks in Declarative
-Pipeline syntax on the <a href="../pipeline/syntax/#stage">Pipeline syntax</a> page. As
-mentioned <a href="#scripted-pipeline-fundamentals">above</a>, <code>stage</code> blocks are optional
-in Scripted Pipeline syntax.</td>
+<a href="#stage">stage of this Pipeline</a>. Read more about <code>stage</code> blocks in
+Declarative Pipeline syntax on the <a href="syntax#stage">Pipeline syntax</a> page. As
+mentioned <a href="#scripted-pipeline-fundamentals">above</a>, <code>stage</code> blocks are
+optional in Scripted Pipeline syntax.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><a href="../pipeline/syntax/#steps"><code>steps</code></a> is Declarative Pipeline-specific syntax
-that describes the steps to be run in this <code>stage</code>.</td>
+<td><a href="syntax#steps"><code>steps</code></a> is Declarative Pipeline-specific syntax that
+describes the steps to be run in this <code>stage</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td><code>sh</code> is a Pipeline <a href="../pipeline/syntax/#steps">step</a> (provided by the
+<td><code>sh</code> is a Pipeline <a href="syntax#steps">step</a> (provided by the
 <a href="https://plugins.jenkins.io/workflow-durable-task-step">Pipeline: Nodes and Processes plugin</a>) that
 executes the given shell command.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td><code>junit</code> is another a Pipeline <a href="../pipeline/syntax/#steps">step</a> (provided by
-the <a href="https://plugins.jenkins.io/junit">JUnit plugin</a>) for aggregating test reports.</td>
+<td><code>junit</code> is another a Pipeline <a href="syntax#steps">step</a> (provided by the
+<a href="https://plugins.jenkins.io/junit">JUnit plugin</a>) for aggregating test reports.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
@@ -979,8 +980,7 @@ Pipeline-specific syntax.</td>
 </table>
 </div>
 <div class="paragraph">
-<p>Read more about Pipeline syntax on the <a href="../pipeline/syntax/">Pipeline Syntax</a>
-page.</p>
+<p>Read more about Pipeline syntax on the <a href="syntax">Pipeline Syntax</a> page.</p>
 </div>
 </div>
 </div>
@@ -1002,7 +1002,7 @@ page.</p>
 <a href="#_footnoteref_5">5</a>. <a href="https://plugins.jenkins.io/github-organization-folder">GitHub Organization Folder plugin</a>
 </div>
 <div class="footnote" id="_footnote_6">
-<a href="#_footnoteref_6">6</a>. <a href="../blueocean/">Blue Ocean</a>, <a href="https://plugins.jenkins.io/pipeline-stage-view">Pipeline Stage View plugin</a>
+<a href="#_footnoteref_6">6</a>. <a href="../blueocean">Blue Ocean</a>, <a href="https://plugins.jenkins.io/pipeline-stage-view">Pipeline: Stage View plugin</a>
 </div>
 </div>
 </div>
