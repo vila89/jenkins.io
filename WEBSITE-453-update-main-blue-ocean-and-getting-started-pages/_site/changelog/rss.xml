@@ -1,0 +1,2537 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>
+Jenkins Changelog
+</title>
+<link>
+https://jenkins.io/changelog
+</link>
+<atom:link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/changelog/rss.xml" rel="self" type="application/rss+xml"></atom:link>
+<description>
+Changelog for Jenkins weekly releases
+</description>
+<lastBuildDate>
+Wed, 14 Feb 2018 00:00:00 +0000
+</lastBuildDate>
+<!-- starting partial changelog-changes.xml.haml -->
+<item>
+<title>Jenkins 2.106</title>
+<link>
+https://jenkins.io/changelog//#v2.106
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Update Remoting library from 3.16 to 3.17 to improve diagnostic logging for channel read/write events and JEP-200 related class filtering.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Integrate SSHD module 2.4 which updates Apache Mina SSHD Core from 1.6.0 to 1.7.0.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal/API: Add &lt;code&gt;DataBoundConstructor&lt;/code&gt; to &lt;code&gt;LegacySecurityRealm&lt;/code&gt; to facilitate reflective instantiation in Jenkins-related tools and frameworks.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.106
+</guid>
+<pubDate>
+Sun, 11 Feb 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.105</title>
+<link>
+https://jenkins.io/changelog//#v2.105
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+When Jenkins fails to load plugins, show failures that users need to take action on separate from those due to other plugins failing to load.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Upgrade Executable War from 1.36 to 1.37 to allow supplying &lt;code&gt;jenkins.war&lt;/code&gt; command-line arguments via standard input using the &lt;code&gt;--paramsFromStdIn&lt;/code&gt; parameter.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Jenkins now creates XML 1.1 files to be more accepting of unusual contents.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Form validation for number of executors now properly shows validation errors and user-friendly message on form submission.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Ensure that threads for background tasks cannot be created with a custom classloader to prevent possible Groovy memory leaks.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Upgrade Executable War from 1.36 to 1.37 to prevent multiple copies of &lt;code&gt;winstone-*.jar&lt;/code&gt; in the temp folder from using up disk space needlessly.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Update to task reactor version 1.5 to prevent hanging of Jenkins on startup/reload when an initialization task throws an unhandled exception.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Introduce &lt;code&gt;ACL#lambda&lt;/code&gt; convenience method.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.105
+</guid>
+<pubDate>
+Sun, 4 Feb 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.104</title>
+<link>
+https://jenkins.io/changelog//#v2.104
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Whitelist additional safe Java platform types for use in XStream (XML serialization) and Remoting (agent communication).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Remove support for unbounded number of SCM polling threads. Previously, the default was infinite and could be set to between 10 and 100. Existing installations with unbounded SCM polling threads will now use the default of 10, and it is no longer possible to use a value outside of this range.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Define a minimum required version of the Remoting library (agent communication) and print warnings when an older version is connecting.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve robustness in case of faulty &lt;code&gt;SCM#guessBrowser&lt;/code&gt; implementations.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve error message when failing to read some files to actually mention the file name.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Restore &lt;em&gt;Manage Jenkins&lt;/em&gt; submenu in the context menu accessible from the breadcrumb (regression in 2.103).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix &lt;code&gt;MalformedInputException&lt;/code&gt; or &lt;code&gt;UnmappableCharacterException&lt;/code&gt; when reading the log file after finishing a build (regression in 2.102).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Jenkins 2.102 and later could fail to start or run properly when loaded inside certain containers, including old versions of Tomcat.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Don't attempt to export information about arbitrary offline causes as part of the &lt;code&gt;/computer/(name)/api&lt;/code&gt; output, which could result in errors.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.104
+</guid>
+<pubDate>
+Sun, 28 Jan 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.103</title>
+<link>
+https://jenkins.io/changelog//#v2.103
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Whitelist additional safe types for use in XStream (XML serialization) and Remoting (agent communication).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Re-style the Manage Jenkins page, including administrative monitors.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Make Blue Ocean work on Wildfly by excluding its outdated Jackson implementation from the Jenkins class path.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Do not downgrade detached plugins when upgrading Jenkins while its previous version was not properly recorded.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Restore file permissions granted to &lt;em&gt;group&lt;/em&gt; and &lt;em&gt;other&lt;/em&gt; for file created by Jenkins (regression in 2.93).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix a race condition in &lt;code&gt;Initializer&lt;/code&gt; implementations creating &lt;code&gt;Item&lt;/code&gt;s that resulted in their deletion.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+A &lt;code&gt;ClassCastException&lt;/code&gt; or &lt;code&gt;NoSuchMethodException&lt;/code&gt; could under certain circumstances mask the actual error when loading erroneous data from an XML file.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Properly add apostrophes to several localized strings that were missing them before.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Improve detection of current plugin's or test's classes for exclusion from JEP-200 filtering.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.103
+</guid>
+<pubDate>
+Sun, 21 Jan 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.102</title>
+<link>
+https://jenkins.io/changelog//#v2.102
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Switch Remoting/XStream blacklist to a whitelist.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update Jenkins Remoting from 3.15 to 3.16.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Limit which section headers are added to the breadcrumb config outline.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Reduce memory consumption for concurrent jobs when retrieving cause of blockage.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Introduce new &lt;code&gt;hudson.lifecycle.ExitLifecycle&lt;/code&gt; to exit instead of restart.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+&lt;code&gt;AtomicFileWriter&lt;/code&gt; was not fully atomic. Now it uses a &lt;code&gt;FileChannel&lt;/code&gt; internally and forces a disk sync when committing.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Add a constructor to &lt;code&gt;ToolDescriptor&lt;/code&gt; so that subclasses are not required to be an inner class of their &lt;code&gt;Describable&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.102
+</guid>
+<pubDate>
+Sun, 14 Jan 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.101</title>
+<link>
+https://jenkins.io/changelog//#v2.101
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Log EOF exceptions on a &lt;code&gt;FINE&lt;/code&gt; level instead of &lt;code&gt;WARNING&lt;/code&gt; when the Jetty connection is closed by peer.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix HTTP 404 error when clicking on &lt;em&gt;New View&lt;/em&gt; sidebar link from another view.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve Chinese and French localizations.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.101
+</guid>
+<pubDate>
+Sun, 7 Jan 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.100</title>
+<link>
+https://jenkins.io/changelog//#v2.100
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Restore binary compatibility with agents running Remoting versions older than 3.15 (regression in 2.98).
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.100
+</guid>
+<pubDate>
+Wed, 3 Jan 2018 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.99</title>
+<link>
+https://jenkins.io/changelog//#v2.99
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Updating Jenkins jobs and views by XML left fields at their old value if not defined in the new XML.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.99
+</guid>
+<pubDate>
+Sun, 31 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.98</title>
+<link>
+https://jenkins.io/changelog//#v2.98
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Update Remoting from 3.14 to 3.15 to fix several issues.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Make the system property &lt;code&gt;hudson.consoleTailKB&lt;/code&gt; actually work.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: &lt;code&gt;Jenkins#getInstance()&lt;/code&gt; is now deprecated as its semantics have been a source of confusion for some time. Use &lt;code&gt;#get()&lt;/code&gt; in typical cases and &lt;code&gt;Jenkins#getInstanceOrNull()&lt;/code&gt; in rare cases (see Javadoc).
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.98
+</guid>
+<pubDate>
+Sun, 24 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.97</title>
+<link>
+https://jenkins.io/changelog//#v2.97
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Fix regression in 2.96 that caused a downgrade of Script Security when upgrading Jenkins.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.97
+</guid>
+<pubDate>
+Tue, 19 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.96</title>
+<link>
+https://jenkins.io/changelog//#v2.96
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Make sure detached plugins (plugins whose functionality used to be part of Jenkins itself) are installed when upgrading Jenkins past the version at which the plugin was detached.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Do not require CSRF crumb to be provided when the request is authenticated using API token.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve robustness and error handling of various file operations by switching to NIO.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve Chinese translation.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Update Stapler from 1.253 to 1.254 to make the form that shows up when a URL requiring &lt;code&gt;POST&lt;/code&gt; is accessed using a different HTTP verb work with CSRF protection enabled.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix a performance regression in Jenkins 2.86 due to lock contention in &lt;code&gt;ExtensionList&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Trigger &lt;code&gt;SecurityListener#loggedIn&lt;/code&gt; events on programmatic login during self-registration when using &lt;code&gt;HudsonPrivateSecurityRealm&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Capture more authentication-related events in &lt;code&gt;SecurityListener&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Deprecate &lt;code&gt;hudson.util.Service&lt;/code&gt; in favor of Java's &lt;code&gt;ServiceLoader&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Introduce &lt;code&gt;Cause.UserIdCause(String)&lt;/code&gt; constructor, which allows creating causes for specified users without switching the user context.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.96
+</guid>
+<pubDate>
+Sun, 17 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.95</title>
+<link>
+https://jenkins.io/changelog//#v2.95
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Security:
+Security fixes.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.95
+</guid>
+<pubDate>
+Thu, 14 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.94</title>
+<link>
+https://jenkins.io/changelog//#v2.94
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Export &lt;tt&gt;assignedLabels&lt;/tt&gt; for agents and &lt;tt&gt;labelExpression&lt;/tt&gt; for applicable job types in remote API.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Optimization: Don't consult the authorization strategy about whether the internal &lt;tt&gt;SYSTEM&lt;/tt&gt; pseudo-user has a given permission.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update SSHD Module 2.0 to 2.3 to fire authentication events in &lt;tt&gt;SecurityListener&lt;/tt&gt;s when a user connects using SSH.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+The setup wizard is now resumed upon restart if it hasn't been completed yet, instead of showing the regular login screen (regression in 2.81).
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.94
+</guid>
+<pubDate>
+Mon, 11 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.93</title>
+<link>
+https://jenkins.io/changelog//#v2.93
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Use Java NIO to read and write Unix file permissions by default. The previous behavior can be restored by setting the Java system property &lt;code&gt;hudson.Util.useNativeChmodAndMode&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Better handling of certain unreproducible XML file load/save errors.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve user lookup performance, for example from Git changelog calculation.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Reduce memory usage when scheduling pipelines on big clusters.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Use atomic file moves if available on the underlying file system from &lt;code&gt;AtomicFileWriter&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent setup wizard from hanging when the two provided passwords differ, instead show a validation error.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Add &lt;code&gt;ItemGroup#allItems&lt;/code&gt; and similar default methods to &lt;code&gt;ItemGroup&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Add default implementations of deprecated methods to &lt;code&gt;BuildableItem&lt;/code&gt; and &lt;code&gt;Item&lt;/code&gt; so they don't need to be implemented.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Add documentation and convenience methods for the &lt;code&gt;User.CanonicalIdResolver&lt;/code&gt; extension point.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.93
+</guid>
+<pubDate>
+Sun, 3 Dec 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.92</title>
+<link>
+https://jenkins.io/changelog//#v2.92
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Revert internal change that broke assumption in &lt;code&gt;ruby-runtime&lt;/code&gt; in 2.91, impacting plugins based on it.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve UI performance with long list of running builds by caching the estimated duration.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Cache permission names, allowing Jenkins to recover faster after "stop-the-world" Java GC pauses.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent potential &lt;code&gt;NullPointerException&lt;/code&gt; when migrating the default "All View" name for a "My Views" user property.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Add &lt;code&gt;AccessControlled#hasPermission(Authentication, Permission)&lt;/code&gt; for convenience.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.92
+</guid>
+<pubDate>
+Sun, 26 Nov 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.91</title>
+<link>
+https://jenkins.io/changelog//#v2.91
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Use Java NIO library instead of native code to create and detect symbolic links and Windows junctions to improve compatibility and robustness.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent concurrent installation of Maven on the same node to prevent problems.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Deprecate the ambiguous &lt;code&gt;User#getUser(String)&lt;/code&gt; in favor of the &lt;code&gt;User#getById()&lt;/code&gt; or the new &lt;code&gt;User#getOrCreateByIdOrFullName()&lt;/code&gt; methods.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Implement default methods in &lt;code&gt;TaskListener&lt;/code&gt; and &lt;code&gt;BuildListener&lt;/code&gt; interfaces so they don't have to be implemented in subclasses.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.91
+</guid>
+<pubDate>
+Sun, 19 Nov 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.90</title>
+<link>
+https://jenkins.io/changelog//#v2.90
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Recover from legacy user configuration folders with &lt;code&gt;$&lt;/code&gt; characters that are not part of hex escape sequences. (Regression in 2.89)
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Fix &lt;em&gt;Download from java.sun.com&lt;/em&gt; installation method for JDK for downloads requiring an Oracle login after change to the Oracle site (again).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update Remoting from 3.13 to 3.14 in order to apply various performance and stability improvements.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add option to trim specified string parameter values.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update Windows Agent Installer from 1.9.1 to 1.9.2: Do not try to update &lt;code&gt;jenkins-slave.exe&lt;/code&gt; on Unix agents when they connect.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add a note explaining that the nodes count in label selection does not take into account permissions or other plugins.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve Chinese localization.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Updated default workspace directory naming for new installations to use filesystem-safe variable &lt;code&gt;ITEM_FULL_NAME&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix icon for Manage Jenkins link in the sidebar of the Global Tool Configuration form.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent caching of captcha on the login form.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Ensure that the &lt;em&gt;authenticated&lt;/em&gt; group is not added twice to the authorities for a user.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.90
+</guid>
+<pubDate>
+Sun, 12 Nov 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.89</title>
+<link>
+https://jenkins.io/changelog//#v2.89
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Security:
+Security fixes.
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.89
+</guid>
+<pubDate>
+Wed, 8 Nov 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.88</title>
+<link>
+https://jenkins.io/changelog//#v2.88
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Add sidebar link to create new view.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve robustness of the &lt;code&gt;/user/(username)/configure&lt;/code&gt; page when a &lt;code&gt;UserProperty&lt;/code&gt; is missing its descriptor.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve Russian localization.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.88
+</guid>
+<pubDate>
+Sun, 5 Nov 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.87</title>
+<link>
+https://jenkins.io/changelog//#v2.87
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Stapler library upgraded from 1.252 to 1.253 with Servlet 3.1 support, improved Blue Ocean performance and changes of interest to plugin developers.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Commons Codec library upgraded from 1.8 to 1.9.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Agents JVM must be 1.8+ and a clear message is shown in connection logs if it is not.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Major improvement to Italian localization.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improvements to Chinese localization.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Retrieving the list of installed plugins now consumes much less memory.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+When the Jenkins root URL was not configured, the &lt;code&gt;login&lt;/code&gt; CLI command did not work.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Allow users with &lt;code&gt;Job/Cancel&lt;/code&gt; permission to abort pipeline builds from the builds history widget.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Jobs no longer disappear from NestedView lists after renaming.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Move metadata about plugins split from core into a resource file.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Add &lt;code&gt;ExtensionList#lookupSingleton&lt;/code&gt; convenience method.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.87
+</guid>
+<pubDate>
+Sun, 29 Oct 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.86</title>
+<link>
+https://jenkins.io/changelog//#v2.86
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+&lt;em&gt;Launch agent via execution of command on the master&lt;/em&gt; has been moved to a new &lt;em&gt;Command Launcher&lt;/em&gt; plugin and integrated with the &lt;em&gt;Script Security&lt;/em&gt; plugin.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add link to recursive &lt;code&gt;cc.xml&lt;/code&gt; output on build history page.
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Fix &lt;em&gt;Download from java.sun.com&lt;/em&gt; installation method for JDK for downloads requiring an Oracle login after change to the Oracle site.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+&lt;code&gt;Secret&lt;/code&gt; threw &lt;code&gt;ArrayIndexOutOfBoundsException&lt;/code&gt; trying to decrypt &lt;code&gt;{}&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Race conditions in agents going offline could result in an exception when picking a workspace for a build.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent duplicated elements with incorrect URL when using the search on Dashboard View plugin based views.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+&lt;code&gt;StackOverflowError&lt;/code&gt; thrown under some conditions when using Pipeline on 2.85.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent &lt;code&gt;NullPointerException&lt;/code&gt; updating a folder with a primary view specified in Folders plugin 6.2.0.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Add an empty default implementation for previously &lt;code&gt;abstract&lt;/code&gt; methods of &lt;code&gt;SecurityListener&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Deprecate &lt;code&gt;hudson.util.Memoizer&lt;/code&gt; and replace its usage in core.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Developer: &lt;code&gt;Slave.JnlpJar.getURL&lt;/code&gt; did not work in some modes when core had a snapshot dependency on the Remoting library.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.86
+</guid>
+<pubDate>
+Sun, 22 Oct 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.85</title>
+<link>
+https://jenkins.io/changelog//#v2.85
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Upgrade Remoting from 3.12 to 3.13.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Restart agent communication related threads on both master and agents when encountering an unhandled exception, if possible, to improve stability.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve performance by not querying queue dispatchers from the UI.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Use node display name when printing "built on" message in the build log.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Enable &lt;code&gt;cc.xml&lt;/code&gt; to export jobs in folders recursively when accessed with a query parameter named &lt;code&gt;recursive&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add new administrative monitor warning users about disabled CSRF protection.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+In rare configurations, agents tried to load unloadable classes from the master, resulting in &lt;code&gt;ClassNotFoundException: javax.servlet.ServletContextListener&lt;/code&gt; on agents.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Jenkins did not correctly show parts of pipeline builds in side panel widgets if the current view is configured to filter their content.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Make &lt;code&gt;Xstream2#addCriticalField&lt;/code&gt; available for use in plugins.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.85
+</guid>
+<pubDate>
+Sun, 15 Oct 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.84</title>
+<link>
+https://jenkins.io/changelog//#v2.84
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Security:
+Important security fixes.
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.84
+</guid>
+<pubDate>
+Wed, 11 Oct 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.83</title>
+<link>
+https://jenkins.io/changelog//#v2.83
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+Fix potential HTTP 414 error in form validation of long Batch/Shell tool installer scripts.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix link from build cause or page header to user profile in case of unusual user names.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Properly display agent launch arguments when using nested launch methods.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.83
+</guid>
+<pubDate>
+Sun, 8 Oct 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.82</title>
+<link>
+https://jenkins.io/changelog//#v2.82
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+&lt;tt&gt;favicon.ico&lt;/tt&gt; and other binary resource files were broken since 2.79 because they were incorrectly filtered during the build.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Don't log warning when an anonymous user sends an invalid crumb, usually just an expired session.
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Developer: Fix &lt;code&gt;TimeDuration&lt;/code&gt; time unit handling and its incorrect usage. &lt;code&gt;TimeDuration&lt;/code&gt; uses milliseconds as the default unit. It was supposed to parse &lt;code&gt;sec&lt;/code&gt; or &lt;code&gt;secs&lt;/code&gt; suffix to interpret the number as seconds, but that never worked.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Developer: Create a copy of a list of parameters in &lt;code&gt;ParametersAction&lt;/code&gt; constructor before storing them to improve robustness when the caller reuses that list.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.82
+</guid>
+<pubDate>
+Sun, 1 Oct 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.81</title>
+<link>
+https://jenkins.io/changelog//#v2.81
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Security:
+Jenkins 2.80 did not initialize the setup wizard on new installations, causing various security options including authentication and authorization to be turned off by default, granting anonymous administrator access.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.81
+</guid>
+<pubDate>
+Wed, 27 Sep 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.80</title>
+<link>
+https://jenkins.io/changelog//#v2.80
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Improve error reporting when failing to archive artifacts.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Save the current Jenkins version whenever saving the Jenkins object, e.g. when saving the global security configuration. Plugins may rely on this information for data migration that would be triggered unnecessarily.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent possible &lt;code&gt;NullPointerException&lt;/code&gt; when removing an item from a list view due to a race condition.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Avoid a possible server-side timeout on long-running CLI commands using plain HTTP mode by sending periodic pings from the client.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Renaming or moving a folder failed to properly move build directories of its children when using custom build directory, resulting of loss of their builds.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Deprecate &lt;code&gt;hudson.util.TimeUnit2&lt;/code&gt; and replace with &lt;code&gt;java.util.concurrent.TimeUnit&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.80
+</guid>
+<pubDate>
+Sun, 24 Sep 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.79</title>
+<link>
+https://jenkins.io/changelog//#v2.79
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Fix random failures to use passphrase-protected ed25519 SSH private keys (regression in 2.73).
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Update Remoting library from 3.11 to 3.12 to fix regression in Jenkins 2.68 when using non-writable home directories.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add description of nodes to their remote API.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Disconnect node on ping timeout instead of leaving the channel half open.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Require Java 8u101 to build Jenkins, as that's the minimum required to run it since 2.77.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.79
+</guid>
+<pubDate>
+Sun, 17 Sep 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.78</title>
+<link>
+https://jenkins.io/changelog//#v2.78
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Moved Jenkins agent runtime to &lt;code&gt;agent.jar&lt;/code&gt; file name, and deprecate (but still support) use of legacy &lt;code&gt;slave.jar&lt;/code&gt;. Introduce the &lt;code&gt;AGENTJAR_URL&lt;/code&gt; environment variable as replacement for &lt;code&gt;SLAVEJAR_URL&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Accept &lt;code&gt;Basic&lt;/code&gt; authentication headers case-insensitively.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Implement &lt;code&gt;DescriptorByNameOwner&lt;/code&gt; using Java 8 interface default method. Make &lt;code&gt;Computer&lt;/code&gt; a &lt;code&gt;DescriptorByNameOwner&lt;/code&gt; allowing its use as &lt;code&gt;@AncestorInPath&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.78
+</guid>
+<pubDate>
+Sun, 10 Sep 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.77</title>
+<link>
+https://jenkins.io/changelog//#v2.77
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Default the built-in Jenkins Update Center URL to &lt;code&gt;https://updates.jenkins.io&lt;/code&gt; instead of obsolete HTTP endpoint. &lt;strong&gt;This requires a JRE compatible with &lt;a href="https://letsencrypt.org/docs/certificate-compatibility/#known-compatible"&gt;Let's Encrypt&lt;/a&gt;, e.g. Oracle JRE 8u101.&lt;/strong&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix problem with auto upgrade when using custom &lt;code&gt;JENKINS_HOME&lt;/code&gt; on Windows.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Administrative monitor did not detect when Tomcat's URL escaping does not permit forward slashes.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix broken UI for users with Discover permission when renaming a job.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Avoid code duplication using default methods.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.77
+</guid>
+<pubDate>
+Sun, 3 Sep 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.76</title>
+<link>
+https://jenkins.io/changelog//#v2.76
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Update Remoting from 3.10 to 3.11 to improve stability and diagnosability.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Major update of the Bulgarian translation.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Allow &lt;code&gt;EnvironmentContributingAction&lt;/code&gt; to support &lt;code&gt;Run&lt;/code&gt; in addition to &lt;code&gt;AbstractProject&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Updated parent POM; Jenkins core now requires Maven 3.3.9 or newer to build.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.76
+</guid>
+<pubDate>
+Sun, 27 Aug 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.75</title>
+<link>
+https://jenkins.io/changelog//#v2.75
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Update Windows service wrapper from 2.1.0 to 2.1.2 and Windows Agent Installer from 1.9 to 1.9.1.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Disable obsolete JNLP, JNLP2, and CLI protocols on new Jenkins installations during Setup Wizard.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Button to validate proxy configuration in Manage Plugins now works correctly with NTLM authorization.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.75
+</guid>
+<pubDate>
+Sun, 20 Aug 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.74</title>
+<link>
+https://jenkins.io/changelog//#v2.74
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Upgrade Stapler library from 1.250 to 1.252.
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Stapler 1.252: Prevent file handle leak in &lt;code&gt;LargeText#GzipAwareSession&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Prevent core or plugin code from mistakenly attempting to serialize jobs, builds, and users except in their intended top-level XML file positions, preventing a class of serious deserialization-related errors.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Stapler 1.252: Restore ability to attach views to interfaces (regression in Jenkins 2.46).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve Polish localization.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Log name of the executor thread that died to improve diagnosability.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent caching of the item categories list by the browser to prevent stale data.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update Agent Installer module to 1.6 for minor fixes and enhancements.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Show display name of the current view in window title.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Include culprits in XML and JSON API again (regression in 2.60).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Improve robustness of the reverse build trigger ("Build after other projects are built").
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Cleanup of Maven dependencies in Jenkins core, allowing plugins depending on this version or later to build without “upper bound” dependency warnings on recent Maven HPI Plugin releases.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.74
+</guid>
+<pubDate>
+Tue, 15 Aug 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.73</title>
+<link>
+https://jenkins.io/changelog//#v2.73
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Avoid unnecessary locking to improve performance related to actions.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve performance when reading the console text of a build.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add Polish translations for setup wizard.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Reliably close build log file when using chained &lt;code&gt;BuildListener&lt;/code&gt;s.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Modify the JNLPLauncher configuration page to work around regression in Docker Plugin (regression in 2.72).
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.73
+</guid>
+<pubDate>
+Sun, 6 Aug 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.72</title>
+<link>
+https://jenkins.io/changelog//#v2.72
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Enable Remoting work directories by default for newly created agents launched via JNLP (Java Web Start Launcher).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Always follow redirects for downloading update center metadata, so misbehaving plugins cannot break it.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Minor optimization to queue maintenance routines and printing of console notes, mainly for the benefit of Pipeline node blocks.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Don't monitor response time on offline agents.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.72
+</guid>
+<pubDate>
+Sun, 30 Jul 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.71</title>
+<link>
+https://jenkins.io/changelog//#v2.71
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Winstone 4.1: Add Jetty HTTP/2 connector and corresponding options for Winstone-Jetty.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Don't reload user records from disk unless explicitly requested to improve performance of user record access.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent &lt;tt&gt;NullPointerException&lt;/tt&gt; in &lt;code&gt;Jenkins#getRootURL()&lt;/code&gt; while the instance is not fully loaded yet.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Contributions to the PATH environment variable could result in malformed values on agents on a platform different from master's.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+JNLP for launching agents now requests Java 8.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent &lt;tt&gt;NullPointerException&lt;/tt&gt; when a previous completed build is missing for upstream culprits check.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Correctly show or suppress warnings about undefined parameters based on &lt;code&gt;hudson.model.ParametersAction.keepUndefinedParameters&lt;/code&gt; system property.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Internal: Delete obsolete SECURITY-144-compat exclusion that can break tests.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.71
+</guid>
+<pubDate>
+Sun, 23 Jul 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.70</title>
+<link>
+https://jenkins.io/changelog//#v2.70
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+Fix version number shown in 2.0 upgrade wizard.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.70
+</guid>
+<pubDate>
+Sun, 16 Jul 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.69</title>
+<link>
+https://jenkins.io/changelog//#v2.69
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+SSHD Module 2.0: Update from SSHD Core 0.14.0 to Apache MINA SSHD 1.6.0 in Jenkins core and Jenkins CLI.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+SSHD Module 2.0: Enable aes192ctr and aes256ctr ciphers if JVM supports unlimited-strength encryption.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.69
+</guid>
+<pubDate>
+Sun, 9 Jul 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.68</title>
+<link>
+https://jenkins.io/changelog//#v2.68
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Update Remoting from 3.7 to 3.10 adding opt-in support for work directories and improving logging in Jenkins agents.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+The &lt;code&gt;reload-configuration&lt;/code&gt; CLI command now waits until the reload is finished, and returns an error code if the reload failed.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Follow HTTP redirects while initiating CLI connection.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Add documentation for time zone specification for cron patterns (e.g. SCM polling).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Robustness improvements related to agent connections.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.68
+</guid>
+<pubDate>
+Sun, 2 Jul 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.67</title>
+<link>
+https://jenkins.io/changelog//#v2.67
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Enable simpler syntax for &lt;code&gt;upstream&lt;/code&gt; build trigger in pipelines.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Remove the "JNLP" protocol references from the TCP Agent Listener log messages.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Internal: Update Annotation Indexer to 1.12 to work around JRE bug in tests.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.67
+</guid>
+<pubDate>
+Sun, 25 Jun 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.66</title>
+<link>
+https://jenkins.io/changelog//#v2.66
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+When starting the &lt;code&gt;jenkins.war&lt;/code&gt; directly, properly check for Java 8 as minimum instead of Java 7 before proceeding.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Allow overriding the Jenkins session ID suffix so it doesn't change on every restart, possibly resulting in too many cookies.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix resource loading in plugins using the &lt;code&gt;PluginFirstClassLoader&lt;/code&gt;, e.g. loading Groovy classes from plugin resources.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent possible &lt;code&gt;NullPointerException&lt;/code&gt; when listing remote directories using the &lt;code&gt;FilePath#list()&lt;/code&gt; and &lt;code&gt;FilePath#listDirectories()&lt;/code&gt; APIs.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.66
+</guid>
+<pubDate>
+Sun, 18 Jun 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.65</title>
+<link>
+https://jenkins.io/changelog//#v2.65
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+Prevent &lt;code&gt;NullPointerException&lt;/code&gt; when calling &lt;code&gt;restart&lt;/code&gt; CLI command (regression in 2.57).
+
+&lt;/li&gt;
+&lt;li&gt;
+Major Bug:
+Packaging: Docker alpine image had a Jenkins-incompatible JDK installation (regression in 2.64).
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.65
+</guid>
+<pubDate>
+Sun, 11 Jun 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.64</title>
+<link>
+https://jenkins.io/changelog//#v2.64
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Moved agent port and protocol configuration out of "security" (authentication and authorization) block in Configure Global Security.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Add section headers for Markup Formatter and CSRF Protection in Configure Global Security form to make these options more obvious.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Use one-column layout for REST API documentation (&lt;tt&gt;.../api&lt;/tt&gt; URLs).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Update jnr-posix from 3.0.1 to 3.0.41 to pick up improvements and fixes in the POSIX platforms support.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Jenkins failed to perform some cleanup tasks, including saving the build queue, if stopped via REST &lt;tt&gt;/exit&lt;/tt&gt;, CLI &lt;tt&gt;shutdown&lt;/tt&gt;, or when restarting from &lt;em&gt;Install as Windows Service&lt;/em&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Don't check whether disabled administrative monitors are active or not on the &lt;em&gt;Manage Jenkins&lt;/em&gt; page.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Do not submit form when pressing &lt;kbd&gt;Enter&lt;/kbd&gt; in the plugin manager's filter field.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Plugin Development: Jenkins now no longer publishes a &lt;code&gt;war-for-test&lt;/code&gt; artifact. Plugins using this or a later version of Jenkins as baseline need to use plugin parent POM 2.30 or later.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.64
+</guid>
+<pubDate>
+Sun, 4 Jun 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.63</title>
+<link>
+https://jenkins.io/changelog//#v2.63
+</link>
+<description>
+&lt;ul&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.63
+</guid>
+<pubDate>
+Sun, 28 May 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.62</title>
+<link>
+https://jenkins.io/changelog//#v2.62
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Fixed Pipeline compatibility for a number of CLI commands (&lt;tt&gt;delete-builds&lt;/tt&gt;, &lt;tt&gt;list-changes&lt;/tt&gt;, &lt;tt&gt;console&lt;/tt&gt;, &lt;tt&gt;set-build-description&lt;/tt&gt;, and &lt;tt&gt;set-build-display-name&lt;/tt&gt;), as well as some issues affecting error reporting in other commands when used with Pipeline.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+If you have the Authorize Project plugin installed and configured, its configuration will now be treated as final with respect to the behavior of &lt;em&gt;Job/Build&lt;/em&gt; checks from &lt;strong&gt;Build other projects&lt;/strong&gt; and &lt;strong&gt;Build after other projects are built&lt;/strong&gt;. Formerly, if a &lt;strong&gt;Per-project configurable Build Authorization&lt;/strong&gt; was enabled globally but some projects did not specify an &lt;strong&gt;Authorization&lt;/strong&gt;, the two aforementioned checks would automatically fall back to checking as anonymous (typically denying build permission). To restore the former behavior, explicitly configure a &lt;strong&gt;Project default Build Authorization&lt;/strong&gt; to be &lt;strong&gt;Run as anonymous&lt;/strong&gt;. Note that this will affect all build-scoped permission checks, including for example &lt;em&gt;Agent/Build&lt;/em&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API: &lt;code&gt;Tasks.getAuthenticationOf&lt;/code&gt; now honors authentication contributed by &lt;code&gt;QueueItemAuthenticatorProvider&lt;/code&gt; extensions.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update WinP from 1.24 to 1.25 to improve performance and diagnostics of issues like &lt;a href="https://issues.jenkins-ci.org/browse/JENKINS-30782"&gt;JENKINS-30782&lt;/a&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix for &lt;code&gt;NullPointerException&lt;/code&gt; while initiating some SSH connections (regression in 2.59).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent &lt;code&gt;StackOverflowError&lt;/code&gt; in log recorder when Winstone-Jetty debug logging is enabled. (regression in 2.61)
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.62
+</guid>
+<pubDate>
+Sun, 21 May 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.61</title>
+<link>
+https://jenkins.io/changelog//#v2.61
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+Upgrade Groovy from 2.4.8 to 2.4.11.
+
+&lt;/li&gt;
+&lt;li&gt;
+Major RFE:
+Integration of Winstone 4.0: Upgrade bundled Jetty from 9.2.15.v20160210 to 9.4.5.v20170502. &lt;strong&gt;This removes support for the deprecated SPDY protocol. The &lt;tt&gt;--spdy&lt;/tt&gt; parameter has been removed accordingly and Jenkins may refuse to start if it's set.&lt;/strong&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Jetty 9.4.5:  Prevent the &lt;i&gt;400 Bad Host header&lt;/i&gt; error for &lt;code&gt;HttpChannelOverHttp&lt;/code&gt; when operating behind reverse proxy.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update the Mailer plugin version installed when updating from very old Jenkins releases to include the fix for SECURITY-372, the SSH Slaves plugin for SECURITY-161, and the Script Security plugin for SECURITY-258.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Freestyle projects may now list Pipeline jobs as downstream and trigger them, without needing to use the Parameterized Trigger plugin or reverse triggers ("Build after other projects are built").
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Define enabling/disabling in &lt;code&gt;ParameterizedJob&lt;/code&gt; rather than &lt;code&gt;AbstractProject&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Offer default methods on &lt;code&gt;ParameterizedJob&lt;/code&gt; to have less boilerplate code.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.61
+</guid>
+<pubDate>
+Sun, 14 May 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.60</title>
+<link>
+https://jenkins.io/changelog//#v2.60
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Update to Windows Service Wrapper 2.1.0 to support new features: &lt;tt&gt;download&lt;/tt&gt; command with authentication, flag for startup failure on &lt;tt&gt;download&lt;/tt&gt; error, Delayed Automatic Start mode.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Windows services: Add system property that allows disabling WinSW automatic upgrade on agents.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Windows services: Restore compatibility of the &lt;code&gt;WindowsSlaveInstaller#generateSlaveXml()&lt;/code&gt; method (regression in 2.50, no known external usages).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Windows services: Prevent fatal file descriptor leak when agent service installer fails to read data from the service &lt;tt&gt;startup.log&lt;/tt&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Use full display name for runs in RSS feed to restore the project name there (regression in 2.59).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Generalize the changelog API to support non-&lt;code&gt;AbstractBuild&lt;/code&gt; run types.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.60
+</guid>
+<pubDate>
+Wed, 10 May 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.59</title>
+<link>
+https://jenkins.io/changelog//#v2.59
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Move to latest version of Trilead to fix SSH connection issues following a previous Trilead upgrade.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Prevent Internet Explorer from caching AJAX requests using &lt;tt&gt;Cache-Control&lt;/tt&gt; header.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Properly fail with error when updating view with CLI using input of a different view type.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix &lt;tt&gt;AccessDeniedException&lt;/tt&gt; in "Build after other projects are built" when user has Discover permission but not Read.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Properly log failure due to empty archive in Pipeline.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent rare &lt;code&gt;NullPointerException&lt;/code&gt; if an admin user is created in the setup wizard after first disabling CSRF protection.
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.59
+</guid>
+<pubDate>
+Sun, 7 May 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.58</title>
+<link>
+https://jenkins.io/changelog//#v2.58
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Use build display names in RSS feed titles.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update the Trilead SSH library to get support of new Mac, Key, and Key Exchange Algorithms.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Migrate legacy users only once per restart to improve performance of the user retrieval logic.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Pick up the latest release of version-number library.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal: Refactor &lt;code&gt;ProcessTree.Windows&lt;/code&gt; logic to propagate errors.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.58
+</guid>
+<pubDate>
+Sun, 30 Apr 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.57</title>
+<link>
+https://jenkins.io/changelog//#v2.57
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Security:
+Important security fixes.
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.57
+</guid>
+<pubDate>
+Wed, 26 Apr 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.56</title>
+<link>
+https://jenkins.io/changelog//#v2.56
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+Plugins did not expect &lt;code&gt;InvalidPathException&lt;/code&gt; to be thrown in file-related methods, so wrap them in &lt;code&gt;IOException&lt;/code&gt; to restore behavior (regression in 2.55).
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Remove links in stack traces to the &lt;tt&gt;stacktrace.jenkins-ci.org&lt;/tt&gt; service that has been shut down.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+If an exception is thrown while rendering an HTTP response, just log the stack trace on the server side, without trying to send an error page to the client.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent &lt;code&gt;NullPointerException&lt;/code&gt; when a non-existent default view is specified in &lt;em&gt;Configure System&lt;/em&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Deleting jobs with running builds could result in &lt;code&gt;NullPointerException&lt;/code&gt; (regression in 2.55).
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.56
+</guid>
+<pubDate>
+Sun, 23 Apr 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.55</title>
+<link>
+https://jenkins.io/changelog//#v2.55
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Packaging: Debian package now requires Java 8. (causes regression since 2.54).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Added fine-grain logging of &lt;code&gt;FullDuplexHttpService&lt;/code&gt; to diagnose issues when establishing an HTTP Duplex connection.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Update LibZFS from 0.5 to 0.8 to fix compatibility issues with ZFS filesystem and illumos distributions.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Before deleting jobs, try to abort the running builds. Error will be thrown instead of the job deletion if its builds cannot be aborted.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Ensure that &lt;code&gt;Cloud.PROVISION&lt;/code&gt; is properly initialized during the configuration loading.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix log message formatting when migrating `AllView` names due to &lt;a href="https://issues.jenkins-ci.org/browse/JENKINS-38606"&gt;JENKINS-38606"&lt;/a&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Setup wizard gets into bad state when failures like network issues happen.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Catch and log &lt;code&gt;RuntimeException&lt;/code&gt; in &lt;code&gt;Computer#setNode()&lt;/code&gt; when updating the Computer list.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+SSH CLI client authenticator 1.4. Add missing SSH Public Key field validation in user configuration.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API:  SSH CLI client authenticator 1.3.  Expose &lt;code&gt;PublicKeySignatureWriter&lt;/code&gt; to plugins.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.55
+</guid>
+<pubDate>
+Sat, 15 Apr 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.54</title>
+<link>
+https://jenkins.io/changelog//#v2.54
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major RFE:
+&lt;strong&gt;Jenkins (master and agents) now requires Java 8 to run.&lt;/strong&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+Major RFE:
+Non-Remoting-based CLI.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Disable SSH server by default.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Use case-insensitive search by default for new and anonymous users.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Introduce status indicator for skipped download job.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Properly handle saving system configuration when disabling all, or all but one, administrative monitors.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+When validating a cron expression, consider the specified time zone.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.54
+</guid>
+<pubDate>
+Sun, 9 Apr 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.53</title>
+<link>
+https://jenkins.io/changelog//#v2.53
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Update to Windows Service Wrapper 2.0.3 and Windows Agent Installer 1.8 to prevent conversion of environment variables to lowercase in the agent executable, regression in Jenkins 2.50.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+GC Performance: Avoid using &lt;code&gt;FileInputStream&lt;/code&gt; and &lt;code&gt;FileOutputStream&lt;/code&gt; in the core codebase.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Packaging: Do not invoke recursive &lt;code&gt;chown&lt;/code&gt; in &lt;code&gt;JENKINS_HOME&lt;/code&gt; during the RPM post-install step unless owned by a different user.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API: Add support of a new full screen mode in &lt;code&gt;layout.jelly&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.53
+</guid>
+<pubDate>
+Sun, 2 Apr 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.52</title>
+<link>
+https://jenkins.io/changelog//#v2.52
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+&lt;code&gt;Computer#addAction&lt;/code&gt; would throw an &lt;code&gt;UnsupportedOperationException&lt;/code&gt; since Jenkins 2.30. Such a call site was released in SSH Slaves Plugin 1.15 for SECURITY-161.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update German localization.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Removed localizations with very low coverage: Albanian, Basque, Belarusian, Bengali, Esperanto, Galician, Georgian, Gujarati, Hindi, Icelandic, Indonesian, Irish, Kannada, Macedonian, Marathi, Mongolian, Occitan, Punjabi, Sinhala, Tamil, Telugu, Thai.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.52
+</guid>
+<pubDate>
+Sun, 26 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.51</title>
+<link>
+https://jenkins.io/changelog//#v2.51
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Major Bug:
+Restore Windows Slaves Plugin 1.2 compatibility by restoring &lt;code&gt;windows-service/jenkins.xml&lt;/code&gt;, regression in 2.50.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+SSHD 1.10: Move SSH server port configuration to security options page.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update Russian localization.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Update French localization.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Internal: Make sure system threads run as SYSTEM.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API: Add the ability for &lt;code&gt;ItemListener&lt;/code&gt; to veto copy operations.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Internal API: Make &lt;code&gt;Run#compareTo&lt;/code&gt; work across jobs.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API: Save &lt;code&gt;Jenkins&lt;/code&gt; after calling &lt;code&gt;setSecurityRealm&lt;/code&gt; or &lt;code&gt;setAuthorizationStrategy&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API: Annotate &lt;code&gt;PermissionGroup#owner&lt;/code&gt; &lt;code&gt;@Nonnull&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.51
+</guid>
+<pubDate>
+Sun, 19 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.50</title>
+<link>
+https://jenkins.io/changelog//#v2.50
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Allow searching by build parameter values in the &lt;code&gt;Build History&lt;/code&gt; widget.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Searching in the &lt;code&gt;Build History&lt;/code&gt; widget takes into account user preferences (case sensitivity by default).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+When creating temporary files, use the &lt;code&gt;jenkins&lt;/code&gt; prefix instead of the old &lt;code&gt;hudson&lt;/code&gt; one.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix relative links in the SCM polling administrative monitor.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Update Remoting from &lt;code&gt;3.5&lt;/code&gt; to &lt;code&gt;3.7&lt;/code&gt; in order to prevent file descriptor leaks on agents in the case of multiple connection attempts.
+
+&lt;/li&gt;
+&lt;li&gt;
+Major RFE:
+Upgrade the Windows Agent Installer module from &lt;code&gt;1.6&lt;/code&gt; to &lt;code&gt;1.7&lt;/code&gt;. This change picks major updates in Windows service management logic. &lt;strong&gt;This fix caused a critical regression in the  &lt;a href="https://plugins.jenkins.io/windows-slaves"&gt;Windows Slaves Plugin&lt;/a&gt;  (&lt;a href="https://issues.jenkins-ci.org/browse/JENKINS-42724"&gt;JENKINS-42724&lt;/a&gt;). Update to Windows Slaves 1.3.1 in order to get the fix applied. &lt;/strong&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+Major RFE:
+Windows services: Upgrade the bundled &lt;a href="https://github.com/kohsuke/winsw"&gt;Windows Service Wrapper&lt;/a&gt; from &lt;code&gt;1.18&lt;/code&gt; to &lt;code&gt;2.0.2&lt;/code&gt;. 
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Windows services: Enable &lt;a href="https://github.com/kohsuke/winsw/blob/master/doc/extensions/runawayProcessKiller.md"&gt;Runaway Process Killer&lt;/a&gt;  by default in new Agent and Master installations.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Windows services: Enable auto-upgrade of Remoting on newly installed agents if they are connected by HTTPS.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Windows services: Add support of shared directories mapping in Windows agent services. 
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Windows services: Change the default Agent service display name prefix to &lt;code&gt;Jenkins agent %ID%&lt;/code&gt;.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Windows services: Prevent agent connection reset issues when WinSW gets terminated due to the system shutdown.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Windows services: Integrate various stability and performance fixes in &lt;a href="https://github.com/kohsuke/winsw"&gt;Windows Service Wrapper&lt;/a&gt;  from &lt;code&gt;1.18&lt;/code&gt; to &lt;code&gt;2.0.2&lt;/code&gt;. There are many fixes around configuration options and process termination. 
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Prevent file descriptor leaks when Windows Service installer fails to read data from the service startup log.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Select controls in Jenkins Web UI now show the spinner icon while waiting for the list of possible options during AJAX. requests.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Improve plugin access performance in the default &lt;code&gt;PluginManager&lt;/code&gt; implementation.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Internal API:  Allow providing a custom task name in Run/Schedule UI via the &lt;code&gt;AlternativeUiTextProvider&lt;/code&gt; extension.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Search results page did not correctly encode query parameters.
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.50
+</guid>
+<pubDate>
+Sat, 11 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.49</title>
+<link>
+https://jenkins.io/changelog//#v2.49
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+Do not attempt to find the next occurrence of an impossible date such as June 31st in validation of trigger schedules.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Remove invalid translations in Slovene
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.49
+</guid>
+<pubDate>
+Sun, 5 Mar 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.48</title>
+<link>
+https://jenkins.io/changelog//#v2.48
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+RFE:
+Upgrade Apache Commons Collections to version 3.2.2. &lt;strong&gt;Note:&lt;/strong&gt; Jenkins has been using a blacklist to prevent exploiting the serialization vulnerability in 3.2.1 since before 3.2.2 was released.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Use redirect URLs on jenkins.io instead of linking to wiki pages directly, allowing future reorganization of documentation without breaking links in Jenkins.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Fix performance issue in deduplication of lists of tool installers.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Use of the remote API to create items in views (&lt;code&gt;/view/…/createItem&lt;/code&gt;) didn't actually add items to views since Jenkins 2.22.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Do not display a warning when an SCM trigger has no schedules (either to disable SCM post-commit hooks, or to enable them without polling).
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Developer: Allow referencing radio buttons in &lt;code&gt;f:validateButton&lt;/code&gt; validation methods.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.48
+</guid>
+<pubDate>
+Sun, 26 Feb 2017 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<title>Jenkins 2.47</title>
+<link>
+https://jenkins.io/changelog//#v2.47
+</link>
+<description>
+&lt;ul&gt;
+&lt;li&gt;
+Bug:
+Update Groovy to 2.4.8 to address memory leak issue. &lt;strong&gt;Do not use this version if you are running Pipeline builds unless you also update &lt;em&gt;Pipeline: Groovy&lt;/em&gt; to 2.28 or higher.&lt;/strong&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Windows service restart did not retain build queue.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Exceptions during Jenkins cleanup step should not block restart.
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Upgrade Remoting to version 3.5.
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Remoting 3.5: Remoting clients now accept lowercase (HTTP 2) headers sent by reverse proxies.
+
+&lt;/li&gt;
+&lt;li&gt;
+RFE:
+Remoting 3.5: Add option to specify the Remoting protocol to use on the client.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Remoting 3.5: Stability improvements.
+
+&lt;/li&gt;
+&lt;li&gt;
+Bug:
+Developer: Snapshot builds of plugins that had dependencies on other snapshot builds were not having their version numbers compared correctly.
+
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+<guid isPermaLink="false">
+jenkins-2.47
+</guid>
+<pubDate>
+Sun, 19 Feb 2017 00:00:00 +0000
+</pubDate>
+</item>
+
+<!-- ending partial changelog-changes.xml.haml -->
+</channel>
+</rss>

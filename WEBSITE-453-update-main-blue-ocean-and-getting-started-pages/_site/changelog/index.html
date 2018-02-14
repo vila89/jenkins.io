@@ -1,0 +1,3901 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Changelog
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Changelog" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Changelog" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Changelog" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/changelog/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Changelog" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<style>
+  .container .row.body {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
+  .toc {
+      float: right;
+  }
+</style>
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('.container .row.body h' + i);
+    }
+  })
+</script>
+<div class="container">
+<div class="row body">
+<div class="col-md-12">
+<h1>
+Changelog
+</h1>
+<!-- starting partial changelog-header.html -->
+<link rel="stylesheet" TYPE="text/css" href="/css/changelog.css">
+<div id="head"></div>
+<script type="text/javascript" src="/files/rate.js"></script>
+
+<div id="ratings"></div>
+<div class="w-100 text-right">
+    <div class="iconlegend">
+        Legend:
+        <ul class="image">
+            <li class="security">security fix</li>
+            <li class="major bug">major bug fix</li>
+            <li class="bug">bug fix</li>
+            <li class="major rfe">major enhancement</li>
+            <li class="rfe">enhancement</li>
+        </ul>
+    </div>
+</div>
+
+<div class="w-100 text-right" style="margin: 10px 0;">
+    <div class="iconlegend">
+        Community feedback:
+        <ul class="feedback">
+            <li class="sunny">no major issues</li>
+            <li class="cloudy">notable issues</li>
+            <li class="storm">required rollback</li>
+        </ul>
+    </div>
+</div>
+
+<div class="w-100 text-right" style="margin: 10px 0;">
+    <a href="rss.xml">
+        <img src="/images/changelog/feed-icon.png">
+        RSS
+    </a>
+</div>
+
+<script>
+    $(document).ready(function() {
+    loaddata(this);
+});
+</script>
+
+<!-- ending partial changelog-header.html -->
+<div class="ratings">
+<h3 id="v2.106">
+What's new in 2.106 (2018-02-11)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Update Remoting library from 3.16 to 3.17 to improve diagnostic logging for channel read/write events and JEP-200 related class filtering.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-27035">issue 27035</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-49027">issue 49027</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#317">full changelog</a>)
+</li>
+<li class="rfe">
+Integrate SSHD module 2.4 which updates Apache Mina SSHD Core from 1.6.0 to 1.7.0.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3278">pull 3278</a>,&nbsp;<a href="https://github.com/jenkinsci/sshd-module/blob/master/CHANGELOG.md#24">SSHD module changelog</a>)
+</li>
+<li class="rfe">
+Internal/API: Add <code>DataBoundConstructor</code> to <code>LegacySecurityRealm</code> to facilitate reflective instantiation in Jenkins-related tools and frameworks.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3279">pull 3279</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.105">
+What's new in 2.105 (2018-02-04)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+When Jenkins fails to load plugins, show failures that users need to take action on separate from those due to other plugins failing to load.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3256">pull 3256</a>)
+</li>
+<li class="rfe">
+Upgrade Executable War from 1.36 to 1.37 to allow supplying <code>jenkins.war</code> command-line arguments via standard input using the <code>--paramsFromStdIn</code> parameter.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3223">pull 3223</a>,&nbsp;<a href="https://github.com/jenkinsci/extras-executable-war#parameters-from-stdin">documentation</a>)
+</li>
+<li class="rfe">
+Jenkins now creates XML 1.1 files to be more accepting of unusual contents.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48463">issue 48463</a>)
+</li>
+<li class="bug">
+Form validation for number of executors now properly shows validation errors and user-friendly message on form submission.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47793">issue 47793</a>)
+</li>
+<li class="bug">
+Ensure that threads for background tasks cannot be created with a custom classloader to prevent possible Groovy memory leaks.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-49206">issue 49206</a>)
+</li>
+<li class="bug">
+Upgrade Executable War from 1.36 to 1.37 to prevent multiple copies of <code>winstone-*.jar</code> in the temp folder from using up disk space needlessly.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-22088">issue 22088</a>)
+</li>
+<li class="bug">
+Update to task reactor version 1.5 to prevent hanging of Jenkins on startup/reload when an initialization task throws an unhandled exception.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48725">issue 48725</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/lib-task-reactor/blob/master/CHANGELOG.md#version-15">full changelog</a>)
+</li>
+<li class="rfe">
+Developer: Introduce <code>ACL#lambda</code> convenience method.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3260">pull 3260</a>,&nbsp;<a href="http://javadoc.jenkins-ci.org/hudson/security/ACL.html#method.summary">Javadoc</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.104">
+What's new in 2.104 (2018-01-28)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Whitelist additional safe Java platform types for use in XStream (XML serialization) and Remoting (agent communication).
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3251">pull 3251</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3252">pull 3252</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3253">pull 3253</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-49070">issue 49070</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-49071">issue 49071</a><a></a>)
+</li>
+<li class="rfe">
+Remove support for unbounded number of SCM polling threads. Previously, the default was infinite and could be set to between 10 and 100. Existing installations with unbounded SCM polling threads will now use the default of 10, and it is no longer possible to use a value outside of this range.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3258">pull 3258</a>)
+</li>
+<li class="rfe">
+Define a minimum required version of the Remoting library (agent communication) and print warnings when an older version is connecting.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3250">pull 3250</a>)
+</li>
+<li class="rfe">
+Improve robustness in case of faulty <code>SCM#guessBrowser</code> implementations.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3267">pull 3267</a>)
+</li>
+<li class="rfe">
+Improve error message when failing to read some files to actually mention the file name.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-49060">issue 49060</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-49112">issue 49112</a><a></a>)
+</li>
+<li class="bug">
+Restore <em>Manage Jenkins</em> submenu in the context menu accessible from the breadcrumb (regression in 2.103).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-49129">issue 49129</a>)
+</li>
+<li class="bug">
+Fix <code>MalformedInputException</code> or <code>UnmappableCharacterException</code> when reading the log file after finishing a build (regression in 2.102).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-49112">issue 49112</a>)
+</li>
+<li class="bug">
+Jenkins 2.102 and later could fail to start or run properly when loaded inside certain containers, including old versions of Tomcat.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-49147">issue 49147</a>)
+</li>
+<li class="bug">
+Don't attempt to export information about arbitrary offline causes as part of the <code>/computer/(name)/api</code> output, which could result in errors.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-24452">issue 24452</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.103">
+What's new in 2.103 (2018-01-21)
+</h3>
+<div style="margin: 10px; padding: 10px; background-color: #FFFFCE;">
+JEP-200: &quot;Switch Remoting/XStream blacklist to a whitelist&quot; has been integrated into 2.102. This change implies a HIGH RISK of regressions in plugins. See <a href="/blog/2018/01/13/jep-200/">this blogpost</a> for list of plugins known to be affected, with instructions how to resolve possible problems.
+
+</div>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Whitelist additional safe types for use in XStream (XML serialization) and Remoting (agent communication).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48946">issue 48946</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-49000">issue 49000</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-49025">issue 49025</a><a></a>)
+</li>
+<li class="rfe">
+Re-style the Manage Jenkins page, including administrative monitors.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43786">issue 43786</a><a></a>,&nbsp;<a href="https://jenkins.io/blog/2018/01/21/overhaul-of-manage-jenkins-page/">blog post</a>)
+</li>
+<li class="rfe">
+Make Blue Ocean work on Wildfly by excluding its outdated Jackson implementation from the Jenkins class path.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48957">issue 48957</a>)
+</li>
+<li class="bug">
+Do not downgrade detached plugins when upgrading Jenkins while its previous version was not properly recorded.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48899">issue 48899</a>)
+</li>
+<li class="bug">
+Restore file permissions granted to <em>group</em> and <em>other</em> for file created by Jenkins (regression in 2.93).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48407">issue 48407</a>)
+</li>
+<li class="bug">
+Fix a race condition in <code>Initializer</code> implementations creating <code>Item</code>s that resulted in their deletion.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47406">issue 47406</a>)
+</li>
+<li class="bug">
+A <code>ClassCastException</code> or <code>NoSuchMethodException</code> could under certain circumstances mask the actual error when loading erroneous data from an XML file.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-49054">issue 49054</a>)
+</li>
+<li class="bug">
+Properly add apostrophes to several localized strings that were missing them before.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3203">pull 3203</a>)
+</li>
+<li class="rfe">
+Developer: Improve detection of current plugin's or test's classes for exclusion from JEP-200 filtering.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3237">pull 3237</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.102">
+What's new in 2.102 (2018-01-14)
+</h3>
+<div style="margin: 10px; padding: 10px; background-color: #FFFFCE;">
+JEP-200: &quot;Switch Remoting/XStream blacklist to a whitelist&quot; has been integrated to this release. This change implies a HIGH RISK of regressions in plugins. See <a href="/blog/2018/01/13/jep-200/">this blogpost</a> for list of plugins known to be affected, with instructions how to resolve possible problems.
+
+</div>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Switch Remoting/XStream blacklist to a whitelist.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47736">issue 47736</a><a></a>,&nbsp;<a href="/blog/2018/01/13/jep-200/">upgrade guidelines for admins and plugin maintainers</a>,&nbsp;<a href="https://wiki.jenkins.io/display/JENKINS/Plugins+affected+by+fix+for+JEP-200">list of affected plugins</a>)
+</li>
+<li class="rfe">
+Update Jenkins Remoting from 3.15 to 3.16.
+
+(<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#316">full changelog</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47736">issue 47736</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48686">issue 48686</a><a></a>)
+</li>
+<li class="rfe">
+Limit which section headers are added to the breadcrumb config outline.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48773">issue 48773</a>)
+</li>
+<li class="rfe">
+Reduce memory consumption for concurrent jobs when retrieving cause of blockage.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3227">pull 3227</a>)
+</li>
+<li class="rfe">
+Introduce new <code>hudson.lifecycle.ExitLifecycle</code> to exit instead of restart.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47043">issue 47043</a><a></a>,&nbsp;<a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">Jenkins features controlled by system properties</a>)
+</li>
+<li class="bug">
+<code>AtomicFileWriter</code> was not fully atomic. Now it uses a <code>FileChannel</code> internally and forces a disk sync when committing.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34855">issue 34855</a>)
+</li>
+<li class="rfe">
+Developer: Add a constructor to <code>ToolDescriptor</code> so that subclasses are not required to be an inner class of their <code>Describable</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3220">pull 3220</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.101">
+What's new in 2.101 (2018-01-07)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Log EOF exceptions on a <code>FINE</code> level instead of <code>WARNING</code> when the Jetty connection is closed by peer.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3214">pull 3214</a>)
+</li>
+<li class="bug">
+Fix HTTP 404 error when clicking on <em>New View</em> sidebar link from another view.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48447">issue 48447</a>)
+</li>
+<li class="rfe">
+Improve Chinese and French localizations.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3209">pull 3209</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3204">pull 3204</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3216">pull 3216</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3179">pull 3179</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.100">
+What's new in 2.100 (2018-01-03)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Restore binary compatibility with agents running Remoting versions older than 3.15 (regression in 2.98).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48761">issue 48761</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48754">issue 48754</a><a></a>,&nbsp;<a href="https://groups.google.com/forum/#!topic/jenkinsci-dev/-VQ5YU0yYhg">Retrospective thread in the developer mailing list</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.99">
+What's new in 2.99 (2017-12-31)
+</h3>
+<div style="margin: 10px; padding: 10px; background-color: #FFFFCE;">
+The release introduced a serious regression (JENKINS-48761). We recommend upgrading to 2.100 or updating Remoting on agents to 3.15.
+
+</div>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Updating Jenkins jobs and views by XML left fields at their old value if not defined in the new XML.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-21017">issue 21017</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.98">
+What's new in 2.98 (2017-12-24)
+</h3>
+<div style="margin: 10px; padding: 10px; background-color: #FFFFCE;">
+The release introduced a serious regression (JENKINS-48761). We recommend upgrading to 2.100 or updating Remoting on agents to 3.15.
+
+</div>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Update Remoting from 3.14 to 3.15 to fix several issues.
+
+(<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#315">full changelog</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-37566">issue 37566</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-37670">issue 37670</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-38696">issue 38696</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-46724">issue 46724</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47965">issue 47965</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48055">issue 48055</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48130">issue 48130</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48133">issue 48133</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48309">issue 48309</a><a></a>)
+</li>
+<li class="bug">
+Make the system property <code>hudson.consoleTailKB</code> actually work.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48593">issue 48593</a><a></a>,&nbsp;<a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">Jenkins features controlled by system properties</a>)
+</li>
+<li class="rfe">
+Developer: <code>Jenkins#getInstance()</code> is now deprecated as its semantics have been a source of confusion for some time. Use <code>#get()</code> in typical cases and <code>Jenkins#getInstanceOrNull()</code> in rare cases (see Javadoc).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48638">issue 48638</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.97">
+What's new in 2.97 (2017-12-19)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Fix regression in 2.96 that caused a downgrade of Script Security when upgrading Jenkins.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48604">issue 48604</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.96">
+What's new in 2.96 (2017-12-17)
+</h3>
+<div style="margin: 10px; padding: 10px; background-color: #FFFFCE;">
+A bug introduced in Jenkins 2.96 will downgrade Script Security Plugin to version 2.18.1, possibly resulting in cascading failures to load other plugins (and reintroducing security issues). We recommend updating Script Security Plugin to its newest release and immediately restarting Jenkins to resolve this issue.
+
+</div>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Make sure detached plugins (plugins whose functionality used to be part of Jenkins itself) are installed when upgrading Jenkins past the version at which the plugin was detached.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48365">issue 48365</a>)
+</li>
+<li class="rfe">
+Do not require CSRF crumb to be provided when the request is authenticated using API token.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-22474">issue 22474</a>)
+</li>
+<li class="rfe">
+Improve robustness and error handling of various file operations by switching to NIO.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47324">issue 47324</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-48405">issue 48405</a><a></a>)
+</li>
+<li class="rfe">
+Improve Chinese translation.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3176">pull 3176</a>)
+</li>
+<li class="bug">
+Update Stapler from 1.253 to 1.254 to make the form that shows up when a URL requiring <code>POST</code> is accessed using a different HTTP verb work with CSRF protection enabled.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34254">issue 34254</a><a></a>,&nbsp;<a href="https://github.com/stapler/stapler/blob/master/CHANGELOG.md#1254">Stapler changelog</a>)
+</li>
+<li class="bug">
+Fix a performance regression in Jenkins 2.86 due to lock contention in <code>ExtensionList</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48505">issue 48505</a>)
+</li>
+<li class="bug">
+Trigger <code>SecurityListener#loggedIn</code> events on programmatic login during self-registration when using <code>HudsonPrivateSecurityRealm</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48383">issue 48383</a>)
+</li>
+<li class="rfe">
+Developer: Capture more authentication-related events in <code>SecurityListener</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-27027">issue 27027</a>)
+</li>
+<li class="rfe">
+Developer: Deprecate <code>hudson.util.Service</code> in favor of Java's <code>ServiceLoader</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3191">pull 3191</a>)
+</li>
+<li class="rfe">
+Developer: Introduce <code>Cause.UserIdCause(String)</code> constructor, which allows creating causes for specified users without switching the user context.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3162">pull 3162</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.95">
+What's new in 2.95 (2017-12-14)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="security">
+Security fixes.
+
+(<a href="/security/advisory/2017-12-14/">security advisory</a>,&nbsp;<a href="/blog/2017/12/14/security-update/">announcement blog post</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.94">
+What's new in 2.94 (2017-12-11)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Export <tt>assignedLabels</tt> for agents and <tt>labelExpression</tt> for applicable job types in remote API.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-25286">issue 25286</a>)
+</li>
+<li class="rfe">
+Optimization: Don't consult the authorization strategy about whether the internal <tt>SYSTEM</tt> pseudo-user has a given permission.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-20474">issue 20474</a>)
+</li>
+<li class="rfe">
+Update SSHD Module 2.0 to 2.3 to fire authentication events in <tt>SecurityListener</tt>s when a user connects using SSH.
+
+(<a href="https://github.com/jenkinsci/sshd-module/blob/master/CHANGELOG.md">changelog</a>)
+</li>
+<li class="bug">
+The setup wizard is now resumed upon restart if it hasn't been completed yet, instead of showing the regular login screen (regression in 2.81).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47439">issue 47439</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.93">
+What's new in 2.93 (2017-12-03)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Use Java NIO to read and write Unix file permissions by default. The previous behavior can be restored by setting the Java system property <code>hudson.Util.useNativeChmodAndMode</code> to <code>true</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-36088">issue 36088</a><a></a>,&nbsp;<a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">Jenkins features controlled by system properties</a>)
+</li>
+<li class="rfe">
+Better handling of certain unreproducible XML file load/save errors.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3167">pull 3167</a>)
+</li>
+<li class="rfe">
+Improve user lookup performance, for example from Git changelog calculation.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47429">issue 47429</a>)
+</li>
+<li class="rfe">
+Reduce memory usage when scheduling pipelines on big clusters.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48348">issue 48348</a>)
+</li>
+<li class="rfe">
+Use atomic file moves if available on the underlying file system from <code>AtomicFileWriter</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34855">issue 34855</a>)
+</li>
+<li class="bug">
+Prevent setup wizard from hanging when the two provided passwords differ, instead show a validation error.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48080">issue 48080</a>)
+</li>
+<li class="rfe">
+Developer: Add <code>ItemGroup#allItems</code> and similar default methods to <code>ItemGroup</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3148">pull 3148</a>)
+</li>
+<li class="rfe">
+Developer: Add default implementations of deprecated methods to <code>BuildableItem</code> and <code>Item</code> so they don't need to be implemented.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3142">pull 3142</a>)
+</li>
+<li class="rfe">
+Internal: Add documentation and convenience methods for the <code>User.CanonicalIdResolver</code> extension point.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3140">pull 3140</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.92">
+What's new in 2.92 (2017-11-26)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Revert internal change that broke assumption in <code>ruby-runtime</code> in 2.91, impacting plugins based on it.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48116">issue 48116</a>)
+</li>
+<li class="rfe">
+Improve UI performance with long list of running builds by caching the estimated duration.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48350">issue 48350</a>)
+</li>
+<li class="rfe">
+Cache permission names, allowing Jenkins to recover faster after "stop-the-world" Java GC pauses.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48349">issue 48349</a>)
+</li>
+<li class="bug">
+Prevent potential <code>NullPointerException</code> when migrating the default "All View" name for a "My Views" user property.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-48157">issue 48157</a>)
+</li>
+<li class="rfe">
+Developer: Add <code>AccessControlled#hasPermission(Authentication, Permission)</code> for convenience.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3149">pull 3149</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.91">
+What's new in 2.91 (2017-11-19)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Use Java NIO library instead of native code to create and detect symbolic links and Windows junctions to improve compatibility and robustness.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-36088">issue 36088</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-39179">issue 39179</a><a></a>)
+</li>
+<li class="bug">
+Prevent concurrent installation of Maven on the same node to prevent problems.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34138">issue 34138</a>)
+</li>
+<li class="rfe">
+Developer: Deprecate the ambiguous <code>User#getUser(String)</code> in favor of the <code>User#getById()</code> or the new <code>User#getOrCreateByIdOrFullName()</code> methods.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47718">issue 47718</a>)
+</li>
+<li class="rfe">
+Developer: Implement default methods in <code>TaskListener</code> and <code>BuildListener</code> interfaces so they don't have to be implemented in subclasses.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3122">pull 3122</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.90">
+What's new in 2.90 (2017-11-12)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Recover from legacy user configuration folders with <code>$</code> characters that are not part of hex escape sequences. (Regression in 2.89)
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47909">issue 47909</a>)
+</li>
+<li class="major bug">
+Fix <em>Download from java.sun.com</em> installation method for JDK for downloads requiring an Oracle login after change to the Oracle site (again).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47448">issue 47448</a>)
+</li>
+<li class="rfe">
+Update Remoting from 3.13 to 3.14 in order to apply various performance and stability improvements.
+
+(<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#314">full changelog</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-37566">issue 37566</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-45294">issue 45294</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47425">issue 47425</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47901">issue 47901</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47942">issue 47942</a><a></a>)
+</li>
+<li class="rfe">
+Add option to trim specified string parameter values.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47115">issue 47115</a>)
+</li>
+<li class="rfe">
+Update Windows Agent Installer from 1.9.1 to 1.9.2: Do not try to update <code>jenkins-slave.exe</code> on Unix agents when they connect.
+
+(<a href="https://github.com/jenkinsci/windows-slave-installer-module/blob/master/CHANGELOG.md#192">full changelog</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47015">issue 47015</a><a></a>)
+</li>
+<li class="rfe">
+Add a note explaining that the nodes count in label selection does not take into account permissions or other plugins.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47940">issue 47940</a>)
+</li>
+<li class="rfe">
+Improve Chinese localization.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3127">pull 3127</a>)
+</li>
+<li class="rfe">
+Updated default workspace directory naming for new installations to use filesystem-safe variable <code>ITEM_FULL_NAME</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-JENKINS-12251">issue JENKINS-12251</a>)
+</li>
+<li class="bug">
+Fix icon for Manage Jenkins link in the sidebar of the Global Tool Configuration form.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3139">pull 3139</a>)
+</li>
+<li class="bug">
+Prevent caching of captcha on the login form.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43852">issue 43852</a>)
+</li>
+<li class="bug">
+Ensure that the <em>authenticated</em> group is not added twice to the authorities for a user.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47768">issue 47768</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.89">
+What's new in 2.89 (2017-11-08)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="security">
+Security fixes.
+(<a href="https://jenkins.io/security/advisory/2017-11-08/">security advisory</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.88">
+What's new in 2.88 (2017-11-05)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Add sidebar link to create new view.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-6290">issue 6290</a>)
+</li>
+<li class="rfe">
+Improve robustness of the <code>/user/(username)/configure</code> page when a <code>UserProperty</code> is missing its descriptor.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45977">issue 45977</a>)
+</li>
+<li class="rfe">
+Improve Russian localization.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3113">pull 3113</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3115">pull 3115</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.87">
+What's new in 2.87 (2017-10-29)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Stapler library upgraded from 1.252 to 1.253 with Servlet 3.1 support, improved Blue Ocean performance and changes of interest to plugin developers.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-37062">issue 37062</a><a></a>,&nbsp;<a href="https://github.com/stapler/stapler/blob/master/CHANGELOG.md#1253">Stapler changelog</a>)
+</li>
+<li class="rfe">
+Commons Codec library upgraded from 1.8 to 1.9.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3033">pull 3033</a>)
+</li>
+<li class="rfe">
+Agents JVM must be 1.8+ and a clear message is shown in connection logs if it is not.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44851">issue 44851</a>)
+</li>
+<li class="rfe">
+Major improvement to Italian localization.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3075">pull 3075</a>)
+</li>
+<li class="rfe">
+Improvements to Chinese localization.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3104">pull 3104</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/3105">pull 3105</a>)
+</li>
+<li class="rfe">
+Retrieving the list of installed plugins now consumes much less memory.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47713">issue 47713</a>)
+</li>
+<li class="bug">
+When the Jenkins root URL was not configured, the <code>login</code> CLI command did not work.
+
+</li>
+<li class="bug">
+Allow users with <code>Job/Cancel</code> permission to abort pipeline builds from the builds history widget.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3101">pull 3101</a>)
+</li>
+<li class="bug">
+Jobs no longer disappear from NestedView lists after renaming.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-25276">issue 25276</a>)
+</li>
+<li class="rfe">
+Internal: Move metadata about plugins split from core into a resource file.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3110">pull 3110</a>)
+</li>
+<li class="rfe">
+Developer: Add <code>ExtensionList#lookupSingleton</code> convenience method.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3021">pull 3021</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.86">
+What's new in 2.86 (2017-10-22)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+<em>Launch agent via execution of command on the master</em> has been moved to a new <em>Command Launcher</em> plugin and integrated with the <em>Script Security</em> plugin.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47393">issue 47393</a><a></a>,&nbsp;<a href="https://plugins.jenkins.io/command-launcher">Command Launcher plugin site entry</a>,&nbsp;<a href="https://jenkins.io/security/advisory/2017-10-11/#arbitrary-shell-command-execution-on-master-by-users-with-agent-related-permissions">related security advisory</a>)
+</li>
+<li class="rfe">
+Add link to recursive <code>cc.xml</code> output on build history page.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-36282">issue 36282</a>)
+</li>
+<li class="major bug">
+Fix <em>Download from java.sun.com</em> installation method for JDK for downloads requiring an Oracle login after change to the Oracle site.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47448">issue 47448</a>)
+</li>
+<li class="bug">
+<code>Secret</code> threw <code>ArrayIndexOutOfBoundsException</code> trying to decrypt <code>{}</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47500">issue 47500</a>)
+</li>
+<li class="bug">
+Race conditions in agents going offline could result in an exception when picking a workspace for a build.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47455">issue 47455</a>)
+</li>
+<li class="bug">
+Prevent duplicated elements with incorrect URL when using the search on Dashboard View plugin based views.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-35459">issue 35459</a>)
+</li>
+<li class="bug">
+<code>StackOverflowError</code> thrown under some conditions when using Pipeline on 2.85.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47517">issue 47517</a>)
+</li>
+<li class="bug">
+Prevent <code>NullPointerException</code> updating a folder with a primary view specified in Folders plugin 6.2.0.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47416">issue 47416</a>)
+</li>
+<li class="rfe">
+Developer: Add an empty default implementation for previously <code>abstract</code> methods of <code>SecurityListener</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3077">pull 3077</a>)
+</li>
+<li class="rfe">
+Developer: Deprecate <code>hudson.util.Memoizer</code> and replace its usage in core.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3091">pull 3091</a>)
+</li>
+<li class="bug">
+Developer: <code>Slave.JnlpJar.getURL</code> did not work in some modes when core had a snapshot dependency on the Remoting library.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3069">pull 3069</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.85">
+What's new in 2.85 (2017-10-15)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Upgrade Remoting from 3.12 to 3.13.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47132">issue 47132</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-38711">issue 38711</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#313">full changelog</a>)
+</li>
+<li class="rfe">
+Restart agent communication related threads on both master and agents when encountering an unhandled exception, if possible, to improve stability.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-38711">issue 38711</a>)
+</li>
+<li class="rfe">
+Improve performance by not querying queue dispatchers from the UI.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-20046">issue 20046</a>)
+</li>
+<li class="rfe">
+Use node display name when printing "built on" message in the build log.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47168">issue 47168</a>)
+</li>
+<li class="rfe">
+Enable <code>cc.xml</code> to export jobs in folders recursively when accessed with a query parameter named <code>recursive</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-36282">issue 36282</a>)
+</li>
+<li class="rfe">
+Add new administrative monitor warning users about disabled CSRF protection.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47372">issue 47372</a>)
+</li>
+<li class="bug">
+In rare configurations, agents tried to load unloadable classes from the master, resulting in <code>ClassNotFoundException: javax.servlet.ServletContextListener</code> on agents.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46386">issue 46386</a>)
+</li>
+<li class="bug">
+Jenkins did not correctly show parts of pipeline builds in side panel widgets if the current view is configured to filter their content.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46759">issue 46759</a>)
+</li>
+<li class="rfe">
+Developer: Make <code>Xstream2#addCriticalField</code> available for use in plugins.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3066">pull 3066</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.84">
+What's new in 2.84 (2017-10-11)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="security">
+Important security fixes.
+(<a href="https://jenkins.io/security/advisory/2017-10-11/">security advisory</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.83">
+What's new in 2.83 (2017-10-08)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+Fix potential HTTP 414 error in form validation of long Batch/Shell tool installer scripts.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47058">issue 47058</a>)
+</li>
+<li class="bug">
+Fix link from build cause or page header to user profile in case of unusual user names.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-32623">issue 32623</a>)
+</li>
+<li class="bug">
+Properly display agent launch arguments when using nested launch methods.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47056">issue 47056</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.82">
+What's new in 2.82 (2017-10-01)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+<tt>favicon.ico</tt> and other binary resource files were broken since 2.79 because they were incorrectly filtered during the build.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-47127">issue 47127</a>)
+</li>
+<li class="bug">
+Don't log warning when an anonymous user sends an invalid crumb, usually just an expired session.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-40344">issue 40344</a>)
+</li>
+<li class="major bug">
+Developer: Fix <code>TimeDuration</code> time unit handling and its incorrect usage. <code>TimeDuration</code> uses milliseconds as the default unit. It was supposed to parse <code>sec</code> or <code>secs</code> suffix to interpret the number as seconds, but that never worked.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44052">issue 44052</a>)
+</li>
+<li class="bug">
+Developer: Create a copy of a list of parameters in <code>ParametersAction</code> constructor before storing them to improve robustness when the caller reuses that list.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45472">issue 45472</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.81">
+What's new in 2.81 (2017-09-27)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="security">
+Jenkins 2.80 did not initialize the setup wizard on new installations, causing various security options including authentication and authorization to be turned off by default, granting anonymous administrator access.
+
+(<a href="/security/advisory/2017-09-27/">security advisory</a>,&nbsp;<a href="https://groups.google.com/d/msg/jenkinsci-advisories/4fo3FKaLPeg/OuCcovu3AgAJ">notification</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-47139">issue 47139</a><a></a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.80">
+What's new in 2.80 (2017-09-24)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Improve error reporting when failing to archive artifacts.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2976">pull 2976</a>)
+</li>
+<li class="bug">
+Save the current Jenkins version whenever saving the Jenkins object, e.g. when saving the global security configuration. Plugins may rely on this information for data migration that would be triggered unnecessarily.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42577">issue 42577</a>)
+</li>
+<li class="bug">
+Prevent possible <code>NullPointerException</code> when removing an item from a list view due to a race condition.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-23411">issue 23411</a>)
+</li>
+<li class="bug">
+Avoid a possible server-side timeout on long-running CLI commands using plain HTTP mode by sending periodic pings from the client.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46659">issue 46659</a>)
+</li>
+<li class="bug">
+Renaming or moving a folder failed to properly move build directories of its children when using custom build directory, resulting of loss of their builds.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44657">issue 44657</a>)
+</li>
+<li class="rfe">
+Developer: Deprecate <code>hudson.util.TimeUnit2</code> and replace with <code>java.util.concurrent.TimeUnit</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2892">pull 2892</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.79">
+What's new in 2.79 (2017-09-17)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Fix random failures to use passphrase-protected ed25519 SSH private keys (regression in 2.73).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46754">issue 46754</a>)
+</li>
+<li class="major bug">
+Update Remoting library from 3.11 to 3.12 to fix regression in Jenkins 2.68 when using non-writable home directories.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45755">issue 45755</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#312">full changelog</a>,&nbsp;<a href="https://jenkins.io/doc/upgrade-guide/2.73/#known-issue-agent-connection-failures-involving-jenkins-masters-with-undefined-or-non-writable-home-directory">issue description in 2.73.1 upgrade guide</a>)
+</li>
+<li class="rfe">
+Add description of nodes to their remote API.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42854">issue 42854</a>)
+</li>
+<li class="bug">
+Disconnect node on ping timeout instead of leaving the channel half open.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46680">issue 46680</a>)
+</li>
+<li class="rfe">
+Internal: Require Java 8u101 to build Jenkins, as that's the minimum required to run it since 2.77.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3015">pull 3015</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.78">
+What's new in 2.78 (2017-09-10)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Moved Jenkins agent runtime to <code>agent.jar</code> file name, and deprecate (but still support) use of legacy <code>slave.jar</code>. Introduce the <code>AGENTJAR_URL</code> environment variable as replacement for <code>SLAVEJAR_URL</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-35451">issue 35451</a>)
+</li>
+<li class="bug">
+Accept <code>Basic</code> authentication headers case-insensitively.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44663">issue 44663</a>)
+</li>
+<li class="rfe">
+Internal: Implement <code>DescriptorByNameOwner</code> using Java 8 interface default method. Make <code>Computer</code> a <code>DescriptorByNameOwner</code> allowing its use as <code>@AncestorInPath</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/3009">pull 3009</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.77">
+What's new in 2.77 (2017-09-03)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Default the built-in Jenkins Update Center URL to <code>https://updates.jenkins.io</code> instead of obsolete HTTP endpoint. <strong>This requires a JRE compatible with <a href="https://letsencrypt.org/docs/certificate-compatibility/#known-compatible">Let's Encrypt</a>, e.g. Oracle JRE 8u101.</strong>
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2996">pull 2996</a>)
+</li>
+<li class="bug">
+Fix problem with auto upgrade when using custom <code>JENKINS_HOME</code> on Windows.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-13153">issue 13153</a>)
+</li>
+<li class="bug">
+Administrative monitor did not detect when Tomcat's URL escaping does not permit forward slashes.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-31068">issue 31068</a>)
+</li>
+<li class="bug">
+Fix broken UI for users with Discover permission when renaming a job.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41637">issue 41637</a>)
+</li>
+<li class="rfe">
+Internal: Avoid code duplication using default methods.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2999">pull 2999</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.76">
+What's new in 2.76 (2017-08-27)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Update Remoting from 3.10 to 3.11 to improve stability and diagnosability.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-37567">issue 37567</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-43985">issue 43985</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-45023">issue 45023</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-45233">issue 45233</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-45522">issue 45522</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-46259">issue 46259</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#311">full changelog</a>)
+</li>
+<li class="rfe">
+Major update of the Bulgarian translation.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2983">pull 2983</a>)
+</li>
+<li class="rfe">
+Internal: Allow <code>EnvironmentContributingAction</code> to support <code>Run</code> in addition to <code>AbstractProject</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-29537">issue 29537</a>)
+</li>
+<li class="rfe">
+Internal: Updated parent POM; Jenkins core now requires Maven 3.3.9 or newer to build.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2985">pull 2985</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.75">
+What's new in 2.75 (2017-08-20)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Update Windows service wrapper from 2.1.0 to 2.1.2 and Windows Agent Installer from 1.9 to 1.9.1.
+
+(<a href="https://github.com/kohsuke/winsw/blob/master/CHANGELOG.md">Windows service wrapper changelog</a>,&nbsp;<a href="https://github.com/jenkinsci/windows-slave-installer-module/blob/master/CHANGELOG.md">Windows agent installer changelog</a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/2987">pull 2987</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-46282">issue 46282</a><a></a>)
+</li>
+<li class="rfe">
+Disable obsolete JNLP, JNLP2, and CLI protocols on new Jenkins installations during Setup Wizard.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45841">issue 45841</a><a></a>,&nbsp;<a href="/blog/2017/08/11/remoting-update/">announcement blog post</a>)
+</li>
+<li class="bug">
+Button to validate proxy configuration in Manage Plugins now works correctly with NTLM authorization.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46288">issue 46288</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.74">
+What's new in 2.74 (2017-08-15)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Upgrade Stapler library from 1.250 to 1.252.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2956">pull 2956</a>,&nbsp;<a href="https://github.com/stapler/stapler/blob/master/CHANGELOG.md">Stapler changelog</a>)
+</li>
+<li class="major bug">
+Stapler 1.252: Prevent file handle leak in <code>LargeText#GzipAwareSession</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45903">issue 45903</a>)
+</li>
+<li class="major bug">
+Prevent core or plugin code from mistakenly attempting to serialize jobs, builds, and users except in their intended top-level XML file positions, preventing a class of serious deserialization-related errors.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45892">issue 45892</a>)
+</li>
+<li class="bug">
+Stapler 1.252: Restore ability to attach views to interfaces (regression in Jenkins 2.46).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43715">issue 43715</a>)
+</li>
+<li class="rfe">
+Improve Polish localization.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2974">pull 2974</a>)
+</li>
+<li class="rfe">
+Log name of the executor thread that died to improve diagnosability.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42376">issue 42376</a>)
+</li>
+<li class="bug">
+Prevent caching of the item categories list by the browser to prevent stale data.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43848">issue 43848</a>)
+</li>
+<li class="rfe">
+Update Agent Installer module to 1.6 for minor fixes and enhancements.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2965">pull 2965</a>,&nbsp;<a href="https://github.com/jenkinsci/slave-installer-module/blob/master/CHANGELOG.md#16">changelog</a>)
+</li>
+<li class="bug">
+Show display name of the current view in window title.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2969">pull 2969</a>)
+</li>
+<li class="bug">
+Include culprits in XML and JSON API again (regression in 2.60).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-46082">issue 46082</a>)
+</li>
+<li class="bug">
+Improve robustness of the reverse build trigger ("Build after other projects are built").
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45909">issue 45909</a>)
+</li>
+<li class="rfe">
+Internal: Cleanup of Maven dependencies in Jenkins core, allowing plugins depending on this version or later to build without “upper bound” dependency warnings on recent Maven HPI Plugin releases.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2956">pull 2956</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.73">
+What's new in 2.73 (2017-08-06)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Avoid unnecessary locking to improve performance related to actions.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45244">issue 45244</a>)
+</li>
+<li class="rfe">
+Improve performance when reading the console text of a build.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45915">issue 45915</a>)
+</li>
+<li class="rfe">
+Add Polish translations for setup wizard.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2952">pull 2952</a>)
+</li>
+<li class="bug">
+Reliably close build log file when using chained <code>BuildListener</code>s.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45057">issue 45057</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-43199">issue 43199</a><a></a>)
+</li>
+<li class="bug">
+Modify the JNLPLauncher configuration page to work around regression in Docker Plugin (regression in 2.72).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45895">issue 45895</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.72">
+What's new in 2.72 (2017-07-30)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Enable Remoting work directories by default for newly created agents launched via JNLP (Java Web Start Launcher).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44112">issue 44112</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/docs/workDir.md">feature documentation</a>)
+</li>
+<li class="rfe">
+Always follow redirects for downloading update center metadata, so misbehaving plugins cannot break it.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-38185">issue 38185</a>)
+</li>
+<li class="rfe">
+Minor optimization to queue maintenance routines and printing of console notes, mainly for the benefit of Pipeline node blocks.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45553">issue 45553</a>)
+</li>
+<li class="bug">
+Don't monitor response time on offline agents.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-20272">issue 20272</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.71">
+What's new in 2.71 (2017-07-23)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Winstone 4.1: Add Jetty HTTP/2 connector and corresponding options for Winstone-Jetty.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45438">issue 45438</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/winstone#http2-support">enabling HTTP/2 support in Winstone-Jetty</a>)
+</li>
+<li class="rfe">
+Don't reload user records from disk unless explicitly requested to improve performance of user record access.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45737">issue 45737</a>)
+</li>
+<li class="bug">
+Prevent <tt>NullPointerException</tt> in <code>Jenkins#getRootURL()</code> while the instance is not fully loaded yet.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34914">issue 34914</a>)
+</li>
+<li class="bug">
+Contributions to the PATH environment variable could result in malformed values on agents on a platform different from master's.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-14807">issue 14807</a>)
+</li>
+<li class="bug">
+JNLP for launching agents now requests Java 8.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45679">issue 45679</a>)
+</li>
+<li class="bug">
+Prevent <tt>NullPointerException</tt> when a previous completed build is missing for upstream culprits check.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45516">issue 45516</a>)
+</li>
+<li class="bug">
+Correctly show or suppress warnings about undefined parameters based on <code>hudson.model.ParametersAction.keepUndefinedParameters</code> system property.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45519">issue 45519</a>)
+</li>
+<li class="bug">
+Internal: Delete obsolete SECURITY-144-compat exclusion that can break tests.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-25625">issue 25625</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.70">
+What's new in 2.70 (2017-07-16)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+Fix version number shown in 2.0 upgrade wizard.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45459">issue 45459</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.69">
+What's new in 2.69 (2017-07-09)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+SSHD Module 2.0: Update from SSHD Core 0.14.0 to Apache MINA SSHD 1.6.0 in Jenkins core and Jenkins CLI.
+
+(<a href="https://github.com/jenkinsci/sshd-module/blob/master/CHANGELOG.md#20">changelog</a>,&nbsp;<a href="https://github.com/jenkinsci/sshd-module/blob/master/CHANGELOG.md#20-compatibility-notice">plugin compatibility notice</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-43668">issue 43668</a><a></a>)
+</li>
+<li class="rfe">
+SSHD Module 2.0: Enable aes192ctr and aes256ctr ciphers if JVM supports unlimited-strength encryption.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-39738">issue 39738</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.68">
+What's new in 2.68 (2017-07-02)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Update Remoting from 3.7 to 3.10 adding opt-in support for work directories and improving logging in Jenkins agents.
+
+(<a href="https://github.com/jenkinsci/remoting/blob/master/docs/workDir.md">work directory documentation</a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/docs/logging.md">logging documentation</a>,&nbsp;<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#38">Remoting changelog</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-39370">issue 39370</a><a></a>)
+</li>
+<li class="rfe">
+The <code>reload-configuration</code> CLI command now waits until the reload is finished, and returns an error code if the reload failed.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-45256">issue 45256</a>)
+</li>
+<li class="bug">
+Follow HTTP redirects while initiating CLI connection.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44361">issue 44361</a>)
+</li>
+<li class="bug">
+Add documentation for time zone specification for cron patterns (e.g. SCM polling).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-9283">issue 9283</a>)
+</li>
+<li class="bug">
+Robustness improvements related to agent connections.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43496">issue 43496</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-38527">issue 38527</a><a></a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.67">
+What's new in 2.67 (2017-06-25)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Enable simpler syntax for <code>upstream</code> build trigger in pipelines.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34464">issue 34464</a>)
+</li>
+<li class="rfe">
+Remove the "JNLP" protocol references from the TCP Agent Listener log messages.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44103">issue 44103</a>)
+</li>
+<li class="bug">
+Internal: Update Annotation Indexer to 1.12 to work around JRE bug in tests.
+
+(<a href="https://bugs.openjdk.java.net/browse/JDK-8182744">JDK-8182744</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.66">
+What's new in 2.66 (2017-06-18)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+When starting the <code>jenkins.war</code> directly, properly check for Java 8 as minimum instead of Java 7 before proceeding.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44764">issue 44764</a>)
+</li>
+<li class="rfe">
+Allow overriding the Jenkins session ID suffix so it doesn't change on every restart, possibly resulting in too many cookies.
+
+(<a href="https://github.com/jenkinsci/extras-executable-war#jetty-session-ids">how to set session ID</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-25046">issue 25046</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-44894">issue 44894</a><a></a>)
+</li>
+<li class="bug">
+Fix resource loading in plugins using the <code>PluginFirstClassLoader</code>, e.g. loading Groovy classes from plugin resources.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44898">issue 44898</a>)
+</li>
+<li class="bug">
+Prevent possible <code>NullPointerException</code> when listing remote directories using the <code>FilePath#list()</code> and <code>FilePath#listDirectories()</code> APIs.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44942">issue 44942</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.65">
+What's new in 2.65 (2017-06-11)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+Prevent <code>NullPointerException</code> when calling <code>restart</code> CLI command (regression in 2.57).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44769">issue 44769</a>)
+</li>
+<li class="major bug">
+Packaging: Docker alpine image had a Jenkins-incompatible JDK installation (regression in 2.64).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44733">issue 44733</a><a></a>,&nbsp;<a href="https://bugs.alpinelinux.org/issues/7372">corresponding Alpine Linux issue</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.64">
+What's new in 2.64 (2017-06-04)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Moved agent port and protocol configuration out of "security" (authentication and authorization) block in Configure Global Security.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-4478">issue 4478</a>)
+</li>
+<li class="rfe">
+Add section headers for Markup Formatter and CSRF Protection in Configure Global Security form to make these options more obvious.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2900">pull 2900</a>)
+</li>
+<li class="rfe">
+Use one-column layout for REST API documentation (<tt>.../api</tt> URLs).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44563">issue 44563</a>)
+</li>
+<li class="bug">
+Update jnr-posix from 3.0.1 to 3.0.41 to pick up improvements and fixes in the POSIX platforms support.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2904">pull 2904</a>)
+</li>
+<li class="bug">
+Jenkins failed to perform some cleanup tasks, including saving the build queue, if stopped via REST <tt>/exit</tt>, CLI <tt>shutdown</tt>, or when restarting from <em>Install as Windows Service</em>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44589">issue 44589</a>)
+</li>
+<li class="bug">
+Don't check whether disabled administrative monitors are active or not on the <em>Manage Jenkins</em> page.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44608">issue 44608</a>)
+</li>
+<li class="bug">
+Do not submit form when pressing <kbd>Enter</kbd> in the plugin manager's filter field.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44523">issue 44523</a>)
+</li>
+<li class="rfe">
+Plugin Development: Jenkins now no longer publishes a <code>war-for-test</code> artifact. Plugins using this or a later version of Jenkins as baseline need to use plugin parent POM 2.30 or later.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-24064">issue 24064</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.63">
+What's new in 2.63 (2017-05-28)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<em>
+No notable changes in this release.
+</em>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.62">
+What's new in 2.62 (2017-05-21)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Fixed Pipeline compatibility for a number of CLI commands (<tt>delete-builds</tt>, <tt>list-changes</tt>, <tt>console</tt>, <tt>set-build-description</tt>, and <tt>set-build-display-name</tt>), as well as some issues affecting error reporting in other commands when used with Pipeline.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-30785">issue 30785</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-41527">issue 41527</a><a></a>)
+</li>
+<li class="rfe">
+If you have the Authorize Project plugin installed and configured, its configuration will now be treated as final with respect to the behavior of <em>Job/Build</em> checks from <strong>Build other projects</strong> and <strong>Build after other projects are built</strong>. Formerly, if a <strong>Per-project configurable Build Authorization</strong> was enabled globally but some projects did not specify an <strong>Authorization</strong>, the two aforementioned checks would automatically fall back to checking as anonymous (typically denying build permission). To restore the former behavior, explicitly configure a <strong>Project default Build Authorization</strong> to be <strong>Run as anonymous</strong>. Note that this will affect all build-scoped permission checks, including for example <em>Agent/Build</em>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-22949">issue 22949</a>)
+</li>
+<li class="rfe">
+Internal API: <code>Tasks.getAuthenticationOf</code> now honors authentication contributed by <code>QueueItemAuthenticatorProvider</code> extensions.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2880">pull 2880</a>)
+</li>
+<li class="rfe">
+Update WinP from 1.24 to 1.25 to improve performance and diagnostics of issues like <a href="https://issues.jenkins-ci.org/browse/JENKINS-30782">JENKINS-30782</a>.
+
+(<a href="https://github.com/kohsuke/winp/blob/master/CHANGELOG.md#125">full changelog</a>)
+</li>
+<li class="bug">
+Fix for <code>NullPointerException</code> while initiating some SSH connections (regression in 2.59).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44120">issue 44120</a>)
+</li>
+<li class="bug">
+Prevent <code>StackOverflowError</code> in log recorder when Winstone-Jetty debug logging is enabled. (regression in 2.61)
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44330">issue 44330</a><a></a>,&nbsp;<a href="https://github.com/eclipse/jetty.project/issues/1563">corresponding Jetty issue</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.61">
+What's new in 2.61 (2017-05-14)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+Upgrade Groovy from 2.4.8 to 2.4.11.
+
+(<a href="http://groovy-lang.org/changelogs/changelog-2.4.9.html">Groovy 2.4.9 changelog</a>,&nbsp;<a href="http://groovy-lang.org/changelogs/changelog-2.4.10.html">Groovy 2.4.10 changelog</a>,&nbsp;<a href="http://groovy-lang.org/changelogs/changelog-2.4.11.html">Groovy 2.4.11 changelog</a>)
+</li>
+<li class="major rfe">
+Integration of Winstone 4.0: Upgrade bundled Jetty from 9.2.15.v20160210 to 9.4.5.v20170502. <strong>This removes support for the deprecated SPDY protocol. The <tt>--spdy</tt> parameter has been removed accordingly and Jenkins may refuse to start if it's set.</strong>
+
+(<a href="https://github.com/jenkinsci/winstone/blob/master/CHANGELOG.md#40">full changelog</a>)
+</li>
+<li class="bug">
+Jetty 9.4.5:  Prevent the <i>400 Bad Host header</i> error for <code>HttpChannelOverHttp</code> when operating behind reverse proxy.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-40693">issue 40693</a><a></a>,&nbsp;<a href="https://github.com/eclipse/jetty.project/issues/592">corresponding Jetty issue</a>)
+</li>
+<li class="rfe">
+Update the Mailer plugin version installed when updating from very old Jenkins releases to include the fix for SECURITY-372, the SSH Slaves plugin for SECURITY-161, and the Script Security plugin for SECURITY-258.
+
+(<a href="https://jenkins.io/security/advisory/2017-03-20/">SECURITY-372</a>,&nbsp;<a href="https://jenkins.io/security/advisory/2017-03-20/">SECURITY-161</a>,&nbsp;<a href="https://jenkins.io/security/advisory/2016-04-11/">SECURITY-258</a>)
+</li>
+<li class="rfe">
+Freestyle projects may now list Pipeline jobs as downstream and trigger them, without needing to use the Parameterized Trigger plugin or reverse triggers ("Build after other projects are built").
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-28113">issue 28113</a>)
+</li>
+<li class="rfe">
+Internal: Define enabling/disabling in <code>ParameterizedJob</code> rather than <code>AbstractProject</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-27299">issue 27299</a>)
+</li>
+<li class="rfe">
+Internal: Offer default methods on <code>ParameterizedJob</code> to have less boilerplate code.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2864">pull 2864</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.60">
+What's new in 2.60 (2017-05-10)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Update to Windows Service Wrapper 2.1.0 to support new features: <tt>download</tt> command with authentication, flag for startup failure on <tt>download</tt> error, Delayed Automatic Start mode.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43737">issue 43737</a>)
+</li>
+<li class="rfe">
+Windows services: Add system property that allows disabling WinSW automatic upgrade on agents.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43603">issue 43603</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/windows-slave-installer-module#disabling-automatic-upgrade">more information</a>)
+</li>
+<li class="bug">
+Windows services: Restore compatibility of the <code>WindowsSlaveInstaller#generateSlaveXml()</code> method (regression in 2.50, no known external usages).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42745">issue 42745</a>)
+</li>
+<li class="bug">
+Windows services: Prevent fatal file descriptor leak when agent service installer fails to read data from the service <tt>startup.log</tt>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43930">issue 43930</a>)
+</li>
+<li class="bug">
+Use full display name for runs in RSS feed to restore the project name there (regression in 2.59).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44117">issue 44117</a>)
+</li>
+<li class="rfe">
+Internal: Generalize the changelog API to support non-<code>AbstractBuild</code> run types.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-24141">issue 24141</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.59">
+What's new in 2.59 (2017-05-07)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Move to latest version of Trilead to fix SSH connection issues following a previous Trilead upgrade.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42959">issue 42959</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-43979">issue 43979</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-44046">issue 44046</a><a></a>)
+</li>
+<li class="rfe">
+Prevent Internet Explorer from caching AJAX requests using <tt>Cache-Control</tt> header.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43929">issue 43929</a>)
+</li>
+<li class="bug">
+Properly fail with error when updating view with CLI using input of a different view type.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42728">issue 42728</a>)
+</li>
+<li class="bug">
+Fix <tt>AccessDeniedException</tt> in "Build after other projects are built" when user has Discover permission but not Read.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42707">issue 42707</a>)
+</li>
+<li class="bug">
+Properly log failure due to empty archive in Pipeline.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-38005">issue 38005</a>)
+</li>
+<li class="bug">
+Prevent rare <code>NullPointerException</code> if an admin user is created in the setup wizard after first disabling CSRF protection.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-44010">issue 44010</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.58">
+What's new in 2.58 (2017-04-30)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Use build display names in RSS feed titles.
+(<a href="https://github.com/jenkinsci/jenkins/pull/2845">pull 2845</a>)
+</li>
+<li class="rfe">
+Update the Trilead SSH library to get support of new Mac, Key, and Key Exchange Algorithms.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-33021">issue 33021</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-26379">issue 26379</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-31549">issue 31549</a><a></a>)
+</li>
+<li class="rfe">
+Migrate legacy users only once per restart to improve performance of the user retrieval logic.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43936">issue 43936</a>)
+</li>
+<li class="rfe">
+Internal: Pick up the latest release of version-number library.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43733">issue 43733</a>)
+</li>
+<li class="rfe">
+Internal: Refactor <code>ProcessTree.Windows</code> logic to propagate errors.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43825">issue 43825</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.57">
+What's new in 2.57 (2017-04-26)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="security">
+Important security fixes.
+(<a href="https://jenkins.io/security/advisory/2017-04-26/">security advisory</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.56">
+What's new in 2.56 (2017-04-23)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+Plugins did not expect <code>InvalidPathException</code> to be thrown in file-related methods, so wrap them in <code>IOException</code> to restore behavior (regression in 2.55).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43531">issue 43531</a>)
+</li>
+<li class="bug">
+Remove links in stack traces to the <tt>stacktrace.jenkins-ci.org</tt> service that has been shut down.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42861">issue 42861</a>)
+</li>
+<li class="bug">
+If an exception is thrown while rendering an HTTP response, just log the stack trace on the server side, without trying to send an error page to the client.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-21695">issue 21695</a>)
+</li>
+<li class="bug">
+Prevent <code>NullPointerException</code> when a non-existent default view is specified in <em>Configure System</em>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42717">issue 42717</a>)
+</li>
+<li class="bug">
+Deleting jobs with running builds could result in <code>NullPointerException</code> (regression in 2.55).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43653">issue 43653</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.55">
+What's new in 2.55 (2017-04-15)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Packaging: Debian package now requires Java 8. (causes regression since 2.54).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43495">issue 43495</a>)
+</li>
+<li class="rfe">
+Added fine-grain logging of <code>FullDuplexHttpService</code> to diagnose issues when establishing an HTTP Duplex connection.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2481">pull 2481</a>)
+</li>
+<li class="bug">
+Update LibZFS from 0.5 to 0.8 to fix compatibility issues with ZFS filesystem and illumos distributions.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41932">issue 41932</a>)
+</li>
+<li class="bug">
+Before deleting jobs, try to abort the running builds. Error will be thrown instead of the job deletion if its builds cannot be aborted.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-35160">issue 35160</a>)
+</li>
+<li class="bug">
+Ensure that <code>Cloud.PROVISION</code> is properly initialized during the configuration loading.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43279">issue 43279</a>)
+</li>
+<li class="bug">
+Fix log message formatting when migrating `AllView` names due to <a href="https://issues.jenkins-ci.org/browse/JENKINS-38606">JENKINS-38606"</a>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43611">issue 43611</a>)
+</li>
+<li class="bug">
+Setup wizard gets into bad state when failures like network issues happen.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41778">issue 41778</a>)
+</li>
+<li class="bug">
+Catch and log <code>RuntimeException</code> in <code>Computer#setNode()</code> when updating the Computer list.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42043">issue 42043</a>)
+</li>
+<li class="bug">
+SSH CLI client authenticator 1.4. Add missing SSH Public Key field validation in user configuration.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-16337">issue 16337</a>)
+</li>
+<li class="rfe">
+Internal API:  SSH CLI client authenticator 1.3.  Expose <code>PublicKeySignatureWriter</code> to plugins.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2840">pull 2840</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.54">
+What's new in 2.54 (2017-04-09)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major rfe">
+<strong>Jenkins (master and agents) now requires Java 8 to run.</strong>
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-27624">issue 27624</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-42709">issue 42709</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/2802">pull 2802</a>,&nbsp;<a href="/blog/2017/04/10/jenkins-has-upgraded-to-java-8/">announcement blog post</a>)
+</li>
+<li class="major rfe">
+Non-Remoting-based CLI.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41745">issue 41745</a><a></a>,&nbsp;<a href="https://github.com/jenkinsci/jenkins/pull/2795">pull 2795</a>,&nbsp;<a href="/blog/2017/04/11/new-cli/">announcement blog post</a>)
+</li>
+<li class="rfe">
+Disable SSH server by default.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-33595">issue 33595</a>)
+</li>
+<li class="rfe">
+Use case-insensitive search by default for new and anonymous users.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42645">issue 42645</a>)
+</li>
+<li class="bug">
+Introduce status indicator for skipped download job.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-40848">issue 40848</a>)
+</li>
+<li class="bug">
+Properly handle saving system configuration when disabling all, or all but one, administrative monitors.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42852">issue 42852</a>)
+</li>
+<li class="bug">
+When validating a cron expression, consider the specified time zone.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-43228">issue 43228</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.53">
+What's new in 2.53 (2017-04-02)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Update to Windows Service Wrapper 2.0.3 and Windows Agent Installer 1.8 to prevent conversion of environment variables to lowercase in the agent executable, regression in Jenkins 2.50.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42744">issue 42744</a><a></a>,&nbsp;<a href="https://github.com/kohsuke/winsw/blob/master/CHANGELOG.md#203">WinSW Changelog</a>,&nbsp;<a href="https://github.com/jenkinsci/windows-slave-installer-module/blob/master/CHANGELOG.md#18">Windows Agent Installer changelog</a>)
+</li>
+<li class="rfe">
+GC Performance: Avoid using <code>FileInputStream</code> and <code>FileOutputStream</code> in the core codebase.
+
+(<a href="https://bugs.openjdk.java.net/browse/JDK-8080225">JDK-8080225</a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-42934">issue 42934</a><a></a>)
+</li>
+<li class="bug">
+Packaging: Do not invoke recursive <code>chown</code> in <code>JENKINS_HOME</code> during the RPM post-install step unless owned by a different user.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-23273">issue 23273</a>)
+</li>
+<li class="rfe">
+Internal API: Add support of a new full screen mode in <code>layout.jelly</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34670">issue 34670</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.52">
+What's new in 2.52 (2017-03-26)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+<code>Computer#addAction</code> would throw an <code>UnsupportedOperationException</code> since Jenkins 2.30. Such a call site was released in SSH Slaves Plugin 1.15 for SECURITY-161.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42969">issue 42969</a><a></a>,&nbsp;<a href="https://jenkins.io/security/advisory/2017-03-20/">security advisory including SECURITY-161</a>)
+</li>
+<li class="rfe">
+Update German localization.
+(<a href="https://github.com/jenkinsci/jenkins/pull/2777">pull 2777</a>)
+</li>
+<li class="rfe">
+Removed localizations with very low coverage: Albanian, Basque, Belarusian, Bengali, Esperanto, Galician, Georgian, Gujarati, Hindi, Icelandic, Indonesian, Irish, Kannada, Macedonian, Marathi, Mongolian, Occitan, Punjabi, Sinhala, Tamil, Telugu, Thai.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2813">pull 2813</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.51">
+What's new in 2.51 (2017-03-19)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="major bug">
+Restore Windows Slaves Plugin 1.2 compatibility by restoring <code>windows-service/jenkins.xml</code>, regression in 2.50.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42724">issue 42724</a>)
+</li>
+<li class="rfe">
+SSHD 1.10: Move SSH server port configuration to security options page.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2796">pull 2796</a>)
+</li>
+<li class="rfe">
+Update Russian localization.
+(<a href="https://github.com/jenkinsci/jenkins/pull/2798">pull 2798</a>)
+</li>
+<li class="rfe">
+Update French localization.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42627">issue 42627</a>)
+</li>
+<li class="bug">
+Internal: Make sure system threads run as SYSTEM.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42556">issue 42556</a>)
+</li>
+<li class="rfe">
+Internal API: Add the ability for <code>ItemListener</code> to veto copy operations.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34691">issue 34691</a>)
+</li>
+<li class="bug">
+Internal API: Make <code>Run#compareTo</code> work across jobs.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42319">issue 42319</a>)
+</li>
+<li class="rfe">
+Internal API: Save <code>Jenkins</code> after calling <code>setSecurityRealm</code> or <code>setAuthorizationStrategy</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2790">pull 2790</a>)
+</li>
+<li class="rfe">
+Internal API: Annotate <code>PermissionGroup#owner</code> <code>@Nonnull</code>.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2805">pull 2805</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.50">
+What's new in 2.50 (2017-03-11)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Allow searching by build parameter values in the <code>Build History</code> widget.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-40718">issue 40718</a>)
+</li>
+<li class="rfe">
+Searching in the <code>Build History</code> widget takes into account user preferences (case sensitivity by default).
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2683">pull 2683</a>)
+</li>
+<li class="rfe">
+When creating temporary files, use the <code>jenkins</code> prefix instead of the old <code>hudson</code> one.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2778">pull 2778</a>)
+</li>
+<li class="bug">
+Fix relative links in the SCM polling administrative monitor.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2780">pull 2780</a>)
+</li>
+<li class="bug">
+Update Remoting from <code>3.5</code> to <code>3.7</code> in order to prevent file descriptor leaks on agents in the case of multiple connection attempts.
+
+(<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#37">full changelog</a>)
+</li>
+<li class="major rfe">
+Upgrade the Windows Agent Installer module from <code>1.6</code> to <code>1.7</code>. This change picks major updates in Windows service management logic. <strong>This fix caused a critical regression in the  <a href="https://plugins.jenkins.io/windows-slaves">Windows Slaves Plugin</a>  (<a href="https://issues.jenkins-ci.org/browse/JENKINS-42724">JENKINS-42724</a>). Update to Windows Slaves 1.3.1 in order to get the fix applied. </strong>
+
+(<a href="https://github.com/jenkinsci/windows-slave-installer-module/blob/master/CHANGELOG.md#17">full changelog</a>,&nbsp;<a href="https://github.com/jenkinsci/windows-slave-installer-module#upgrading-old-agents">guide to upgrading old Windows service agents</a>)
+</li>
+<li class="major rfe">
+Windows services: Upgrade the bundled <a href="https://github.com/kohsuke/winsw">Windows Service Wrapper</a> from <code>1.18</code> to <code>2.0.2</code>. 
+
+(<a href="https://github.com/kohsuke/winsw/blob/master/CHANGELOG.md">full changelog</a>)
+</li>
+<li class="rfe">
+Windows services: Enable <a href="https://github.com/kohsuke/winsw/blob/master/doc/extensions/runawayProcessKiller.md">Runaway Process Killer</a>  by default in new Agent and Master installations.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-39231">issue 39231</a>)
+</li>
+<li class="rfe">
+Windows services: Enable auto-upgrade of Remoting on newly installed agents if they are connected by HTTPS.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-39237">issue 39237</a>)
+</li>
+<li class="rfe">
+Windows services: Add support of shared directories mapping in Windows agent services. 
+
+(<a href="https://github.com/kohsuke/winsw/blob/master/doc/extensions/sharedDirectoryMapper.md">Shared Directory Mapper documentation</a>)
+</li>
+<li class="rfe">
+Windows services: Change the default Agent service display name prefix to <code>Jenkins agent %ID%</code>.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42468">issue 42468</a>)
+</li>
+<li class="bug">
+Windows services: Prevent agent connection reset issues when WinSW gets terminated due to the system shutdown.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-22692">issue 22692</a>)
+</li>
+<li class="bug">
+Windows services: Integrate various stability and performance fixes in <a href="https://github.com/kohsuke/winsw">Windows Service Wrapper</a>  from <code>1.18</code> to <code>2.0.2</code>. There are many fixes around configuration options and process termination. 
+
+(<a href="https://github.com/kohsuke/winsw/blob/master/CHANGELOG.md">full changelog</a>)
+</li>
+<li class="bug">
+Prevent file descriptor leaks when Windows Service installer fails to read data from the service startup log.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42670">issue 42670</a>)
+</li>
+<li class="rfe">
+Select controls in Jenkins Web UI now show the spinner icon while waiting for the list of possible options during AJAX. requests.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42443">issue 42443</a>)
+</li>
+<li class="rfe">
+Improve plugin access performance in the default <code>PluginManager</code> implementation.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42585">issue 42585</a>)
+</li>
+<li class="rfe">
+Internal API:  Allow providing a custom task name in Run/Schedule UI via the <code>AlternativeUiTextProvider</code> extension.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-34522">issue 34522</a>)
+</li>
+<li class="bug">
+Search results page did not correctly encode query parameters.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42390">issue 42390</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.49">
+What's new in 2.49 (2017-03-05)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+Do not attempt to find the next occurrence of an impossible date such as June 31st in validation of trigger schedules.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41864">issue 41864</a>)
+</li>
+<li class="bug">
+Remove invalid translations in Slovene
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41756">issue 41756</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.48">
+What's new in 2.48 (2017-02-26)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="rfe">
+Upgrade Apache Commons Collections to version 3.2.2. <strong>Note:</strong> Jenkins has been using a blacklist to prevent exploiting the serialization vulnerability in 3.2.1 since before 3.2.2 was released.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-31598">issue 31598</a>)
+</li>
+<li class="rfe">
+Use redirect URLs on jenkins.io instead of linking to wiki pages directly, allowing future reorganization of documentation without breaking links in Jenkins.
+(<a href="https://github.com/jenkinsci/jenkins/pull/2756">pull 2756</a>)
+</li>
+<li class="bug">
+Fix performance issue in deduplication of lists of tool installers.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42141">issue 42141</a>)
+</li>
+<li class="bug">
+Use of the remote API to create items in views (<code>/view/…/createItem</code>) didn't actually add items to views since Jenkins 2.22.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41128">issue 41128</a>)
+</li>
+<li class="bug">
+Do not display a warning when an SCM trigger has no schedules (either to disable SCM post-commit hooks, or to enable them without polling).
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42194">issue 42194</a>)
+</li>
+<li class="rfe">
+Developer: Allow referencing radio buttons in <code>f:validateButton</code> validation methods.
+
+(<a href="https://github.com/jenkinsci/jenkins/pull/2734">pull 2734</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<h3 id="v2.47">
+What's new in 2.47 (2017-02-19)
+</h3>
+<ul class="image">
+<!-- starting partial changelog-changes.html.haml -->
+<li class="bug">
+Update Groovy to 2.4.8 to address memory leak issue. <strong>Do not use this version if you are running Pipeline builds unless you also update <em>Pipeline: Groovy</em> to 2.28 or higher.</strong>
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-33358">issue 33358</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-42189">issue 42189</a><a></a>)
+</li>
+<li class="bug">
+Windows service restart did not retain build queue.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-32820">issue 32820</a>)
+</li>
+<li class="bug">
+Exceptions during Jenkins cleanup step should not block restart.
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-42164">issue 42164</a>)
+</li>
+<li class="rfe">
+Upgrade Remoting to version 3.5.
+(<a href="https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#35">full changelog</a>)
+</li>
+<li class="bug">
+Remoting 3.5: Remoting clients now accept lowercase (HTTP 2) headers sent by reverse proxies.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-40710">issue 40710</a>)
+</li>
+<li class="rfe">
+Remoting 3.5: Add option to specify the Remoting protocol to use on the client.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41730">issue 41730</a>)
+</li>
+<li class="bug">
+Remoting 3.5: Stability improvements.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41513">issue 41513</a><a></a>,&nbsp;<a href="https://issues.jenkins-ci.org/browse/JENKINS-41852">issue 41852</a><a></a>)
+</li>
+<li class="bug">
+Developer: Snapshot builds of plugins that had dependencies on other snapshot builds were not having their version numbers compared correctly.
+
+(<a href="https://issues.jenkins-ci.org/browse/JENKINS-41899">issue 41899</a>)
+</li>
+
+<!-- ending partial changelog-changes.html.haml -->
+</ul>
+<!-- starting partial changelog-weekly.html -->
+<h3 id=v2.46>What's new in 2.46 (2017/02/13)</h3>
+<ul class=image>
+    <li class=bug>
+        Failure to serialize a single <code>Action</code> could cause an entire REST export response to fail.
+        Upgraded to Stapler <code>1.250</code> with a fix.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40088">issue 40088</a>)
+    <li class=bug>
+        Do not fail to write a log file just because something deleted the parent directory.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-16634">issue 16634</a>)
+    <li class=bug>
+        Use extensible <tt>BUILD_NOW_TEXT</tt> for parameterized jobs.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-41457">issue 41457</a>)
+    <li class=bug>
+        Display an informative message, rather than a Groovy exception, when <tt>View#getItems</tt> fails.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-41825">issue 41825</a>)
+    <li class=bug>
+        Don't consider a project to be parameterized if no parameters are defined.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37590">issue 37590</a>)
+    <li class=bug>
+        Don't add all group names as HTTP headers on "access denied" pages.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39402">issue 39402</a>)
+    <li class=bug>
+        Ensure that <tt>PluginManager#dynamicLoad</tt> runs as SYSTEM.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-41684">issue 41684</a>)
+    <li class=bug>
+        Add Usage Statistics section to the global configuration to make it easier to find.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32938">issue 32938</a>)
+    <li class=bug>
+        Allow <tt>groovy</tt> CLI command via SSH CLI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-41765">issue 41765</a>)
+
+</ul>
+<h3 id=v2.45>What's new in 2.45 (2017/02/06)</h3>
+<ul class=image>
+    <li class=bug>
+        Delete obsolete pinning UI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34065">issue 34065</a>)
+    <li class=bug>
+        Don't try to set Agent Port when it is enforced, breaking form submission.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-41511">issue 41511</a>)
+    <li class=bug>
+        Use project-specific validation URL for SCM Trigger, so <code>H</code> is handled correctly in preview.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-26977">issue 26977</a>)
+    <li class=bug>
+        Fix completely wrong Basque translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2731">pull 2731</a>)
+</ul>
+<h3 id=v2.44>What's new in 2.44 (2017/02/01)</h3>
+<ul class=image>
+    <li class="security">
+        <strong>Important security fixes</strong>
+        (<a href="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2017-02-01">security advisory</a>)
+</ul>
+<h3 id=v2.43>What's new in 2.43 (2017/01/29)</h3>
+<ul class=image>
+    <li class=rfe>
+        Print stack traces in logical order, with the most important part on top.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/1485">pull 1485</a>)
+</ul>
+<h3 id=v2.42>What's new in 2.42 (2017/01/22)</h3>
+<ul class=image>
+    <li class=bug>
+        <code>IllegalStateException</code> from Winstone when making certain requests with access logging enabled.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37625">issue 37625</a>)
+</ul>
+<h3 id=v2.41>What's new in 2.41 (2017/01/15)</h3>
+<ul class=image>
+    <li class=bug>
+        Restore option value for setting build result to unstable when loading shell and batch build steps from disk.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40894">issue 40894</a>)
+    <li class=bug>
+        Autocomplete admin-only links in search suggestions only when admin.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-7874">issue 7874</a>)
+    <li class=rfe>
+        Improve agent protocol descriptions.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40700">issue 40700</a>)
+    <li class=rfe>
+        Improve description for <em>Enable Security</em> option and administrative monitor when security is off.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40813">issue 40813</a>)
+    <li class=rfe>
+        Enable the JNLP4 agent protocol by default.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40886">issue 40886</a>)
+</ul>
+<h3 id=v2.40>What's new in 2.40 (2017/01/08)</h3>
+<ul class=image>
+    <li class="major rfe">
+        Support displaying of warnings from the Update Site in the Plugin Manager
+        and in administrative monitors.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40494">issue 40494</a>,
+        <a href="/blog/2017/01/10/security-warnings/">announcement blog post</a>)
+    <li class=rfe>
+        Do not print warnings about undefined parameters
+        when <code>hudson.model.ParametersAction.keepUndefinedParameters</code> property is set to <code>false</code>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2687">pull 2687</a>)
+    <li class="rfe">
+        Increase the <code>JENKINS_HOME</code> disk space threshold from <code>1Gb</code> to <code>10Gb</code> left.
+        The warning will be shown only if more than <code>90%</code> of the disk is utilized.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40749">issue 40749</a>)
+    <li class=rfe>
+        Plugin Manager: Redirect back to the Advanced Tab when saving the Update Site URL.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2703">pull 2703</a>)
+    <li class=bug>
+        Prevent the <code>ClassNotFoundException: javax.servlet.ServletException</code> error
+        when invoking shell tasks on remote agents.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40863">issue 40863</a>)
+    <li class=bug>
+        Jobs were hanging during process termination on the Solaris 11 Intel platform.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40470">issue 40470</a>, regression in 2.20)
+    <li class=bug>
+        Fix handling of the <code>POST</code> flag in <code>ManagementLink</code>s within the Manage Jenkins page.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38175">issue 38175</a>)
+    <li class=bug>
+        Require POST in the <code>Reload from disk</code> management link.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2692">pull 2692</a>)
+</ul>
+<h3 id=v2.39>What's new in 2.39 (2017/01/02)</h3>
+<ul class=image>
+    <li class=bug>
+        Properties were not passed to Maven command by Maven build step when the <code>Inject Build Variables</code> flag was not set.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39268">issue 39268</a>)
+    <li class=bug>
+        Update remoting to 3.4 in order to properly terminate the channel in the case <code>Errors</code> and <code>Exception</code>s.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39835">issue 39835</a>)
+    <li class="rfe">
+        Improved Polish and Catalan translations.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2688">pull 2688</a> and
+        <a href="https://github.com/jenkinsci/jenkins/pull/2686">pull 2686</a>)
+</ul>
+<h3 id=v2.38>What's new in 2.38 (2016/12/25)</h3>
+<ul class=image>
+    <li class=rfe>
+        Update to Winstone 3.2 to support ad-hoc certificate generation on Java 8 (using unsupported APIs).
+        <strong>This option is deprecated and will be removed in a future release.</strong>
+        We strongly recommend you create self-signed certificates yourself and use <tt>--httpsKeyStore</tt> and related options instead.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-25333">issue 25333</a>)
+    <li class=bug>
+        The <tt>install-plugin</tt> CLI command now correctly installs plugins when multiple file arguments are specified.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32358">issue 32358</a>)
+    <li class=bug>
+        Correctly state that Jenkins will refuse to load plugins whose dependencies are not satisfied in plugin manager.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40666">issue 40666</a>)
+</ul>
+<h3 id=v2.37>What's new in 2.37 (2016/12/18)</h3>
+<ul class=image>
+    <li class="rfe">
+        Allow defining agent ping interval and ping timeout in seconds.
+        It can be done via the
+        <code>hudson.slaves.ChannelPinger.pingIntervalSeconds</code> and
+        <code>hudson.slaves.ChannelPinger.pingTimeoutSeconds</code>
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">
+            system properties</a>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-28245">issue 28245</a>)
+    <li class="rfe">
+        Delegate JNLP HMAC computation to <code>SlaveComputer</code> instances when possible.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40286">issue 40286</a>)
+    <li class="rfe">
+        Diagnosability: Split Exception handling of node provision and adding to Jenkins.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38903">issue 38903</a>)
+    <li class="rfe">
+        Do not report <code>-noCertificateCheck</code> warning to STDOUT.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2666">pull 2666</a>)
+    <li class="rfe">
+        Improve overall performance of Jenkins by accessing item group elements without sorting where it is possible.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2665">pull 2665</a>)
+    <li class="rfe">
+        Convert URI encoding check on the <code>Manage Jenkins</code> page into admin monitor.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39433">issue 39433</a>)
+    <li class="rfe">
+        Update <a href="https://mina.apache.org/sshd-project/">SSHD Core</a> from 0.8.0 to 0.14.0.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2662">pull 2662</a>)
+    <li class="bug">
+        SSHD Module: Handshake was failing (wrong shared secret) 1 out of 256 times due to
+        <a href="https://issues.apache.org/jira/browse/SSHD-330">SSHD-330</a>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40362">issue 40362</a>)
+    <li class="bug">
+        View display name was ignored during rendering of tabs.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39300">issue 39300</a>)
+    <li class="bug">
+        Job configuration submission now does not fail when there is no parameters property.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39700">issue 39700</a>, regression in 1.637)
+    <li class="bug">
+        Fix names of item loading and cleanup Jenkins initialization stages.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40489">issue 40489</a>)
+    <li class="bug">
+        Performance: Use bulk change when submitting Job configurations
+        to minimize the number of sequential <code>config.xml</code> write operations.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40435">issue 40435</a>)
+    <li class="bug">
+        <code>Check for Updates</code> button in the Plugin Manager was hidden in the <code>Updates</code> tab
+        when there was no plugins updates available.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39971">issue 39971</a>)
+    <li class="bug">
+        Remoting 3.3: Agent JAR cache corruption was causing malfunctioning of agents.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39547">issue 39547</a>)
+    <li class="bug">
+        Remoting 3.3: Improve diagnostics of the preliminary FifoBuffer termination in the JNLP2 protocol.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40491">issue 40491</a>)
+    <li class="rfe">
+        Remoting 3.3: Hardening of FifoBuffer operation logic.
+        The change improves the original fix of
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-25218">JENKINS-25218</a>.
+        (<a href="https://github.com/jenkinsci/remoting/pull/100">remoting pull #100</a>)
+    <li class="rfe">
+        Remoting 3.3: <code>ProxyException</code> now retains info about suppressed exceptions
+        when serializing over the channel.
+        (<a href="https://github.com/jenkinsci/remoting/pull/136">remoting pull #136</a>)
+    <li class="rfe">
+        API: Introduce the new <code>Jenkins#isSubjectToMandatoryReadPermissionCheck(String restOfPath)</code> method
+        for checking access permissions to particular paths.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32797">issue 32797</a>)
+    <li class="rfe">
+        API: Introduce new <code>Node#getNodeProperty()</code> methods for retrieving node properties.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40365">issue 40365</a>)
+    <li class="rfe">
+        API: Introduce new <code>Items#allItems()</code> methods for accessing items in item groups without sorting overhead.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40252">issue 40252</a>)
+    <li class="rfe">
+        Improved Polish translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2643">pull 2643</a>)
+</ul>
+<h3 id=v2.36>What's new in 2.36 (2016/12/11)</h3>
+<ul class=image>
+    <li class="bug">
+        Several badges were missing in builds flagged as <code>KeepBuildForever</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40281">issue 40281</a>, regression in 2.34)
+    <li class="bug">
+        Retain cause of blockage if the Queue task cannot be taken due to the decision of
+        <code>QueueTaskDispatcher</code> extension, <code>NodeProperty</code> and other extensions.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38514">issue 38514</a>)
+    <li class="rfe">
+        Internal API: Allow overriding <code>UserProperty.setUser(User)</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-40266">issue 40266</a>)
+    <li class="rfe">
+        Internal API: Restrict usage of core localization message classes in plugins.
+        These message classes are not guaranteed to be binary compatible.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2656">pull 2656</a>)
+</ul>
+<h3 id=v2.35>What's new in 2.35 (2016/12/04)</h3>
+<ul class=image>
+    <li class="rfe">
+        Add display name and full display name of items to the remote API.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39972">issue 39972</a>)
+    <li class="rfe">
+        API: Allow specifying log level in <tt>SystemProperties</tt> when a System property is undefined.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2646">pull 2646</a>)
+    <li class="bug">
+        Followup fix for JENKINS-23271 in 2.34 addressing plugin implementations not using <tt>ProcStarter</tt>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2653">pull 2653</a>)
+</ul>
+<h3 id=v2.34>What's new in 2.34 (2016/11/27)</h3>
+<ul class=image>
+    <li class="rfe">
+        Improve performance of <code>Action</code> retrieval methods.
+        It speeds up core and plugin logic operating with <code>Actionable</code> objects like items, folders, nodes, etc.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38867">issue 38867</a>)
+    <li class="rfe">
+        Update the <a href="https://github.com/jenkinsci/sshd-module">SSHD module</a> from <code>1.7</code> to <code>1.8</code>.
+        The change disables obsolete Ciphers: AES128CBC, TripleDESCBC, and BlowfishCBC.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39805">issue 39805</a>)
+    <li class="rfe">
+        Update the <a href="https://github.com/kohsuke/winp">Windows process management library (WinP)</a> from <code>1.22</code> to <code>1.24</code>.
+        Full changelog is available <a href="https://github.com/kohsuke/winp/blob/master/CHANGELOG.md">here</a>, only major issues are mentioned below.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2619">pull 2619</a>)
+    <li class="bug">
+        WinP 1.24: Native class now tries loading DLLs from the temporary location.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-20913">issue 20913</a>)
+    <li class="bug">
+        WinP 1.24: WinP sometimes kills wrong processes when using <code>killRecursive()</code>.
+        It was likely impacting process termination on Windows agents and sometimes leading to BSoD.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-24453">issue 24453</a>, <a href="https://github.com/kohsuke/winp/issues/22">WinP Issue #22</a>)
+</ul>
+<h3 id=v2.33>What's new in 2.33 (2016/11/20)</h3>
+<ul class=image>
+    <li class="rfe">
+        Reduce size of Jenkins WAR file by not storing identical copies of <code>remoting.jar</code>/<code>slave.jar</code> there.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2633">pull 2633</a>)
+    <li class="major bug">
+        Prevent early deallocation of process references by Garbage Collector when starting a remote process.
+        It was sometimes causing build failures with messages like <code>FATAL: Invalid object ID 184 iuota=187</code> and <code>java.lang.Exception: Object was recently deallocated</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23271">issue 23271</a>)
+    <li class="bug">
+        Make handling of internalization resource bundle names compliant with W3C standards.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39034">issue 39034</a>)
+    <li class="bug">
+        Redirect to login page in the case of authorisation error when checking connectivity to the Update Center.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39741">issue 39741</a>)
+    <li class="bug">
+        Remove the obsolete <code>hudson.showWindowsServiceInstallLink</code> property from the <code>slave-agent.jnlp</code> file.
+        It was causing harmless security warnings in Java web start.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39883">issue 39883</a>)
+    <li class="rfe">
+        Improved Polish translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2640">pull 2640</a>)
+</ul>
+<h3 id=v2.32>What's new in 2.32 (2016/11/16)</h3>
+<ul class=image>
+    <li class="security">
+        <strong>Important security fixes</strong>
+        (<a href="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2016-11-16">security advisory</a>)
+    <li class="rfe">
+        Allow disabling the Jenkins CLI over HTTP and JNLP agent port by setting the System property <tt>jenkins.CLI.disabled</tt> to <tt>true</tt>.
+</ul>
+<h3 id=v2.31>What's new in 2.31 (2016/11/13)</h3>
+<ul class=image>
+    <li class="rfe">
+        Performance: Improve responsiveness of Jenkins web UI on mobile devices.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39172">issue 39172</a>, continuation of the patch in 2.28)
+    <li class="major bug">
+        It was not possible to connect Jenkins agents via Java Web Start due to the issue in Remoting <code>3.0</code>.
+        Upgraded to Remoting <code>3.1</code> with a fix.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39596">issue 39596</a>, regression in 2.26)
+    <li class="bug">
+        Prevent <code>NullPointerException</code> when rendering <code>CauseOfInterruption.UserInterruption</code>
+        in build summary pages for non-existent users.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38721">issue 38721</a> and
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-37282">issue 37282</a>,
+        regression in 2.14)
+    <li class="bug">
+        Reduce logging level when the localization resource is missing <code>ResourceBundleUtil#getBundle()</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39604">issue 39604</a>)
+    <li class="bug">
+        <code>ExtensionList.removeAll</code> was not unimplemented in Jenkins extension management API.
+        It was causing issues during dynamic loading of GitHub and BitBucket branch source plugins on the same instance.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39520">issue 39520</a>)
+    <li class="bug">
+        Remoting 3.1: <code>hudson.remoting.Engine</code> (mostly Java Web Start) was failing to establish connection
+        if one of the URLs in <code>urls</code> parameter was malformed.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39617">issue 39617</a>)
+    <li class="rfe">
+        Remoting 3.1: Add method for dumping diagnostics across all the channels (e.g. in the Support Core Plugin).
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39150">issue 39150</a>)
+    <li class="rfe">
+        Remoting 3.1: Improve the caller/callee correlation diagnostics in thread dumps.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39543">issue 39543</a>)
+    <li class="rfe">
+        Remoting 3.1: Add the <code>org.jenkinsci.remoting.nio.NioChannelHub.disabled</code> flag
+        for disabling NIO, mostly for debugging purposes.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39290">issue 39290</a>)
+    <li class="rfe">
+        Remoting 3.1: Add extra logging to help diagnosing <code>IOHub</code> concurrent thread number spikes.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38692">issue 38692</a>)
+    <li class="rfe">
+        Remoting 3.1: When a proxy fails, report what caused the channel to go down.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39289">issue 39289</a>)
+    <li class="rfe">
+        Improved Polish translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2631">pull 2631</a>)
+</ul>
+<h3 id=v2.30>What's new in 2.30 (2016/11/07)</h3>
+<ul class=image>
+    <li class="major bug">
+        Adjust incompatible <code>Actionable</code> initialization changes made for <a href="https://issues.jenkins-ci.org/browse/JENKINS-39404">issue 39404</a>).
+        It caused massive regressions in plugins like Jenkins Pipeline.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39555">issue 39555</a>, regression in 2.29)
+    <li class="major bug">
+        Integration of Stapler <code>1.246</code> caused regressions in plugins depending on Ruby Runtime Plugin.
+        Upgraded to Stapler <code>1.248</code> with a fix.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39414">issue 39414</a>, regression in 2.28)
+    <li class="major bug">
+        Custom remoting enable/disable settings were not properly persisted on the disk and then reloaded.
+        If the option has been configured in Jenkins starting from <code>2.16</code>, a reconfiguration may be required.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39465">issue 39465</a>)
+</ul>
+<h3 id=v2.29>What's new in 2.29 (2016/11/06)</h3>
+<p>
+    <b class="color:red">Warning!</b> This release is not recommended for use due to
+    <a href="https://issues.jenkins-ci.org/browse/JENKINS-39555">issue 39555</a>
+    and <a href="https://issues.jenkins-ci.org/browse/JENKINS-39414">issue 39414</a>.
+    We are working on the out-of-order release (<a href="https://groups.google.com/forum/#!topic/jenkinsci-dev/kceM9T8NEdg">discussion</a>).
+</p>
+<ul class=image>
+    <li class="rfe">
+        Performance: Optimize log retrieval logic for large log files.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39535">issue 39535</a>)
+    <li class="bug">
+        Integration of Stapler <code>1.246</code> caused regressions in plugins depending on Ruby Runtime Plugin.
+        Upgraded to Stapler <code>1.247</code> with a partial fix.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39414">issue 39414</a>, partial fix)
+    <li class="bug">
+        Jenkins startup does not fail if one of
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Extension+points#Extensionpoints-hudson.slaves.ComputerListener">
+            ComputerListeners</a> throws exception in the <code>onOnline()</code> handler.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38487">issue 38487</a>)
+    <li class="bug">
+        Queue: Do not consider pending tasks from the internal scheduling logic when looking for duplicate tasks.
+        It was causing race conditions in Jenkins Pipeline.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39454">issue 39454</a>)
+    <li class="rfe">
+        Internal: Modify the Actionable API to provide methods to assist with manipulation of persisted actions.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39404">issue 39404</a>)
+    <li class="rfe">
+        Internal: Jelly attribute documentation now supports the <code>since</code> tag.
+        (<a href="https://github.com/stapler/stapler/pull/84">Stapler pull #84</a>)
+</ul>
+<h3 id=v2.28>What's new in 2.28 (2016/10/30)</h3>
+<ul class=image>
+    <li class="rfe">
+        Performance: Improve responsiveness of Jenkins web UI on mobile devices.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39172">issue 39172</a>)
+    <li class="rfe">
+        Print warnings if none of Tool Installers can be used during the tool installation.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-26940">issue 26940</a>)
+    <li class="rfe">
+        Update the minimal required versions of the detached Maven Project plugin from <code>2.7.1</code> to <code>2.14</code>.
+        Changelog is available <a href="https://wiki.jenkins-ci.org/display/JENKINS/Maven+Project+Plugin">here</a>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2606">pull 2606</a>)
+    <li class="rfe">
+        Update the minimal required versions of the detached JUnit plugin from <code>1.2-beta-4</code> to <code>1.6</code>.
+        Changelog is available <a href="https://wiki.jenkins-ci.org/display/JENKINS/JUnit+Plugin">here</a>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2606">pull 2606</a>))
+    <li class="major bug">
+        Relax requirements of the JNLP connection receiver, which was rejections connections from agents not using
+        <code>JNLPComputerLauncher</code> (e.g. from Slave Setup, vSphere Cloud and other plugins).
+        No the connection is accepted from launchers implementing other proxying and filtering <code>Launcher</code> implementations.
+        Particular plugins may require setting up the
+        <code>jenkins.slaves.DefaultJnlpSlaveReceiver.disableStrictVerification</code> system property in the master JVM to allow connecting agents.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39232">issue 39232</a>, regression in 2.28)
+    <li class="bug">
+        Prevent resource leak in <code>hudson.XmlFile#readRaw()</code> in the case of encoding issues.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-39363">issue 39363</a>)
+    <li class="bug">
+        Prevented endless loop in <code>LargeText.BufferSession.skip()</code>, which was causing hanging of Pipeline jobs in corner cases.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37664">issue 37664</a>)
+    <li class="rfe">
+        Internal: Upgrade Stapler library from <code>1.243</code> to <code>1.246</code> with fixes required for the Blue Ocean project.
+        More details are coming soon.
+        Raw changes are listed <a href="https://github.com/stapler/stapler/compare/stapler-parent-1.243...stapler-parent-1.246">here</a>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2593">pull 2593</a>)
+    <li class="rfe">
+        Internal: Start defining APIs that are for the master JVM only.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38370">issue 38370</a>)
+    <li class="rfe">
+        Internal: Update Guice dependency from <code>4.0-beta</code> to <code>4.0</code>.
+        This change required upgrade of detached plugins (see above).
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2568">pull 2568</a>)
+</ul>
+<h3 id=v2.27>What's new in 2.27 (2016/10/23)</h3>
+<ul class=image>
+    <li class="major rfe">
+        Upgrade to the Remoting 3 baseline. Compatibility notes are available
+        <a href="https://github.com/jenkinsci/remoting/blob/master/docs/remoting-3-compatibility.md">here</a>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37564">issue 37564</a>)
+    <li class="major rfe">
+        Remoting 3.0: New <a href="https://github.com/jenkinsci/remoting/blob/master/docs/protocols.md#jnlp4-connect">JNLP4-connect protocol</a>,
+        which improves performance and stability compared to the JNLP3-connect protocol.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36871">issue 36871</a>)
+    <li class="rfe">
+        Remoting 3.0: Agents using <code>slave.jar</code> now explicitly require Java 7.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37565">issue 37565</a>)
+    <li class="bug">
+        Prevent deadlocks during modification of node executor numbers (e.g. during deletion of nodes).
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31768">issue 31768</a>)
+    <li class="bug">
+        Add missing internationalization support to <code>ResourceBundleUtil</code>.
+        It fixes internationalization in <a href="https://jenkins.io/projects/blueocean/">Blue Ocean</a>
+        and <a href="http://jenkinsci.github.io/jenkins-design-language/">Jenkins Design Language</a>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35845">issue 35845</a>)
+    <li class="rfe">
+        Internal: Make the code more compatible with Java 9 requirements and allow its editing in newest NetBeans versions
+        with <a href="https://netbeans.org/bugzilla/show_bug.cgi?id=268452">NB bug 268452</a>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2595">pull 2595</a>)
+    <li class="bug">
+        Internal: Icon handling API for items.
+        Deprecate <code>TopLevelItemDescriptor#getIconFilePathPattern()</code> and switch to <code>IconSpec</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38960">issue 38960</a>)
+</ul>
+<h3 id=v2.26>What's new in 2.26 (2016/10/17)</h3>
+<ul class=image>
+    <li class="rfe">
+        Allow <code>CommandInterpreter</code> build steps to set a build result as <code>Unstable</code> via the return code.
+        Shell and Batch build steps now support this feature.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23786">issue 23786</a>)
+    <li class="rfe">
+        Performance: Avoid acquiring locks in <code>MaskingClassloader</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23784">issue 23784</a>)
+    <li class="rfe">
+        Performance: Update <code>XStream</code> driver to improve performance of XML serialization/deserialization.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2561">pull 2561</a>)
+    <li class="rfe">
+        Harden checks of prohibited names in user creation logic.
+        Untrimmed spaces and different letter cases are being checked now.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35967">issue 35967</a>)
+    <li class="bug">
+        Performance: Fix the performance of file compress/uncompress operations over the remoting channel.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38640">issue 38640</a>,
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-38814">issue 38814</a>)
+    <li class="bug">
+        Restore automatic line wrapping in Build Step text boxes with syntax highlighting.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-27367">issue 27367</a>)
+    <li class="bug">
+        Properly remove disabled Administrative Monitors from the extension list.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38678">issue 38678</a>)
+    <li class="bug">
+        Remoting 2.62.2: Improve connection stability by turning on Socket Keep-alive by default.
+        Keep-alive can be disabled via the <code>-noKeepAlive</code> option.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38539">issue 38539</a>)
+    <li class="bug">
+        Remoting 2.62.2: Prevent <code>NullPointerException</code> in <code>Engine#connect()</code>
+        when <code>host</code> or <code>port</code> parameters are <code>null</code> or empty.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37539">issue 37539</a>)
+    <li class="bug">
+        Node build history page was hammering the performance of the Jenkins instance by spawning parallel heavy requests.
+        Now the information is being loaded sequentially.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23244">issue 23244</a>)
+    <li class="bug">
+        Cleanup spelling in CLI help and error messages.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38650">issue 38650</a>)
+    <li class="bug">
+        Properly handle quotes and other special symbols in item names during form validation.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31871">issue 31871</a>)
+    <li class="rfe">
+        Internal: Invoke <code>hpi:record-core-location</code> during the build in order to enabled coordinated run across repositories.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/1894">pull 1894</a>)
+    <li class="rfe">
+        Internal: Bulk cleanup of <code>@since</code> definitions in Javadoc.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2578">pull 2578</a>)
+</ul>
+<h3 id=v2.25>What's new in 2.25 (2016/10/09)</h3>
+<ul class=image>
+    <li class="bug">
+        Display transient actions for labels.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38651">issue 38651</a>)
+    <li class="bug">
+        Add user to restart log message for restart after plugin installation.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38615">issue 38615</a>)
+    <li class="rfe">
+        Internal: Code modernization: Use try-with-resources a lot more
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2570">pull 2570</a>)
+</ul>
+<h3 id=v2.24>What's new in 2.24 (2016/10/02)</h3>
+<ul class=image>
+    <li class="major rfe">
+        Show notification with popup on most pages when administrative monitors are active.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38391">issue 38391</a>)
+    <li class="rfe">
+        Allow disabling/enabling administrative monitors on Configure Jenkins form.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38301">issue 38301</a>)
+    <li class="rfe">
+        Ensure exception stacktrace is shown when there's a <tt>FormException</tt>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2555">pull 2555</a>)
+    <li class="rfe">
+        Add new <code>jenkins.model.Jenkins.slaveAgentPortEnforce</code> system property, which prevents slave agent port modification via Jenkins Web UI and form submissions.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2545">PR #2545</a>)
+    <li class="rfe">
+        Indicate hovered table row on striped tables.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32148">issue 32148</a>)
+    <li class="rfe">
+        Decrease connection timeout when changing the JNLP agent port via Groovy system scripts.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38473">issue 38473</a>)
+    <li class="rfe">
+        Added Serbian localization.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2554">PR #2554</a>)
+    <li class="bug">
+        Exclude <tt>/cli</tt> URL from CSRF protection crumb requirement, making the CLI work with CSRF protection enabled and JNLP port disabled.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-18114">issue 18114</a>)
+    <li class="bug">
+        Prevent instantiation of <code>jenkins.model.Jenkins</code> on agents in the <code>ProcessKillingVeto</code> extension point.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38534">issue 38534</a>)
+    <li class="bug">
+        Fix handling of the <code>jenkins.model.Jenkins.slaveAgentPort</code> system property, which was not honored.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-38187">issue 38187</a>, regression in 2.0)
+    <li class="bug">
+        CLI: Disable the channel message chunking by default.
+        Prevents connection issues like <code>java.io.StreamCorruptedException: invalid stream header: 0A0A0A0A</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23232">issue 23232</a>)
+    <li class="bug">
+        CLI: Connection over HTTP was not working correctly.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34287">issue 34287</a>, regression in 2.0)
+</ul>
+<h3 id=v2.23>What's new in 2.23 (2016/09/18)</h3>
+<ul class=image>
+    <li class="bug">
+        Fix JS/browser memory leak on Jenkins dashboard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-10912">issue 10912</a>)
+    <li class="bug">
+        Build history was not properly updating via AJAX.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31487">issue 31487</a>)
+    <li class="bug">
+        Properly enable submit button on New Item page when choosing item type first.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36539">issue 36539</a>)
+</ul>
+<h3 id=v2.22>What's new in 2.22 (2016/09/11)</h3>
+<ul class=image>
+    <li class="rfe">
+        Change symbol and constructor for SCMTrigger to <tt>pollScm</tt> to make it usable in Pipeline scripts.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37731">issue 37731</a>)
+    <li class="rfe">
+        Prompt user whether to add the job to the current view.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-19142">issue 19142</a>)
+    <li class="rfe">
+        Update to sshd module 1.7, allowing definition of client idle timeout.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2534">pull 2534</a>,
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-36420">issue 36420</a>)
+    <li class="rfe">
+        Update to sezpoz 1.12 with better diagnostics.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2525">pull 2525</a>)
+    <li class="bug">
+        Fix <tt>NullPointerException</tt> when descriptor is not in <tt>DescriptorList</tt>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37997">issue 37997</a>)
+    <li class="bug">
+        Use the correct 'gear' icon for Manage Jenkins in Plugin Manager.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34250">issue 34250</a>)
+</ul>
+<h3 id=v2.21>What's new in 2.21 (2016/09/04)</h3>
+<ul class=image>
+    <li class="rfe">
+        Ask for confirmation before canceling/aborting runs.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-30565">issue 30565</a>)
+    <li class="rfe">
+        Add newline after the text in <code>userContent/readme.txt</code>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2532">PR #2532</a>)
+    <li class="bug">
+        Fixed the missing icon in the System Script console.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37814">issue 37814</a>)
+    <li class="bug">
+        Print warnings to system logs and administrative monitors
+        when Jenkins initialization does not reach the final milestone.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37874">issue 37874</a>,
+        diagnostics for <a href="https://issues.jenkins-ci.org/browse/JENKINS-37759">issue-37759</a>)
+    <li class="rfe">
+        Developer API: <code>UpdateSite#getJsonSignatureValidator()</code> can be now
+        overridden and used in plugins.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2532">PR #2532</a>)
+</ul>
+<h3 id=v2.20>What's new in 2.20 (2016/08/28)</h3>
+<ul class=image>
+    <li class="rfe">
+        Make <code>Cloud.PROVISION</code> permission independent from <code>Jenkins.ADMINISTER</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37616">issue 37616</a>)
+    <li class="rfe">
+        Allow the use of custom JSON signature validator for Update Site metadata signature checks.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36537">issue 36537</a>)
+    <li class="bug">
+        Do not process <code>null</code> CRON specifications in build triggers.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36748">issue 36748</a>, enhances fix in 2.15)
+    <li class="bug">
+        Setup wizard now checks if the restart is supported on the system before displaying the restart button.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33374">issue 33374</a>)
+    <li class="bug">
+        Test Windows junctions before Java 7 symlink in symbolic link checks.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-29956">issue 29956</a>)
+    <li class="bug">
+        Fixed background color in the <code>ComboBoxList</code> element in order to make options visible.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37549">issue 37549</a>)
+    <li class="bug">
+        Fixed editing default view description with automatic refresh.
+        System message is not being displayed instead of the view description.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37360">issue 37360</a>)
+    <li class="bug">
+        Fixed process tree management logic on Solaris with 64-bit JVMs.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37559">issue 37559</a>)
+</ul>
+<h3 id=v2.19>What's new in 2.19 (2016/08/21)</h3>
+<ul class=image>
+    <li class="major bug">
+        Prevent File descriptor leaks when reading plugin manifests.
+        It causes failures during the upgrade of detached plugins on Windows.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37332">issue 37332</a>, regression in 2.16)
+    <li class="bug">
+        Prevent resource leaks in <code>AntClassLoader</code> being used in the core.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37561">issue 37561</a>)
+    <li class="bug">
+        Fix the wrong message about empty field in the case duplicate item name in the New Item dialog.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34532">issue 34532</a>)
+    <li class="rfe">
+        Allow invoking Upgrade Wizard when Jenkins starts up.
+        It can be done by placing an empty <code>jenkins.install.InstallUtil.lastExecVersion</code> file
+        in <code>JENKINS_HOME</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37438">issue 37438</a>)
+    <li class="rfe">
+        Replace repetitious &quot;website&quot; and &quot;dependencies&quot; text in the Setup Wizard by icons.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37523">issue 37523</a>)
+    <li class="rfe">
+        Expose Job name to system logs when Jenkins fails to create a new build with <code>IllegalStateException</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33549">issue 33549</a>)
+    <li class="rfe">
+        Downgrade <code>Queue#maintain()</code> message for dead executors during task mapping
+        from <code>INFO</code> to <code>FINE</code>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2510">PR #2510</a>)
+</ul>
+<h3 id=v2.18>What's new in 2.18 (2016/08/15)</h3>
+<ul class=image>
+    <li class="rfe">
+        Better diagnostics and robustness against old <code>ChangeLogAnnotator</code> API usage in plugins.
+        Enhances <a href="https://issues.jenkins-ci.org/browse/JENKINS-23365">JENKINS-23365</a> fix in 1.569.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36757">issue 36757</a>)
+    <li class="bug">
+        Prevent open file leak when the agent channel <code>onClose()</code> listener writes to the already closed log.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37098">issue 37098</a>)
+    <li class="major bug">
+        Stop A/B testing of the remoting JNLP3 protocol due to the known issues.
+        The protocol can be enabled manually via the <code>jenkins.slaves.JnlpSlaveAgentProtocol3.enabled</code>
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">system property</a>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37315">issue 37315</a>)
+    <li class="bug">
+        When checking Update Center, append <code>?uctest</code> parameter to HTTP and HTTPS URLs only.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37189">issue 37189</a>)
+    <li class="bug">
+        Incorrect formatting of messages in the Update Center and Setup Wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36757">issue 36757</a>)
+    <li class="bug">
+        Massive cleanup of issues reported by FindBugs.
+        User-visible issues - wrong log message formatting bugs in the Update Center and user creation logic.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36717">issue 36717</a>,
+        <a href="https://github.com/jenkinsci/jenkins/pull/2459">PR #2459</a>)
+    <li class="bug">
+        Remoting 2.61: JNLP Slave connection issue with JNLP3-connect
+        when the generated encrypted cookie contains a newline symbols.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37140">issue 37140</a>)
+    <li class="bug">
+        Remoting 2.61: Retry loading classes when remote classloader gets interrupted.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36991">issue 36991</a>)
+    <li class="rfe">
+        Remoting 2.61: Improve diagnostics of Local Jar Cache write errors.
+        (<a href="https://github.com/jenkinsci/remoting/pull/91">remoting PR #91</a>)
+    <li class="bug">
+        Remoting 2.62: Be robust against the delayed EOF command when unexporting input and output streams.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-22853">issue 22853</a>)
+    <li class="bug">
+        Remoting 2.62: Cleanup of minor issues discovered by FindBugs.
+        (<a href="https://github.com/jenkinsci/remoting/pull/96">remoting PR #96</a>)
+    <li class="rfe">
+        Remoting 2.62: Improve class filtering performance in remote invocations.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37218">issue 37218</a>)
+    <li class="rfe">
+        Remoting 2.62: TCP agent connection listener now publishes a list of supported agent protocols to speed up the connection setup.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37031">issue 37031</a>)
+    <li class="rfe">
+        Improve German, Lithuanian and Bulgarian translations.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2473">PR #2473</a>,
+        <a href="https://github.com/jenkinsci/jenkins/pull/2470">PR #2470</a>,
+        <a href="https://github.com/jenkinsci/jenkins/pull/2498">PR #2498</a>
+        )
+</ul>
+<h3 id=v2.17>What's new in 2.17 (2016/08/05)</h3>
+<ul class=image>
+    <li class="major bug">
+        Don't load all builds to display the paginated build history widget.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31791">issue 31791</a>)
+    <li class="rfe">
+        Add diagnostic HTTP response to TCP agent listener.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37223">issue 37223</a>)
+    <li class="rfe">
+        Internal: Invoke FindBugs during core build.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36715">issue 36715</a>)
+</ul>
+<h3 id=v2.16>What's new in 2.16 (2016/07/31)</h3>
+<ul class=image>
+    <li class="major bug">
+        Fix plugin dependency resolution. Jenkins will now refuse to load plugins with unsatisfied dependencies, which resulted in difficult to diagnose problems. <strong>This may result in errors on startup if your instance has an invalid plugin configuration.</strong>, check the Jenkins log for details.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-21486">issue 21486</a>)
+    <li class="major rfe">
+        Decouple bouncycastle libraries from Jenkins into bouncycastle-api plugin.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36923">issue 36923</a>)
+    <li class="rfe">
+        Upgrade to instance-identity module 2.1.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36922">issue 36922</a>)
+    <li class="rfe">
+        Hide the Java Web Start launcher when the TCP agent port is disabled.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36996">issue 36996</a>)
+    <li class="rfe">
+        Allow admins to control the enabled agent protocols on their instance from the global security settings screen.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37032">issue 37032</a>)
+    <li class="bug">
+        Make sure that the All view is created.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36908">issue 36908</a>)
+    <li class="bug">
+        Remove trailing space from <tt>Hudson.DisplayName</tt> in Spanish, which resulted in problems with Blue Ocean.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36940">issue 36940</a>)
+    <li class="bug">
+        Honor non-default update sites in setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34882">issue 34882</a>)
+    <li class="bug">
+        Display delete button only when build is not locked.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2483">pull 2483</a>)
+    <li class="bug">
+        Use build start times instead of build scheduled times in build timeline widget.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36732">issue 36732</a>)
+    <li class="bug">
+        Ensure that detached plugins are always at least their minimum version.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37041">issue 37041</a>)
+    <li class="rfe">
+        Internal: Move CLI commands wait-node-online/wait-node-offline from core to CLI module.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34915">issue 34915</a>)
+    <li class="rfe">
+        Internal: Allow accessing instance identity from core.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36871">issue 36871</a>)
+    <li class="bug">
+        Internal: Fix the default value handling of <tt>ArtifactArchiver.excludes</tt>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-29922">issue 29922</a>)
+</ul>
+<h3 id=v2.15>What's new in 2.15 (2016/07/24)</h3>
+<ul class=image>
+    <li class="major bug">
+        Tell browsers not to cache or try to autocomplete forms in Jenkins to prevent problems due to invalid data in form submissions.
+        From now on, only select form fields (e.g. job name) will offer autocompletion.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-18435">issue 18435</a>)
+    <li class=rfe>
+        Add a cache for user information to fix performance regression due to SECURITY-243.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35493">issue 35493</a>)
+    <li class=bug>
+        Prevent null pointer exceptions when not entering a cron spec for a trigger.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36748">issue 36748</a>)
+    <li class=bug>
+        Defend against some fatal startup errors.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36666">issue 36666</a>)
+    <li class=rfe>
+        Use the icon specified by the computer implementation on its overview page.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36775">issue 36775</a>)
+    <li class=rfe>
+        Internal: Extract the CLI command <tt>offline-node</tt> from core.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34468">issue 34468</a>)
+</ul>
+<h3 id=v2.14>What's new in 2.14 (2016/07/17)</h3>
+<ul class=image>
+    <li class=rfe>
+        Minor optimization in calculation of recent build stability health report.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36629">issue 36629</a>)
+    <li class=bug>
+        Underprivileged users were unable to use the default value of a password parameter.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36476">issue 36476</a>)
+    <li class=bug>
+        Allow keeping builds forever with custom build retention strategies.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-26438">issue 26438</a>)
+    <li class=bug>
+        Properly handle exceptions during global configuration form submissions when <code>SCM Retry Count</code> field is empty.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36387">issue 36387</a>)
+    <li class=bug>
+        When a user aborts the build, this user may be restored after its deletion.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36594">issue 36594</a>)
+    <li class=bug>
+        Prevent potential <code>NullPointerException</code> in the <code>BlockedBecauseOfBuildInProgress</code> build blockage cause visualization.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36592">issue 36592</a>)
+    <li class=rfe>
+        CLI commands <code>quiet-down</code> and <code>cancel-quiet-down</code> were extracted from the core to CLI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35423">issue 35423</a>)
+    <li class=rfe>
+        Developer API: Extract listing of computer names to the <code>ComputerSet#getComputerNames()</code> method.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35423">issue 35423</a>)
+    <li class=rfe>
+        Developer API: Add a try with resources form of impersonation.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36494">issue 36494</a>)
+    <li class=bug>
+        Developer API: Usage of <code>ItemCategory#MIN_TOSHOW</code> in external plugins is now restricted.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36593">issue 36593</a>)
+</ul>
+<h3 id=v2.13>What's new in 2.13 (2016/07/10)</h3>
+<ul class=image>
+    <li class=bug>
+        <code>IllegalStateException</code> under certain conditions when reloading configuration from disk while jobs are in the queue.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-27530">issue 27530</a>)
+    <li class=rfe>
+        Eliminate “dead executor” UI appearing after certain errors, such as JENKINS-27530.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2440">PR 2440</a>)
+    <li class=bug>
+        Make setup wizard installation panel usable on small screens.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34668">issue 34668</a>)
+</ul>
+<h3 id=v2.12>What's new in 2.12 (2016/07/05)</h3>
+<ul class=image>
+    <li class=rfe>
+        Enable the <code>DescriptorVisibilityFilter</code>s for ComputerLauncher, RetentionStrategy and NodeProperty.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36280">issue 36280</a>)
+    <li class=rfe>
+        Before starting a process, ensure that its working directory exists.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36277">issue 36277</a>)
+    <li class=bug>
+        Prevent <code>NullPointerException</code> during SCM polling if <code>SCMDecisionHandler</code> returns <code>null</code> veto.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36232">issue 36232</a>, regression in 2.11)
+    <li class=bug>
+        Ensure that <code>SCMDescriptor.newInstance</code> overrides are honored when creating new SCM entries.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36043">issue 36043</a>,
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-35906">issue 35906</a>
+        , regression in 2.10)
+    <li class=bug>
+        Performance: Improve configuration page load times by removing the CodeMirror reloading cycle.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32027">issue 32027</a>)
+    <li class=bug>
+        Fix optional plugin dependency version resolution.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-21486">issue 21486</a>)
+    <li class=bug>
+        When creating a tar file, ensure that the final size does not exceed the value
+        in header in the case of growing files.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-20187">Issue 20187</a>)
+    <li class=bug>
+        Do not inject build variables into Maven process by default for new projects.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-25416">issue 25416</a>,
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-28790">issue 28790</a>)
+    <li class=rfe>
+        Update <code>BUILD_TAG</code> environment variable description to mention the replacement of slashes with dashes.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2417">PR #2417</a>)
+    <li class=rfe>
+        Internal API: Make <code>BulkChange</code> auto-closeable.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2428">PR #2428</a>)
+</ul>
+<h3 id=v2.11>What's new in 2.11 (2016/06/26)</h3>
+<ul class=image>
+    <li class=rfe>
+        Provide an extension point for SCM decisions such as whether to poll a specific job's backing
+        repository for changes.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36123">issue 36123</a>)
+</ul>
+<h3 id=v2.10>What's new in 2.10 (2016/06/19)</h3>
+<ul class=image>
+    <li class=rfe>
+        Better exception message if a <code>SecurityRealm</code> returns null when loading a user.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2407">PR #2407</a>)
+    <li class=bug>
+        Prevent <code>NullPointerException</code> in user registration if user ID is not specified.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33600">issue 33600</a>)
+    <li class=bug>
+        Internal: It was impossible to build Jenkins on 32-bit Linux machine.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-36052">issue 36052, regression from 2.0</a>)
+</ul>
+<h3 id=v2.9>What's new in 2.9 (2016/06/13)</h3>
+<ul class=image>
+    <li class=bug>
+        Always send usage statistics over HTTPs to the new usage.jenkins.io hostname.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35641">issue 35641</a>)
+    <li class=bug>
+        Performance: Disable AutoBrowserHolder by default to improve the changelog rendering performance.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35098">issue 35098</a>)
+    <li class=bug>
+        Remoting 2.60: Make the channel reader tolerant against Socket timeouts.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-22722">issue 22722</a>)
+    <li class=bug>
+        Remoting 2.60: Proper handling of the <code>no_proxy</code> environment variable.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32326">issue 32326</a>)
+    <li class=bug>
+        Remoting 2.60: Do not invoke PingFailureAnalyzer for agent=>master ping failures.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35190">issue 35190</a>)
+    <li class=bug>
+        Remoting 2.60: <code>hudson.Remoting.Engine#waitForServerToBack</code> now uses credentials for connection.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31256">issue 31256</a>)
+    <li class=bug>
+        Remoting 2.60: Fix potential file handle leaks during the build agent (FKA slave) startup.
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-35190">issue 35190</a>)
+    <li class=rfe>
+        Internal: Upgrade Groovy to 2.4.7 to finalize the fix in Jenkins 2.7.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34751">issue 34751</a>)
+    <li class=rfe>
+        API: Allow delegating <code>TaskListener</code> creation to build agent implementations.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34923">issue 34923</a>)
+    <li class=rfe>
+        API: Restrict external usages of <code>jenkins.util.ResourceBundleUtil</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35381">issue 35381</a>)
+    <li class=rfe>
+        API: Make it easier for <code>UpdateSite</code>s to tweak the <code>InstallationJob</code>.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35402">issue 35402</a>)
+</ul>
+<h3 id=v2.8>What's new in 2.8 (2016/06/05)</h3>
+<ul class=image>
+    <li class=bug>
+        Explicitly declare compatibility of Windows build agent service with .NET Framework 4.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2386">PR #2386</a>)
+    <li class=rfe>
+        API: Introduce new listener extension point for slave creation/update/deletion.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33780">issue 33780</a>)
+    <li class=rfe>
+        Lossless optimization sizes of PNG images in Jenkins.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2379">PR #2379</a>)
+    <li class=bug>
+        Fix the repeatable item delete button layout in Safari.
+        Addresses Build Steps and other such configuration items.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35178">issue 35178</a>)
+    <li class=bug>
+        Installation Wizard: Do not offer creating new admin user if the security is preconfigured.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34881">issue 34881</a>)
+    <li class=bug>
+        Prevent <code>NullPointerException</code> on startup after update from Jenkins 2.5.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35206">issue 35206</a>)
+    <li class=bug>
+        Honor noProxy settings from "Manage Jenkins > Manage Plugins > Advanced".
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31915">issue 31915</a>)
+    <li class=rfe>
+        Add <a href="http://hc.apache.org/httpclient-3.x/authentication.html#NTLM">NTLM support</a>
+        to the proxy validation logic.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/1955">PR #1955</a>)
+</ul>
+<h3 id=v2.7>What's new in 2.7 (2016/05/29)</h3>
+<ul class=image>
+
+    <li class="bug">
+        Prevent stack overflow when using classes with complex generic type arguments
+        (e.g. <code>hudson.model.Run</code> or <code>hudson.model.Job</code>).
+        Regression in Groovy 2.4,
+        see <a href="https://issues.apache.org/jira/browse/GROOVY-7826">GROOVY-7826</a> for more info.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34751">issue 34751</a>)
+    <li class="bug">
+        Do not invoke <code>PingFailureAnalyzer</code> for agent=>master ping failures.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35190">issue 35190</a>)
+    <li class="bug">
+        Fix keyboard navigation in setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33947">issue 33947</a>)
+    <li class="bug">
+        Cleanup of Javascript issues discovered by the JSHint static analysis tool.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35020">issue 35020</a>)
+    <li class="bug">
+        <code>DelegatingComputerLauncher</code> now accepts child classes in its hooks
+        (pre-offline, pre-connect, etc.).
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35198">issue 35198</a>)
+    <li class="rfe">
+        Internal: Activate JSHint in Jenkins js-builder component during the core build.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34438">issue 34438</a>)
+    <li class="rfe">
+        Internal: Add symbol annotation for <code>SystemInfoLink</code>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2375">PR #2375</a>)
+    <li class="bug">
+        Internal: NodeJS build was malfunctioning on Win x64.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-35201">issue 35201</a>)
+</ul>
+<h3 id=v2.6>What's new in 2.6 (2016/05/22)</h3>
+<ul class=image>
+    <li class="major rfe">
+        Adapt the Setup Wizard GUI to provide a similar user experience when upgrading Jenkins.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33663">issue 33663</a>)
+        <!--TODO: add a links to the Extension points when Wiki get's updated-->
+    <li class="rfe">
+        Improve extensibility of the Setup Wizard GUI:
+        <code>InstallState</code> and <code>InstallStateFilter</code> extension points.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2281">PR 2281</a> as supplementary change for
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-33663">issue 33663</a>)
+    <li class="rfe">
+        Improve User Experience in the New Item form. Submit button is always visible.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34244">issue 34244</a>)
+    <li class="rfe">
+        Allow passing a list of safe job parameters in <code>ParametersAction</code>.
+        It simplifies fixing of <a href="https://wiki.jenkins-ci.org/display/JENKINS/Plugins+affected+by+fix+for+SECURITY-170">plugins affected by SECURITY-170 fix</a>.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2353">PR 2353</a>)
+    <li class="rfe">
+        Added Symbol annotations for
+        <code>ParametersDefinition</code> and <code>BuildDiscarder</code> properties.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2358">PR 2358</a>)
+    <li class="rfe">
+        Extended the <code>online-node</code> CLI command for accepting multiple agents.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34531">issue 34531</a>)
+    <li class="bug">
+        Listed Parameters should reflect what was used when the build ran (filtering of unsafe parameters).
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34858">issue 34858</a>)
+    <li class="bug">
+        Scalability: Fix performance issues in the XML unmarshalling code.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34888">issue 34888</a>)
+    <li class="bug">
+        Support the legacy icon size specification approach in the Status Ball visualization.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-25220">issue 25220</a>, regression in 1.586)
+    <li class="bug">
+        Migrate the leftover system properties to the new engine introduced in 2.4.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34854">issue 34854</a>)
+    <li class="bug">
+        Do not show warnings about a missing Tool Installer if it is present in at least one Update Site.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34880">issue 34880</a>)
+    <li class="bug">
+        Prevent hanging of the installation wizard due to the plugin status update issue.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34708">issue 34708</a>)
+    <li class="rfe">
+        Internal: CLI command <code>connect-node</code> was extracted from the core to CLI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31417">issue 31417</a>)
+</ul>
+<h3 id=v2.5>What's new in 2.5 (2016/05/16)</h3>
+<ul class=image>
+    <li class="major bug">
+        Do not throw exceptions if <code>Jenkins.getInstance()</code> returns <code>null</code> instance.
+        It was causing failures on Jenkins agents in the case of unexpected API usage by agents.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34857">issue 34857</a>, regression in 2.4)
+    <li class=rfe>
+        Replace <code>jenkins.model.Jenkins.disableExceptionOnNullInstance</code> by
+        <code>jenkins.model.Jenkins.enableExceptionOnNullInstance</code> to address the
+        behavior change.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34857">issue 34857</a>)
+</ul>
+<h3 id=v2.4>What's new in 2.4 (2016/05/15)</h3>
+<ul class=image>
+    <li class=rfe>
+        Internal/build: <code>jenkins-ui</code> (NPM module) is private, used only internally.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34629">issue 34629</a>)
+    <li class=rfe>
+        Do not print stack trace during a plugin installation if it is missing its dependencies.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34683">issue 34683</a>)
+    <li class=rfe>
+        Allow specifying custom <code>AbortException</code>s.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2288">pull 2288</a>)
+    <li class=rfe>
+        Add a <code>hudson.model.UpdateCenter.defaultUpdateSiteId</code> system property,
+        which allows specifying an alternate default Update Site ID.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34674">issue 34674</a>)
+    <li class=rfe>
+        Allow setting of properties from <code>context.xml</code> and <code>web.xml</code>
+        in addition to setting system properties from the command line.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34755">issue 34755</a>)
+    <li class=rfe>
+        Remove the historical initialization of CVS changelog parser for jobs without explicit SCM definition.
+        <b>Warning!</b> This change may potentially cause a regression if a Jenkins plugin depends on this default behavior and injects changelogs without SCM.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-4610">issue 4610</a>)
+    <li class=rfe>
+        Add the JOB_BASE_NAME environment variable to builds (job name without path).
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-25164">issue 25164</a>)
+    <li class=rfe>
+        Allow overriding Jenkins <code>UpdateCenter</code> by a custom implementation.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34733">issue 34733</a>)
+    <li class=rfe>
+        Allow overriding Jenkins <code>PluginManager</code> by a custom implementation.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34681">issue 34681</a>)
+    <li class=rfe>
+        Installation Wizard: Allow altering the list of suggested plugins from update sites.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34833">issue 34833</a>)
+    <li class=bug>
+        Prevent hanging of the Installation Wizard if the default Update Site ID cannot be resolved.
+        In such case an error message will be displayed.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34675">issue 34675</a>)
+    <li class=bug>
+        Prevent hanging of the Installation Wizard if the internet check is skipped for the default update site.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34705">issue 34705</a>)
+    <li class=bug>
+        Do not fail with error when enabling a plugin, which has been already enabled.
+        It prevents errors in the new Installation Wizard, which installs plugins in parallel.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34710">issue 34710</a>)
+    <li class=bug>
+        Plugin Manager was building incorrect list of bundled plugins for nested dependencies.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34748">issue 34748</a>)
+    <li class=bug>
+        Prevent fatal failure of the updates check <code>PeriodicWork</code> if update site certificate is missing.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34745">issue 34745</a>)
+    <li class=bug>
+        Pick up missing <code>Downloadable</code> items on restart if all update centers are up to date.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32886">issue 32886</a>)
+    <li class=bug>
+        Allow starting non-<code>AbstractProject</code> (e.g. Pipeline) jobs from CLI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-28071">issue 28071</a>)
+    <li class=bug>
+        Disable JSESSIONID in URLs when running in the JBoss web container.
+        It prevents Error 404 due to invalid links starting from Jenkins 1.556.
+        More info: <a href="https://issues.jboss.org/browse/WFLY-4782">WFLY-4782</a>
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34675">issue 34675</a>)
+    <li class=bug>
+        Prevent RSS ID collisions for items with same name in different folders.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34767">issue 34767</a>)
+    <li class=bug>
+        Prevent <code>NoSuchMethodException</code> in <code>loginLink.jelly</code>
+        when attempting to start a job using REST API.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31618">issue 31618</a>)
+    <li class=bug>
+        Make <code>ToolInstallers</code> to follow HTTP 30x redirects.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23507">issue 23507</a>)
+    <li class=bug>
+        Prevent <code>NullPointerException</code> in the parameter definition job property
+        if it gets initialized incorrectly.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34370">issue 34370</a>)
+    <li class=bug>
+        Bundle <code>Font Awesome</code> and <code>Google Fonts: Roboto</code> dependencies
+        to prevent failures in the offline mode.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34628">issue 34628</a>)
+    <li class=rfe>
+        Internal: CLI commands <code>disconnect-node</code> and <code>reload-configuration</code> were extracted from the core to CLI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34328">issue 34328</a> and
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-31900">issue 31900</a>)
+    <li class=rfe>
+        Internal: Support latest source version to avoid compile time warnings with JDK7.
+        <a href="https://github.com/jenkinsci/lib-annotation-indexer">annotation-indexer</a> and
+        <a href="https://github.com/jglick/sezpoz">sezpoz</a> have been updated to 1.11.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32978">issue 32978</a>)
+    <li class=rfe>
+        Developer API: Switch <code>Jenkins.getInstance()</code> to <code>@Nonnull</code>.
+        (new <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">system property</a>)
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2297">pull 2297</a>)
+    <li class=bug>
+        Remoting, scalability: Ensure that the unexporter cleans up whatever it can each GC sweep.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34213">issue 34213</a>)
+    <li class=bug>
+        Remoting: Force class load on UserRequest to prevent deadlocks on Windows nodes agents in the case of multiple classloaders.
+        (Controlled by <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">hudson.remoting.RemoteClassLoader.force</a>)
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-19445">issue 19445</a>)
+    <li class=rfe>
+        Remoting: Allow Jenkins admins to adjust the socket timeout.
+        (Controlled by <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">hudson.remoting.Engine.socketTimeout</a>)
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34808">issue 34808</a>)
+    <li class=rfe>
+        Remoting: Allow disabling the remoting protocols individually.
+        Allows working around compatibility issues like
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-34121">JENKINS-34121</a>.
+        (Controlled by <a href="https://wiki.jenkins-ci.org/display/JENKINS/Features+controlled+by+system+properties">PROTOCOL_CLASS_NAME.disabled</a>)
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34819">issue 34819</a>)
+</ul>
+<h3 id=v2.3>What's new in 2.3 (2016/05/11)</h3>
+<ul class=image>
+    <li class="security">
+        <strong>Important security fixes</strong>
+        (see the <a href="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2016-05-11">security advisory</a> for details and plugin compatibility issues)
+</ul>
+<h3 id=v2.2>What's new in 2.2 (2016/05/08)</h3>
+<ul class=image>
+    <li class="rfe">
+        Add symbol annotations on core.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2293">pull 2293</a>)
+    <li class=rfe>
+        Upgrade Stapler to 1.243.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2298">pull 2298</a>)
+    <li class=rfe>
+        Internal/build: Enable JSHint during build.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34438">issue 34438</a>)
+    <li class=rfe>
+        Workaround for unpredictable Windows file locking.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-15331">issue 15331</a>)
+    <li class="rfe">
+        Improved Lithuanian translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2309">pull 2309</a>)
+    <li class="rfe">
+        Improved French translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2308">pull 2308</a>)
+    <li class="rfe">
+        Restrict access to URLs related to plugin manager.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31611">issue 31611</a>)
+    <li class=rfe>
+        API: New <tt>HttpSessionListener</tt> extension point.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2303">pull 2303</a>)
+
+    <li class=bug>
+        Don't go through init sequence twice.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2177">pull 2177</a>)
+    <li class=bug>
+        Create Item form can be navigated using keyboard again.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33822">issue 33822</a>)
+    <li class="rfe">
+        Fix inline help for node name field.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34601">issue 34601</a>)
+</ul>
+<h3 id=v2.1>What's new in 2.1 (2016/05/01)</h3>
+<ul class=image>
+    <li class="major bug">
+        Enable disabled dependencies during plugin installations.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34494">issue 34494</a>)
+    <li class="major bug">
+        Force ordering between GPG and jarsigner to ensure correct GPG signature.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2285">pull 2285</a>)
+    <li class="major bug">
+        Secured Jenkins installations didn't properly save the queue on shutdown.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34281">issue 34281</a>)
+
+    <li class="rfe">
+        Add dependency resolution to manually uploaded plugins.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-15057">issue 15057</a>)
+    <li class="rfe">
+        Show Jenkins version on setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33535">issue 33535</a>)
+    <li class="rfe">
+        Update remoting to 2.57.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33999">issue 33999</a>)
+    <li class="rfe">
+        Allow retrying plugin downloads in setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33244">issue 33244</a>)
+    <li class="rfe">
+        Add links to homepage of plugins and dependencies in setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33936">issue 33936</a>,
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-33937">issue 33937</a>)
+    <li class="rfe">
+        Improved handling of the 'close' button during setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34137">issue 34137</a>)
+    <li class="rfe">
+        Wrong spacing in flat mode of 'Create Item' screen.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31162">issue 31162</a>)
+    <li class="rfe">
+        Add timestamp to the <tt>jarsigner</tt> signature.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2284">pull 2284</a>)
+    <li class="rfe">
+        Improved French translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2267">pull 2267</a>)
+    <li class="rfe">
+        Improved Lithuanian translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2286">pull 2286</a>)
+    <li class="rfe">
+        Improved Brazilian Portuguese translation.
+        (<a href="https://github.com/jenkinsci/jenkins/pull/2273">pull 2273</a>)
+
+    <li class="bug">
+        Prevent errors when hiding management links.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33683">issue 33683</a>)
+    <li class="bug">
+        Internal: Make logger field private.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34093">issue 34093</a>)
+    <li class="bug">
+        Shorter timeout for plugin downloads to prevent setup wizard from hanging.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34174">issue 34174</a>)
+    <li class="bug">
+        Check if job is buildable before showing 'Build with parameters' page.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34146">issue 34146</a>)
+    <li class="bug">
+        Fixed race condition in slave offline cause.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34448">issue 34448</a>)
+    <li class="bug">
+        Allow enabling disabled dependencies in the plugin manager to fix broken configurations.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32340">issue 32340</a>)
+    <li class="bug">
+        Always display clicked scrollspy items as active in setup wizard.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33948">issue 33948</a>)
+    <li class="bug">
+        Prevent multiple installations of the same dependency.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33950">issue 33950</a>)
+</ul>
+
+
+<h3 id=v2.0>What's new in 2.0 (2016/04/20)</h3>
+<div style="margin: 10px; padding: 10px; background-color: #FFFFCE;">
+    <strong>More detailed information about the new features in Jenkins 2.0 <a href="/2.0/">on the overview page</a>.</strong>
+</div>
+
+<ul class=image>
+    <li class="rfe major">
+        New password-protected setup wizard shown on first run to guide users through installation of popular plugins and setting up an admin user.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-30749">issue 30749</a>,
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-9598">issue 9598</a>)
+    <li class="rfe major">
+        Plugin bundling overhaul: Bundled plugins are only installed if necessary when upgrading, all plugins can be uninstalled.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-20617">issue 20617</a>)
+    <li class="rfe major">
+        Redesigned job configuration form makes it easier to understand the option hierarchy, and to navigate the form.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-32357">issue 32357</a>)
+    <li class="rfe major">
+        Richer 'Create Item' form with job icons and job categories (once a threshold of three categories has been reached).
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-31162">issue 31162</a>)
+
+    <li class="rfe">
+        Upgrade wizard encourages installation of Pipeline related plugins when upgrading from 1.x.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33662">issue 33662</a>)
+    <li class="rfe">
+        <strong>Jenkins now requires Servlet 3.1</strong>. Upgraded embedded Winstone-Jetty to Jetty 9 accordingly.
+        <strong>This removes AJP support when using the embedded Winstone-Jetty container.</strong>
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-23378">issue 23378</a>)
+    <li class="rfe">
+        Bundled Groovy updated from 1.8.9 to 2.4.6.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-21249">issue 21249</a>)
+    <li class="rfe">
+        Added option to prohibit anonymous access to security realm "Logged in users can do anything", enable by default.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-30749">issue 30749</a>)
+    <li class="rfe">
+        Renamed 'slave' to 'agent' on the UI.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-27268">issue 27268</a>)
+    <li class="rfe">
+        Improvements to inline documentation of numerous form fields in Jenkins global and job configuration.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33364">issue 33364</a>)
+    <li class="rfe">
+        Change default CSRF protection crumb name to Jenkins-Crumb for nginx compatibility.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-12875">issue 12875</a>)
+
+    <li class="bug">
+        Enforce correct icon size in list view.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33799">issue 33799</a>)
+    <li class="bug">
+        CLI: Fixed NPE when non-existent run is requested.
+        (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33942">issue 33942</a>)
+
+</ul>
+
+<!-- ending partial changelog-weekly.html -->
+</div>
+<p>
+<b>
+Older changelogs can be found in a
+<a href="/changelog-old/">
+separate file
+</a>
+</b>
+</p>
+
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//changelog/index.html.haml" title="Edit /changelog/index.html.haml on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//changelog/index.html.haml" title="View /changelog/index.html.haml history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-453-update-main-blue-ocean-and-getting-started-pages/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>
