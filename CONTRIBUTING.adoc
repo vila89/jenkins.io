@@ -10,14 +10,14 @@ toc::[]
 == Purpose of this guide
 
 The purpose of this guide is to provide instructions on how to get set up to
-contribute to `jenkins.io`, as well as how to edit/contribute content on this
+contribute to `jenkins.io`, as well as how to edit and review content on this
 site. Since this site is generated using a combination of Asciidoctor and
-Awestruct, this guide covers various aspects of AsciiDoc and Haml syntax which
-are important for creating properly functioning content on this site. This
-guide, however, does not provide details on AsciiDoc and Haml syntax.
+Awestruct, this CONTRIBUTING guide covers aspects of AsciiDoc and Haml syntax
+and usage which are required for this site to function correctly. This guide,
+however, is not a detailed guide on how to use AsciiDoc and Haml syntax.
 
 For details about Jenkins-specific terminology, writing style and using AsciiDoc
-syntax on this site, see the link:STYLEGUIDE.adoc[STYLEGUIDE].
+syntax correctly on this site, see the <<styleguide>>.
 
 
 == Forking and cloning this repository

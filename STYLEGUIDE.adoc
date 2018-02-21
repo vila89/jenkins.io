@@ -14,13 +14,13 @@ CAUTION: This document is still a work in progress.
 The purpose of this guide is to cover all aspects on how to write content for
 the `jenkins.io` site. Unlike the link:CONTRIBUTING.adoc[CONTRIBUTING] guide,
 this STYLEGUIDE covers details about how to use Jenkins-specific terminology,
-general comments about phraseology and writing style, as well as all aspects of
-AsciiDoc syntax which are relevant to this site.
+general comments about phraseology and writing style, as well as how to use
+AsciiDoc syntax correctly on this site.
 
 For details about how to get set up to contribute to the `jenkins.io` site and
 broader aspects such as a description of the `jenkins.io` documentation
-structure and how to construct properly functioning content on the site, see the
-link:CONTRIBUTING.adoc[CONTRIBUTING] guide.
+structure, how to construct properly functioning content on the site and review
+this content, see the link:CONTRIBUTING.adoc[CONTRIBUTING] guide.
 
 
 == Terminology
