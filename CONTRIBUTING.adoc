@@ -13,11 +13,11 @@ The purpose of this guide is to provide instructions on how to get set up to
 contribute to `jenkins.io`, as well as how to edit/contribute content on this
 site. Since this site is generated using a combination of Asciidoctor and
 Awestruct, this guide covers various aspects of AsciiDoc and Haml syntax which
-are important for creating properly functioning content on this site. However,
-this guide does not provide details on AsciiDoc and Haml syntax.
+are important for creating properly functioning content on this site. This
+guide, however, does not provide details on AsciiDoc and Haml syntax.
 
 For details about Jenkins-specific terminology, writing style and using AsciiDoc
-syntax on this site, see the link:styleguide[STYLEGUIDE].
+syntax on this site, see the <<styleguide>>.
 
 
 == Forking and cloning this repository
