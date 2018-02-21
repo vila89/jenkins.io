@@ -17,7 +17,7 @@ and usage which are required for this site to function correctly. This guide,
 however, is not a detailed guide on how to use AsciiDoc and Haml syntax.
 
 For details about Jenkins-specific terminology, writing style and using AsciiDoc
-syntax correctly on this site, see the <<styleguide>>.
+syntax correctly on this site, see the link:STYLEGUIDE.adoc[STYLEGUIDE].
 
 
 == Forking and cloning this repository
