@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Re-keying
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Re-keying" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Re-keying" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Re-keying" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/security/advisory/2013-01-04/re-keying/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Re-keying" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<style>
+  .container .row.body {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
+  .toc {
+      float: right;
+  }
+</style>
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('.container .row.body h' + i);
+    }
+  })
+</script>
+<div class="container">
+<div class="row body">
+<div class="col-md-12">
+<h1>
+Re-keying
+</h1>
+<div class="paragraph">
+<p>Due to the <a href="/security/advisory/2013-01-04/">security vulnerability</a>, it is possible that the cryptographic key used to store secrets (such as various password, API tokens, anything else that the UI uses the password input field) in your Jenkins was compromised by someone who has HTTP access to your Jenkins.</p>
+</div>
+<div class="paragraph">
+<p>To plug this hole, Jenkins 1.497 introduced a new mechanism to store secrets that make this kind of wide-spread problem less likely in the future. As you use Jenkins and save configurations of various Jenkins objects, configuration XML files are overwritten and they will start using this new encryption key.</p>
+</div>
+<div class="paragraph">
+<p>However, some jobs may not get any configuration changes in a timely fashion, and in such a situation, the corresponding configuration XML files on the disk will be potentially at risk.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, Jenkins 1.497 offers a functionality to actively re-key the encrypted secrets in your entire <code>$JENKINS_HOME</code>. This process involves scanning <code>$JENKINS_HOME</code> recursively and find secrets encrypted by using the old (and therefore possibly compromised) key. Once found, they are replaced by the same plain text encrypted by the fresh key.</p>
+</div>
+<div class="paragraph">
+<p>Because this involves modifying data in <code>$JENKINS_HOME</code>, the administrator should consider the following trade-offs in choosing when to run this.</p>
+</div>
+<div class="sect1">
+<h2 id="before-you-start"><a class="anchor" href="#before-you-start"></a>Before you start</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="what-it-does"><a class="anchor" href="#what-it-does"></a>What it does</h3>
+<div class="paragraph">
+<p>As the re-keying process finds old data and rewrites them, files are backed up to <code>$JENKINS_HOME/jenkins.security.RekeySecretAdminMonitor/backups</code>. In an unlikely event that the rewrite process causes a problem down the road, you can get your original data back from this directory. Nonetheless, you may want to back up <code>$JENKINS_HOME</code> before you run the re-keying process.</p>
+</div>
+<div class="paragraph">
+<p>The re-keying process works transparently to the running Jenkins instance. Updates of files are done atomically (by creating files in new names then rename into the original), so it will not affect the concurrent read by other parts of Jenkins. And if other parts of Jenkins so happen to be updating the same file, both will contain the data encrypted by the new key.</p>
+</div>
+<div class="paragraph">
+<p>With that said, for those who want to be extra cautious, we provided an option to schedule the re-keying operation upon the next boot. Upon the boot, Jenkins will run the re-keying operation, and resumes the normal service only after this process is complete. From outside, this will look no different from the regular prolonged startup wait screen.</p>
+</div>
+<div class="paragraph">
+<p>Once started, the re-keying process recursively looks for files with the <code>.xml</code> extension in <code>$JENKINS_HOME</code>, which can take some time on a larger installation. To mitigate this, the recursion logic is designed to skip directories that are known not to contain any encrypted secrets. This includes "workspace", "artifacts", and "plugins".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-you-ll-lose-once-you-re-key"><a class="anchor" href="#what-you-ll-lose-once-you-re-key"></a>What you&#8217;ll lose once you re-key</h3>
+<div class="paragraph">
+<p>Because older versions of Jenkins do not understand the new mechanism to encrypt secrets, rewritten configuration files cannot be read back by older Jenkins without loss of information. More specifically, it&#8217;ll fail to load the encrypted secrets but it&#8217;ll read back everything else OK.</p>
+</div>
+<div class="paragraph">
+<p>If you find yourself needing to downgrade after the re-keying operation, please restore the older files from <code>$JENKINS_HOME/jenkins.security.RekeySecretAdminMonitor/backups</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="while-you-re-key"><a class="anchor" href="#while-you-re-key"></a>While you re-key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The re-keying operation is idempotent, in that you can run it multiple times without causing a harm. The new key is generated as soon as you launch Jenkins 1.497, and all that the re-keying process is doing is to overwrite the data to use this new key. For this reason, you can safely rerun the re-keying operation should one fail/abort in the middle.</p>
+</div>
+<div class="paragraph">
+<p>If you start running re-keying process either in the background or during the boot, you can monitor its progress by looking at <code>$JENKINS_HOME/jenkins.security.RekeySecretAdminMonitor/rekey.log</code>. For background re-keying operation, this log is visible by following the link in the "Manage Jenkins" page. The "scanning" log line is meant to be an indication of where the process currently is. It only prints one line for every 100 files scanned.</p>
+</div>
+<div class="paragraph">
+<p>If you are in the middle of the background re-keying operation and found that you need to reboot/shutdown Jenkins, you can do so without harm. You just need to re-run the re-keying process later. The same thing applies if you are in the middle of the boot-time re-keying operation and found that you need to bring it to the operation right away. You simply kill the Jenkins process and restart. It&#8217;ll come up without running another re-keying operation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="after-you-re-key"><a class="anchor" href="#after-you-re-key"></a>After you re-key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the re-keying process is completed, the aforementioned backup directory should be moved off from the Jenkins master to prevent future leakage of the sensitive data.</p>
+</div>
+<div class="paragraph">
+<p>To really verify that the re-keying process didn&#8217;t cause any issues, you&#8217;ll have to reboot Jenkins one more time, so that fresh reads will be attempted from disk.</p>
+</div>
+<div class="paragraph">
+<p>We apologize for your inconvenience.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//security/advisory/2013-01-04/re-keying.adoc" title="Edit /security/advisory/2013-01-04/re-keying.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//security/advisory/2013-01-04/re-keying.adoc" title="View /security/advisory/2013-01-04/re-keying.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

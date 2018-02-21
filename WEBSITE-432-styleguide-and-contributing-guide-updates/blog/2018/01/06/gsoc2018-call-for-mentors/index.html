@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Google Summer Of Code 2018: Call for mentors
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Google Summer Of Code 2018: Call for mentors" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Google Summer Of Code 2018: Call for mentors" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Google Summer Of Code 2018: Call for mentors" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2018/01/06/gsoc2018-call-for-mentors/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Google Summer Of Code 2018: Call for mentors" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2018/01/06/gsoc2018-call-for-mentors/" title="Google Summer Of Code 2018: Call for mentors">
+Google Summer Of Code 2018: Call for mentors
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2018-01-06
+by
+<a href="#about-the-author">Oleg Nenashev</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/gsoc">
+gsoc
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/gsoc2018">
+gsoc2018
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/events">
+events
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/community">
+community
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>This year the Jenkins project is interested in participating in
+<a href="https://developers.google.com/open-source/gsoc/">Google Summer of Code (GSoC)</a>.
+As in 2016/2017, we are looking for mentors.
+So yes, we are looking for you :)</p>
+</div>
+<div class="paragraph">
+<p><span class="image center" style="float: right"><img src="/images/gsoc/jenkins-gsoc-logo_small.png" alt="Jenkins GSoC"></span></p>
+</div>
+<div class="sect1">
+<h2 id="what-is-gsoc"><a class="anchor" href="#what-is-gsoc"></a>What is GSoC?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>GSoC is an annual international program which encourages
+college-aged students to participate with open source projects during the summer
+break between classes.</p>
+</div>
+<div class="paragraph">
+<p>Students accepted into the program receive a stipend,
+paid by Google, to work on well-defined projects to improve or enhance the Jenkins
+project.
+In exchange, numerous Jenkins community members volunteer as <em>mentors</em>
+for students to help integrate them into the open source community and succeed
+in completing their summer projects.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-do-mentors-get"><a class="anchor" href="#what-do-mentors-get"></a>What do mentors get?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A student who works full-time in the area of your interest for several months</p>
+</li>
+<li>
+<p>Joint projects with Jenkins experts, lots of fun and ability to study something together</p>
+</li>
+<li>
+<p>Limited-edition of swags from Google and Jenkins project</p>
+</li>
+<li>
+<p>Maybe: Participation in GSoC Mentor Summit and other GSoC events/meetups</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conditions"><a class="anchor" href="#conditions"></a>Conditions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mentors are expected to&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Be passionate about Jenkins</p>
+</li>
+<li>
+<p>Lead the project in the area of their interest</p>
+</li>
+<li>
+<p>Actively participate in the project during student selection, community bonding and coding phases (March - August)</p>
+</li>
+<li>
+<p>Work in teams of 2+ mentors per 1 each student</p>
+</li>
+<li>
+<p>Dedicate a consistent and significant amount of time, especially during the coding phase (<em>~5 hours</em> per week in a team of two mentors)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mentorship does <strong>NOT</strong> require strong expertise in Jenkins plugin development.
+The main objective is to guide students and to get them involved into the Jenkins community.
+GSoC org admins will help to find advisors if a special expertise is needed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Disclaimer:</strong> We cannot guarantee that the Jenkins organization gets accepted to GSoC.
+Even if it gets accepted, we may need to select projects depending on student applications
+and the number of allocated project slots.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="timeline"><a class="anchor" href="#timeline"></a>Timeline</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Dec 2017 - started collecting project ideas</p>
+</li>
+<li>
+<p>Jan 17 - Status review at the <a href="https://wiki.jenkins.io/display/JENKINS/Governance+Meeting+Agenda">Jenkins Governance Meeting</a>.
+Outcome: decision whether we apply to GSoC in 2018.</p>
+</li>
+<li>
+<p>Jan 21 - Application to GSoC (deadline - Jan 23)</p>
+</li>
+<li>
+<p>Feb 12 - List of accepted mentoring organizations published</p>
+</li>
+<li>
+<p>Mar 05 - Deadline for project idea proposals</p>
+</li>
+<li>
+<p>Next - <a href="https://developers.google.com/open-source/gsoc/timeline">GSoC Timeline</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-apply"><a class="anchor" href="#how-to-apply"></a>How to apply?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are interested in proposing a project or joining an existing one, please respond to
+<a href="https://groups.google.com/forum/#!topic/jenkinsci-dev/We-14-z_YXU">this thread</a>
+in the Jenkins Developer mailing list.
+We aggregate/review proposals in
+<a href="https://docs.google.com/document/d/1q2p_XZEdbkcVDMpEPTtjPS15i2Oq3CQgH_geJjPhofY/edit">this document</a>
+where you just need to describe the idea and introduce yourself.</p>
+</div>
+<div class="paragraph">
+<p>Please propose new project ideas for discussion until March 05.
+You can join an existing project at any time, including community bonding and coding periods.</p>
+</div>
+<div class="sect2">
+<h3 id="project-requirements"><a class="anchor" href="#project-requirements"></a>Project requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>GSoC is about code (though it may and likely should include some documentation and testing work)</p>
+</li>
+<li>
+<p>Projects should be about Jenkins (plugins, core, infrastructure, integrations, etc.)</p>
+</li>
+<li>
+<p>Projects should be potentially doable by a student in 3-4 months</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can find more information about requirements and practices in the
+<a href="https://google.github.io/gsocguides/mentor/">GSoC Mentor Guide</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="links"><a class="anchor" href="#links"></a>Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/projects/gsoc/">Jenkins GSoC subproject page</a></p>
+</li>
+<li>
+<p><a href="/projects/gsoc/mentors">Information for mentors</a></p>
+</li>
+<li>
+<p><a href="https://developers.google.com/open-source/gsoc/">Google Summer of Code page</a></p>
+</li>
+<li>
+<p><a href="https://google.github.io/gsocguides/mentor/">GSoC Mentor Guide</a></p>
+</li>
+<li>
+<p><a href="https://developers.google.com/open-source/gsoc/timeline">GSoC Timeline</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Oleg Nenashev" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/images/avatars/oleg_nenashev.png">
+</td>
+<td>
+<b class="author name">
+Oleg Nenashev
+</b>
+<p>
+<div class="paragraph">
+<p>Oleg an active Jenkins contributor and engineer at CloudBees.
+He has a PhD degree in Hardware Engineering and &gt;10 years in R&amp;D and Automation.
+Oleg contributes to the Jenkins core,
+maintains <a href="/projects/remoting">Remoting</a> and plugins like
+<a href="https://plugins.jenkins.io/role-strategy">Role Strategy</a>,
+<a href="https://plugins.jenkins.io/envinject">EnvInject</a>,
+<a href="https://plugins.jenkins.io/ownership">Ownership</a>,
+etc.
+He also organizes <a href="/projects/jam/">Jenkins meetups</a>
+and events like <a href="/projects/gsoc">GSoC</a>.</p>
+</div>
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/oleg-nenashev" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/oleg_nenashev" target="_blank">
+Twitter
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2018/01/2018-01-06-gsoc2018-call-for-mentors.adoc" title="Edit /blog/2018/01/2018-01-06-gsoc2018-call-for-mentors.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2018/01/2018-01-06-gsoc2018-call-for-mentors.adoc" title="View /blog/2018/01/2018-01-06-gsoc2018-call-for-mentors.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

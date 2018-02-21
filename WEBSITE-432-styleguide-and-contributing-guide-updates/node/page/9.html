@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Jenkins Community Blog
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Jenkins Community Blog" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Jenkins Community Blog" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Jenkins Community Blog" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/9.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Jenkins Community Blog" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-8 main-content with-sidebar" id="content">
+<div id="content-top">
+<h2>
+Jenkins Community Blog
+</h2>
+</div>
+<div class="blogintro">
+The Jenkins project has a lot going on between core/plugin development,
+events and other open source automation related activities. To keep up with
+it subscribe to our
+<a href="https://feeds.feedburner.com/ContinuousBlog/">
+RSS feed
+</a>
+or
+<a href="https://twitter.com/jenkinsci">
+follow us on Twitter
+</a>
+</div>
+<!-- starting partial blogcardlist.html.haml -->
+<div class="content blog-posts">
+<div class="item-list">
+<ul class="ji-blog-list ji-item-list">
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/04/06/welcome-to-blue-ocean-editor/">
+<div class="header">
+<div class="date">
+<div class="month">
+Apr
+</div>
+<div class="day">
+06
+</div>
+</div>
+<h5 class="title">
+Getting Started with Blue Ocean's Visual Pipeline Editor
+</h5>
+</div>
+<p class="teaser">
+This is a guest post by Liam Newman,
+Technical Evangelist at CloudBees.
+
+
+
+
+
+Blue Ocean is a new user experience for Jenkins,
+and version 1.0 is now live!
+Blue Ocean makes Jenkins, and continuous delivery, approachable to all team members.
+In my previous post,
+I explained how to install Blue Ocean on your local Jenkins instance and switch to using Blue Ocean.
+As promised, here&#8217;s a screencast that picks up where that...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/bitwiseman">Liam Newman</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/blueocean">
+blueocean
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/ux">
+ux
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/pipeline">
+pipeline
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/tutorial">
+tutorial
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/screencast">
+screencast
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/04/05/welcome-to-blue-ocean/">
+<div class="header">
+<div class="date">
+<div class="month">
+Apr
+</div>
+<div class="day">
+05
+</div>
+</div>
+<h5 class="title">
+Getting Started with Blue Ocean
+</h5>
+</div>
+<p class="teaser">
+This is a guest post by Liam Newman,
+Technical Evangelist at CloudBees.
+
+
+
+
+
+Welcome to Blue Ocean 1.0!
+
+
+In case you&#8217;ve been heads down on other projects
+for the past 10 months,
+Blue Ocean is a new user experience for Jenkins,
+and version 1.0 was released today!
+Blue Ocean makes Jenkins, and continuous delivery, approachable to all team members.
+I&#8217;ve been working with it for the past several months, and I can tell...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/bitwiseman">Liam Newman</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/blueocean">
+blueocean
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/ux">
+ux
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/pipeline">
+pipeline
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/tutorial">
+tutorial
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/04/05/say-hello-blueocean-1-0/">
+<div class="header">
+<div class="date">
+<div class="month">
+Apr
+</div>
+<div class="day">
+05
+</div>
+</div>
+<h5 class="title">
+Say hello to Blue Ocean 1.0
+</h5>
+</div>
+<p class="teaser">
+Back in May 2016 we announced our intent
+to rethink the Jenkins User experience with the Blue Ocean project and today
+the Jenkins project are pleased to announce the general
+availability of Blue Ocean 1.0.
+
+
+Blue Ocean is an entirely new, modern and fun way for developers to use Jenkins
+that has been built from the ground up to help teams of any size approach
+Continuous Delivery. Easily installed as...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/i386">James Dumay</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/blueocean">
+blueocean
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/ux">
+ux
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/pipeline">
+pipeline
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/03/24/jenkins-community-survey/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+24
+</div>
+</div>
+<h5 class="title">
+The State of Jenkins - 2016 Community Survey
+</h5>
+</div>
+<p class="teaser">
+This is a guest post by Bhavani Rao, Marketing Manager at CloudBees
+
+
+
+
+
+
+Last fall, prior to Jenkins World, CloudBees conducted a
+Community Survey.
+We received over 1200 responses, and thanks to this input, we have some
+interesting insights into how Jenkins users and their use of Jenkins are
+evolving.
+
+
+Based on the survey&#8217;s results, Jenkins is increasingly being used to support
+continuous delivery (CD). Adoption of Jenkins 2, which featured "Pipeline...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://www.cloudbees.com/blogs/bhavani-rao">Bhavani Rao</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/community">
+community
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/survey">
+survey
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/continuous delivery">
+continuous delivery
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/03/21/toulousejam-pipeline-workshop/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+21
+</div>
+</div>
+<h5 class="title">
+Pipeline Workshop & Hackergarten @ ToulouseJAM Feedback
+</h5>
+</div>
+<p class="teaser">
+Earlier this month, a full-day event about Jenkins Pipeline was organized in Toulouse, France with the Toulouse JAM.
+
+
+After a warm-up on the previous Tuesday where Michaël Pailloncy had given a talk at the local Toulouse Devops user group about Jenkins Pipeline ecosystem, we were ready for more digging :-).
+
+
+
+
+
+
+
+The agenda
+
+
+We had planned the day in two parts:
+
+
+
+
+Morning would be a more driven workshop with...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/batmat">Baptiste Mathus</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/hackergarten">
+hackergarten
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/jam">
+jam
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/meetup">
+meetup
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/feedback">
+feedback
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/03/20/security-updates/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+20
+</div>
+</div>
+<h5 class="title">
+Security updates for multiple Jenkins plugins
+</h5>
+</div>
+<p class="teaser">
+Multiple Jenkins plugins received updates today that fix several security vulnerabilities:
+
+
+
+
+Active Directory
+
+
+Distributed Fork
+
+
+Email Extension (Email-ext)
+
+
+Mailer
+
+
+SSH Slaves
+
+
+
+
+For an overview of what was fixed, see the security advisory.
+
+
+Additionally, we also published a security notice for the following plugin and recommend that users disable and uninstall it:
+
+
+
+
+Pipeline: Classpath Step
+
+
+
+
+This plugin is not part of the Pipeline suite of plugins, despite its name. It&#8217;s installed on just several...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/daniel-beck">Daniel Beck</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/plugins">
+plugins
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/security">
+security
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/03/17/blueocean-devlog-mar3/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+17
+</div>
+</div>
+<h5 class="title">
+Blue Ocean Dev Log: March Week #3
+</h5>
+</div>
+<p class="teaser">
+We&#8217;re counting down the weeks until Blue Ocean 1.0,
+and we&#8217;re getting close!  In this past week, the first release candidate
+has gone out to the Update Center, along with a new
+Pipeline Editor plugin. The Blue Ocean
+Pipeline Editor is its own plugin which integrates into Blue Ocean, so this was
+a coordinated release with Blue Ocean 1.0 rc1.
+
+
+
+
+
+Noteworthy this week:
+
+
+
+
+RC1 includes the Blue Ocean Pipeline Editor,...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/michaelneale">Michael Neale</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/blueocean">
+blueocean
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="post">
+<a class="body" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2017/03/16/fosdem-event-report/">
+<div class="header">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+16
+</div>
+</div>
+<h5 class="title">
+FOSDEM 2017 Wrap-up
+</h5>
+</div>
+<p class="teaser">
+In early February numerous free and open source developers from around the
+world traveled to Brussels, Belgium, for arguably the largest event of its
+kind:
+FOSDEM. Among the thousands of hackers in attendance
+were a dozen or so Jenkins contributors. We have attended the event in the
+past, but this year we had a blizzard of activity spanning four days around the FOSDEM
+weekend.
+
+
+
+
+
+Figure 1. City Hall, photo by Kohsuke...
+<span class="more"></span>
+</p>
+</a>
+<div class="attrs">
+<a href="https://github.com/rtyler">R. Tyler Croy</a>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/fosdem">
+fosdem
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/event">
+event
+</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- ending partial blogcardlist.html.haml -->
+<div>
+<nav>
+<ul class="pagination">
+<li class='17061600: 21763360: 22966480: 24074700: 24451880: 24694060: 24928960: 25178780: :change_frequency=&gt;"never", :lastmod=&gt;"2018-02-21", :layout=&gt;"default", :paginate_generated=&gt;true, :posts=&gt;[Awestruct::Page{ :priority=&gt;0.1, :section=&gt;"blog", :selected_tag=&gt;nil, :title=&gt;"Jenkins :url=&gt;"/node/page/8.html"} Awestruct::Page{ Blog", Community layout=&gt;post output_path=&gt;/blog/2017/04/10/jenkins-has-upgraded-to-java-8/index.html, output_path=&gt;/blog/2017/04/10/security-advisory/index.html, output_path=&gt;/blog/2017/04/11/new-cli/index.html, output_path=&gt;/blog/2017/04/11/welcome-to-blue-ocean-pipeline-activity/index.html, output_path=&gt;/blog/2017/04/12/jenkinsworld-agenda-announced/index.html, output_path=&gt;/blog/2017/04/12/welcome-to-blue-ocean-dashboard/index.html, output_path=&gt;/blog/2017/04/18/continuousdelivery-devops-sonarqube/index.html, output_path=&gt;/blog/2017/04/20/secure-jenkins-on-azure/index.html, page-item source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-10-jenkins-has-upgraded-to-java-8.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-10-security-advisory.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-11-new-cli.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-11-welcome-to-blue-ocean-pipeline-activity.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-12-jenkinsworld-agenda-announced.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-12-welcome-to-blue-ocean-dashboard.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-18-continuousdelivery-devops-sonarqube.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/04/2017-04-20-secure-jenkins-on-azure.adoc, {:__is_layout=&gt;false, }, }],'>
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/8.html">
+&laquo;
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+1
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/2.html">
+2
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/3.html">
+3
+</a>
+</li>
+<li class="page-item disabled">
+<a class="page-link" href="#">
+...
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/5.html">
+5
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/6.html">
+6
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/7.html">
+7
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/8.html">
+8
+</a>
+</li>
+<li class="active page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/9.html">
+9
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/10.html">
+10
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/11.html">
+11
+</a>
+</li>
+<li class="page-item disabled">
+<a class="page-link" href="#">
+...
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/66.html">
+66
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/67.html">
+67
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/68.html">
+68
+</a>
+</li>
+<li class="page-item">
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/69.html">
+69
+</a>
+</li>
+<li class='17098560: 22118560: 23243160: 24254220: 24569300: 24814360: 25094520: 25469300: :change_frequency=&gt;"never", :lastmod=&gt;"2018-02-21", :layout=&gt;"default", :paginate_generated=&gt;true, :posts=&gt;[Awestruct::Page{ :priority=&gt;0.1, :section=&gt;"blog", :selected_tag=&gt;nil, :title=&gt;"Jenkins :url=&gt;"/node/page/10.html"} Awestruct::Page{ Blog", Community layout=&gt;post output_path=&gt;/blog/2017/02/10/blueocean-devlog-feb2/index.html, output_path=&gt;/blog/2017/02/10/declarative-html-publisher/index.html, output_path=&gt;/blog/2017/02/15/declarative-notifications/index.html, output_path=&gt;/blog/2017/02/15/pipeline-editor-preview/index.html, output_path=&gt;/blog/2017/02/23/declarative-saucelabs-xunit/index.html, output_path=&gt;/blog/2017/02/24/blueocean-devlog-feb4/index.html, output_path=&gt;/blog/2017/03/03/blueocean-devlog-mar1/index.html, output_path=&gt;/blog/2017/03/10/blueocean-devlog-mar2/index.html, page-item source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/02/2017-02-10-blueocean-devlog-feb2.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/02/2017-02-10-declarative-html-publisher.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/02/2017-02-15-declarative-notifications.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/02/2017-02-15-pipeline-editor-preview.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/02/2017-02-23-declarative-saucelabs-xunit.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/02/2017-02-24-blueocean-devlog-feb4.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/03/2017-03-03-blueocean-devlog-mar1.adoc, source_path=&gt;/Users/giles/Documents/GitHub/jenkins.io/content/blog/2017/03/2017-03-10-blueocean-devlog-mar2.adoc, {:__is_layout=&gt;false, }, }],'>
+<a class="page-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/page/10.html">
+&raquo;
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-md-4 events vertical">
+<div class="content">
+<!-- starting partial events.html.haml -->
+<div class="item-list">
+<ul class="ji-date-list ji-item-list">
+<li class="post event">
+<a class="body" href="https://www.meetup.com/DFW-Jenkins-Area-Meetup/events/247529602/" target="_blank">
+<div class="header time">
+<div class="date-time">
+<div class="date">
+<div class="month">
+Feb
+</div>
+<div class="day">
+22
+</div>
+<div class="dow">
+Thu
+</div>
+</div>
+<div class="time">
+ 6:30 pm
+</div>
+</div>
+<h5 class="title">
+DFW JAM
+</h5>
+</div>
+<p class="teaser">
+Feb 2018 DFW JAM
+
+<div class="more"></div>
+</p>
+</a>
+<div class="attrs"></div>
+</li>
+<li class="post event">
+<a class="body" href="https://www.meetup.com/Jenkins-online-meetup/events/247776374/" target="_blank">
+<div class="header time">
+<div class="date-time">
+<div class="date">
+<div class="month">
+Feb
+</div>
+<div class="day">
+27
+</div>
+<div class="dow">
+Tue
+</div>
+</div>
+<div class="time">
+ 8:00 am
+</div>
+</div>
+<h5 class="title">
+Jenkins Online Meetup
+</h5>
+</div>
+<p class="teaser">
+Setup and Manage iOS & Android infrastructure for CI with Jenkins
+
+<div class="more"></div>
+</p>
+</a>
+<div class="attrs"></div>
+</li>
+<li class="post event">
+<a class="body" href="https://www.meetup.com/Philadelphia-Jenkins-Area-Meetup/events/246936225/" target="_blank">
+<div class="header time">
+<div class="date-time">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+7
+</div>
+<div class="dow">
+Wed
+</div>
+</div>
+<div class="time">
+ 6:00 pm
+</div>
+</div>
+<h5 class="title">
+Philadelphia JAM
+</h5>
+</div>
+<p class="teaser">
+
+March 2018 Philadelphia JAM 
+
+<div class="more"></div>
+</p>
+</a>
+<div class="attrs"></div>
+</li>
+<li class="post event">
+<a class="body" href="https://www.meetup.com/Jenkins-Oslo/events/247148897/" target="_blank">
+<div class="header time">
+<div class="date-time">
+<div class="date">
+<div class="month">
+Mar
+</div>
+<div class="day">
+19
+</div>
+<div class="dow">
+Mon
+</div>
+</div>
+<div class="time">
+ 6:30 pm
+</div>
+</div>
+<h5 class="title">
+Jenkins Oslo
+</h5>
+</div>
+<p class="teaser">
+
+Day of Cloud Native warm-up!
+
+<div class="more"></div>
+</p>
+</a>
+<div class="attrs"></div>
+</li>
+</ul>
+</div>
+
+<!-- ending partial events.html.haml -->
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//node/index.html.haml" title="Edit /node/index.html.haml on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//node/index.html.haml" title="View /node/index.html.haml history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2016/03/02/toulousejam-hackergarten/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2016/03/02/toulousejam-hackergarten/" title="Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse">
+Jenkins Hackergarten : mercredi 9 mars 2016 à Toulouse
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2016-03-02
+by
+<a href="#about-the-author">Baptiste Mathus</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/hackergarten">
+hackergarten
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/jam">
+jam
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/meetup">
+meetup
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous êtes développeuse ou développeur, vous avez envie de découvrir le projet
+Jenkins de l&#8217;intérieur, en bricolant sur un sujet qui vous intéresse, lisez
+la suite !</p>
+</div>
+<div class="paragraph">
+<p>Mercredi 9 mars, le <a href="http://www.meetup.com/fr-FR/Toulouse-Jenkins-Area-Meetup/events/228709190/">Toulouse Jenkins Area Meetup</a>
+organise à Toulouse un Hackergarten Jenkins, occasion idéale pour faire ses
+premiers pas dans la communauté assisté(e) d&#8217;un contributeur au projet.</p>
+</div>
+<div class="sect1">
+<h2 id="em-hackergart-em-quoi"><a class="anchor" href="#em-hackergart-em-quoi"></a><em>Hackergart</em> quoi ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hackergarten est un mot qui provient de la contraction des mots <em>Hacker</em> et
+<em>Kindergarten</em>, ce dernier étant le mot allemand qui désigne en gros l&#8217;école
+maternelle.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="comment-ça-va-se-passer"><a class="anchor" href="#comment-ça-va-se-passer"></a>Comment ça va se passer ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En partenariat avec le <a href="http://www.meetup.com/fr-FR/Toulouse-Java-User-Group/events/228708579/">Toulouse Java User Group</a>
+(c&#8217;est sur ce lien qu&#8217;il <strong>faut</strong> s&#8217;inscrire), nous nous donnons rendez-vous à
+partir de 18h30 dans les locaux de l&#8217;Epitech Toulouse, chacun avec son
+ordinateur (non fourni), et on commence à jouer.</p>
+</div>
+<div class="paragraph">
+<p>Et c&#8217;est bien sûr <strong>gratuit et ouvert à tous</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Un <a href="https://trello.com/b/fpT5dJqS/toulousejam-hackergarten-february-2016">tableau trello a été initialisé</a>
+pour tenter de s&#8217;organiser un peu. La liste des choses à faire n&#8217;est pas du
+tout figée, et les idées sont les bienvenues.</p>
+</div>
+<div class="paragraph">
+<p>Les commentaires sont ouverts à tous, et l&#8217;accès sera donné à quiconque en fait
+la demande (façon communauté Jenkins :-)).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="goodies"><a class="anchor" href="#goodies"></a>Goodies !</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grâce à l&#8217;aide de CloudBees, on a pas mal de goodies à offrir : stickers,
+badges, t-shirts et bobble-heads !</p>
+</div>
+<div class="sect2">
+<h3 id="les-bobble-heads-jenkins"><a class="anchor" href="#les-bobble-heads-jenkins"></a>Les Bobble Heads Jenkins</h3>
+<div class="paragraph">
+<p><span class="image"><img src="https://farm3.staticflickr.com/2878/9725573715_fa056b6652_n.jpg" alt="9725573715 fa056b6652 n"></span>
+Nous en avons 2 ! Et ceux-ci
+seront <strong>offerts au deux premiers participants à voir leur pull-request
+envoyée pendant la soirée <em>mergée</em></strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="que-faire-pour-se-préparer"><a class="anchor" href="#que-faire-pour-se-préparer"></a>Que faire pour (se) préparer ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si vous n&#8217;en avez pas, créez-vous un compte pour les services suivants :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://accounts.jenkins.io">Jenkins</a></p>
+</li>
+<li>
+<p><a href="https://github.com/join">GitHub</a></p>
+</li>
+<li>
+<p><a href="https://trello.com/signup">Trello</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Au niveau machine, idéalement, vous avez :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Git</code> et <code>Maven</code> bien installés</p>
+</li>
+<li>
+<p><code>Docker</code> installé (natif sous Linux), ou via
+<a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox</a> pour
+les autres OS</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Des informations plus précises seront normalement données très bientôt aux
+inscrits via <em><a href="http://www.meetup.com/fr-FR/Toulouse-Java-User-Group/events/228708579/">meetup</a></em> quant à la préparation des machines.</p>
+</div>
+<div class="sect2">
+<h3 id="quel-s-langage-s-faut-il-connaître"><a class="anchor" href="#quel-s-langage-s-faut-il-connaître"></a>Quel(s) langage(s) faut-il connaître ?</h3>
+<div class="paragraph">
+<p>Idéalement, puisque Jenkins est écrit en Java, il serait souhaitable que vous
+ connaissiez au moins les bases.</p>
+</div>
+<div class="paragraph">
+<p>Toutefois, même si par exemple vos compétences sont plutôt côté Web, il y aura
+aussi des choses à faire, que ce soit jouer avec le
+<a href="https://trello.com/c/imxNcDEj/1-new-website">nouveau site en préparation</a>,
+ou ajouter une <a href="https://trello.com/c/07doPalc/2-statistics">page web câblée
+sur certains fichiers json des statistiques</a>.</p>
+</div>
+<div class="paragraph">
+<p>Connaître au moins les bases de Git sera un gain de temps, mais ce n&#8217;est pas
+indispensable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="récapitulatif"><a class="anchor" href="#récapitulatif"></a>Récapitulatif</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.meetup.com/Toulouse-Java-User-Group/events/228708579/?<em>locale=fr-FR">Pour s&#8217;inscrire (indiquez Jenkins à la question posée au _RSVP</em>)</a></p>
+</li>
+<li>
+<p>le <a href="https://trello.com/b/fpT5dJqS/toulousejam-hackergarten-february-2016">tableau Trello dédié aux activités de la soirée</a> (demandez l&#8217;accès !)</p>
+</li>
+<li>
+<p>Cf. ci-dessus pour les choses à installer sur votre machine</p>
+</li>
+<li>
+<p>N&#8217;hésitez pas : l&#8217;ambiance est accueillante, et on offre les pizzas !</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Baptiste Mathus" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Baptiste Mathus
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/batmat" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/bmathus" target="_blank">
+Twitter
+</a>
+</li>
+<li class="author">
+<a href="http://batmat.net" target="_blank">
+Blog
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2016/2016-03-02-toulousejam-hackergarten.adoc" title="Edit /blog/2016/2016-03-02-toulousejam-hackergarten.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2016/2016-03-02-toulousejam-hackergarten.adoc" title="View /blog/2016/2016-03-02-toulousejam-hackergarten.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>

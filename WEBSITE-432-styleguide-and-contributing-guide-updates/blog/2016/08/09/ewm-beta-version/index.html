@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+GSoC: External Workspace Manager for Pipeline. Beta release is available
+</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Jenkins is an open source automation server" name="description">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/sites/default/files/jenkins_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon.ico" rel="icon" sizes="32x32" type="img/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="GSoC: External Workspace Manager for Pipeline. Beta release is available" name="apple-mobile-web-app-title">
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@JenkinsCI" name="twitter:site">
+<meta content="GSoC: External Workspace Manager for Pipeline. Beta release is available" name="twitter:title">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="twitter:description">
+<meta content="@JenkinsCI" name="twitter:creator">
+<!-- Twitter Summary card images must be at least 120x120px -->
+<!-- Open Graph data -->
+<meta content="GSoC: External Workspace Manager for Pipeline. Beta release is available" property="og:title">
+<meta content="article" property="og:type">
+<meta content="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2016/08/09/ewm-beta-version/index.html" property="og:url">
+<meta content="Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software." name="og:description">
+<meta content="GSoC: External Workspace Manager for Pipeline. Beta release is available" property="og:site_name">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/css/tether.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-icons.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/jenkins.css" media="screen" rel="stylesheet">
+<!-- Non-obtrusive CSS styles -->
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/ionicons/css/ionicons.min.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/footer.css" media="screen" rel="stylesheet">
+<link href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/css/font-awesome.min.css" media="screen" rel="stylesheet">
+</head>
+<body>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/jquery/jquery.js"></script>
+<!-- starting partial toptoolbar.html.haml -->
+<nav class="navbar navbar-toggleable-md navbar-inverse top bg-inverse fixed-top" id="ji-toolbar">
+<div class="container">
+<button class="navbar-toggler navbar-toggler-rght hidden-lg-up float-right" data-target="#CollapsingNavbar" data-toggle="collapse" type="button">
+<i class="ion-navicon"></i>
+</button>
+<a class="navbar-brand" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates">
+Jenkins
+</a>
+<div class="collapse navbar-collapse" id="CollapsingNavbar">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Documentation
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Use Jenkins
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc/developer">
+Extend Jenkins
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://plugins.jenkins.io/">
+Plugins
+</a>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Use-cases
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/participate">
+Participate
+</a>
+</li>
+<li class="dropdown nav-item">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Sub-projects</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/">
+Overview
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/blueocean/">
+Blue Ocean
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/gsoc/">
+Google Summer of Code
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/infrastructure/">
+Infrastructure
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/jam/">
+Jenkins Area Meetups
+</a>
+<a class="dropdown-item feature" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/projects/remoting/">
+Jenkins Remoting
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+Resources
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item feature" href="https://accounts.jenkins.io/" title="Create/manage your account for accessing wiki, issue tracker, etc">
+Account Management
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/chat" title="Chat with the rest of the Jenkins community on IRC">
+Chat
+</a>
+<a class="dropdown-item feature" href="https://issues.jenkins-ci.org/">
+Issue Tracker
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">
+Mailing Lists
+</a>
+<a class="dropdown-item feature" href="https://wiki.jenkins-ci.org/">
+Wiki
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">
+About
+</div>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/security">
+Security
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/press">
+Press
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/project/conduct">
+Conduct
+</a>
+<a class="dropdown-item" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/artwork">
+Artwork
+</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link btn btn-outline-secondary" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/download">
+Download
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Spacing to make the fixed-top sticky navbar not occlude any content below it -->
+<div class="pt-4">
+&nbsp;
+</div>
+
+<!-- ending partial toptoolbar.html.haml -->
+<script>
+  $(function () {
+    for (var i = 1 ; i <= 6 ; i ++) {
+      anchors.add('#content h' + i);
+    }
+  })
+</script>
+<div class="container blog-post">
+<div class="row body">
+<div class="col-md-11 col-md-offset-1 main-content" id="content">
+<div id="content-top">
+<h1>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/blog/2016/08/09/ewm-beta-version/" title="GSoC: External Workspace Manager for Pipeline. Beta release is available">
+GSoC: External Workspace Manager for Pipeline. Beta release is available
+</a>
+</h1>
+<div style="float: right; clear: all;">
+<a class="twitter-share-button" data-lang="en" href="https://twitter.com/share">
+Tweet
+</a>
+</div>
+<div class="post-attrs">
+<span class="submitted">
+Published on
+2016-08-09
+by
+<a href="#about-the-author">Alexandru Somai</a>
+</span>
+<ul class="list-inline tags">
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/pipeline">
+pipeline
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/plugins">
+plugins
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/external-workspace-manager">
+external-workspace-manager
+</a>
+</li>
+<li>
+<a class="tag-link" href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node/tags/gsoc">
+gsoc
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph">
+<p>This blog post is a continuation of the External Workspace Manager Plugin related posts, starting with
+<a href="/blog/2016/05/23/external-workspace-manager-plugin/">the introductory blog post</a>, and followed by
+<a href="/blog/2016/06/30/ewm-alpha-version/">the alpha version release announcement</a>.</p>
+</div>
+<div class="paragraph">
+<p>As the title suggests, the beta version of the External Workspace Manager Plugin was launched!
+This means that it&#8217;s available only in the
+<a href="/blog/2013/09/23/experimental-plugins-update-center/">Experimental Plugins Update Center</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Take care when installing plugins from the Experimental Update Center, since they may change in
+backward-incompatible ways.
+It&#8217;s advisable not to use it for Jenkins production environments.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The plugin&#8217;s repository is on <a href="https://github.com/jenkinsci/external-workspace-manager-plugin">GitHub</a>.
+The complete plugin&#8217;s documentation can be accessed
+<a href="https://github.com/jenkinsci/external-workspace-manager-plugin/blob/master/README.md">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="what-s-new"><a class="anchor" href="#what-s-new"></a>What&#8217;s new</h3>
+<div class="paragraph">
+<p>Bellow is a summary of the features added so far, since the alpha version.</p>
+</div>
+<div class="sect3">
+<h4 id="multiple-upstream-run-selection-strategies"><a class="anchor" href="#multiple-upstream-run-selection-strategies"></a>Multiple upstream run selection strategies</h4>
+<div class="paragraph">
+<p>It has support for the
+<a href="https://github.com/jenkinsci/run-selector-plugin">Run Selector Plugin</a> (which is still in beta),
+so you can provide different run selection strategies when allocating a disk from the upstream job.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s suppose that we have an upstream job that clones the repository and builds the project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> extWorkspace = exwsAllocate <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">diskpool1</span><span style="color:#710">'</span></span>
+
+node (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">linux</span><span style="color:#710">'</span></span>) {
+    exws (extWorkspace) {
+        checkout scm
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mvn clean install -DskipTests</span><span style="color:#710">'</span></span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the downstream job, we run the tests on a different node, but we reuse the same workspace as the previous job:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> run = selectRun <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">upstream</span><span style="color:#710">'</span></span>
+<span style="color:#080;font-weight:bold">def</span> extWorkspace = exwsAllocate <span style="color:#606">selectedRun</span>: run
+
+node (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">test</span><span style="color:#710">'</span></span>) {
+    exws (extWorkspace) {
+        sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mvn test</span><span style="color:#710">'</span></span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>selectRun</code> in this example selects the last stable build from the upstream job.
+But, we can be more explicit, and select a specific build number from the upstream job.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> run = selectRun <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">upstream</span><span style="color:#710">'</span></span>,
+ <span style="color:#606">selector</span>: [<span style="color:#F00;background-color:#FAA">$</span><span style="color:#339;font-weight:bold">class</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">SpecificRunSelector</span><span style="color:#710">'</span></span>, <span style="color:#B06;font-weight:bold">buildNumber</span>: UPSTREAM_BUILD_NUMBER]
+<span style="color:#080;font-weight:bold">def</span> extWorkspace = exwsAllocate <span style="color:#606">selectedRun</span>: run
+<span style="color:#777">// ...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the <code>selectedRun</code> parameter is given to the <code>exwsAllocate</code> step, it will allocate the same workspace that was
+used by that run.</p>
+</div>
+<div class="paragraph">
+<p>The Run Selector Plugin has several run selection strategies that are briefly explained
+<a href="https://github.com/jenkinsci/run-selector-plugin/blob/master/README.md">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="automatic-workspace-cleanup"><a class="anchor" href="#automatic-workspace-cleanup"></a>Automatic workspace cleanup</h4>
+<div class="paragraph">
+<p>Provides an automatic workspace cleanup by integrating the
+<a href="https://github.com/jenkinsci/ws-cleanup-plugin">Workspace Cleanup Plugin</a>.
+For example, if we need to delete the workspace only if the build has failed, we can do the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> extWorkspace = exwsAllocate <span style="color:#606">diskPoolId</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">diskpool1</span><span style="color:#710">'</span></span>
+
+node (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">linux</span><span style="color:#710">'</span></span>) {
+    exws (extWorkspace) {
+        <span style="color:#080;font-weight:bold">try</span> {
+            checkout scm
+            sh <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mvn clean install</span><span style="color:#710">'</span></span>
+        } <span style="color:#080;font-weight:bold">catch</span> (e) {
+            currentBuild.result = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">FAILURE</span><span style="color:#710">'</span></span>
+            <span style="color:#080;font-weight:bold">throw</span> e
+        } <span style="color:#080;font-weight:bold">finally</span> {
+            step ([<span style="color:#F00;background-color:#FAA">$</span><span style="color:#339;font-weight:bold">class</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">WsCleanup</span><span style="color:#710">'</span></span>, <span style="color:#B06;font-weight:bold">cleanWhenFailure</span>: <span style="color:#069">false</span>])
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More workspace cleanup examples can be found at this
+<a href="https://github.com/jenkinsci/external-workspace-manager-plugin/blob/master/doc/WORKSPACE_CLEANUP.md">link</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="custom-workspace-path"><a class="anchor" href="#custom-workspace-path"></a>Custom workspace path</h4>
+<div class="paragraph">
+<p>Allows the user to specify a custom workspace path to be used when allocating workspace on the disk.
+The plugin offers two alternatives for doing this:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>by defining a global workspace template for each Disk Pool</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This can be defined in the Jenkins global config, <em>External Workspace Definitions</em> section.</p>
+</div>
+<div class="paragraph">
+<p><span class="image center"><img src="/images/post-images/ewm/global-custom-workspace-path.png" alt="global custom workspace path" title="Global Custom Workspace Path"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>by defining a custom workspace path in the Pipeline script</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We can use the Pipeline DSL to compute the workspace path.
+Then we pass this path as input parameter to the <code>exwsAllocate</code> step.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> customPath = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">${</span>env.JOB_NAME<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">${</span>PULL_REQUEST_NUMBER<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">${</span>env.BUILD_NUMBER<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+<span style="color:#080;font-weight:bold">def</span> extWorkspace = exwsAllocate <span style="color:#606">diskPoolId</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">diskpool1</span><span style="color:#710">'</span></span>, <span style="color:#606">path</span>: customPath
+<span style="color:#777">// ...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more details see the afferent
+<a href="https://github.com/jenkinsci/external-workspace-manager-plugin/blob/master/doc/CUSTOM_WORKSPACE_PATH.md">documentation page</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="disk-pool-restrictions"><a class="anchor" href="#disk-pool-restrictions"></a>Disk Pool restrictions</h4>
+<div class="paragraph">
+<p>The plugin comes with Disk Pool restriction strategies.
+It does this by using the restriction capabilities provided by the
+<a href="https://github.com/jenkinsci/job-restrictions-plugin">Job Restrictions Plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example, we can restrict a Disk Pool to be allocated only if the Jenkins job in which it&#8217;s allocated was triggered
+by a specific user:</p>
+</div>
+<div class="paragraph">
+<p><span class="image center"><img src="/images/post-images/ewm/restriction-by-user.png" alt="restriction by user" title="Disk Pool Restriction By User"></span></p>
+</div>
+<div class="paragraph">
+<p>Or, we can restrict the Disk Pool to be allocated only for those jobs whose name matches a well defined pattern:</p>
+</div>
+<div class="paragraph">
+<p><span class="image center"><img src="/images/post-images/ewm/restriction-by-job-name.png" alt="restriction by job name" title="Disk Pool Restriction By Job Name"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-s-next"><a class="anchor" href="#what-s-next"></a>What&#8217;s next</h3>
+<div class="paragraph">
+<p>Currently there is ongoing work for providing flexible disk allocation strategies.
+The user will be able to define a default disk allocation strategy in the Jenkins global config.
+So for example, we want to select the disk with the most usable space as default allocation strategy:</p>
+</div>
+<div class="paragraph">
+<p><span class="image center"><img src="/images/post-images/ewm/global-disk-allocation-strategy.png" alt="global disk allocation strategy" title="Global Disk Allocation Strategy"></span></p>
+</div>
+<div class="paragraph">
+<p>If needed, this allocation strategy may be overridden in the Pipeline code.
+Let&#8217;s suppose that for a specific job, we want to allocate the disk with the highest read speed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight nowrap"><code data-lang="groovy"><span style="color:#080;font-weight:bold">def</span> extWorkspace = exwsAllocate <span style="color:#606">diskPoolId</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">diskpool1</span><span style="color:#710">'</span></span>, <span style="color:#606">strategy</span>: fastestRead()
+<span style="color:#777">// ...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When this feature is completed, the plugin will enter a final testing phase.
+If all goes to plan, a stable version should be released in about two weeks.</p>
+</div>
+<div class="paragraph">
+<p>If you have any issues in setting up or using the plugin, please feel free to ask me on the plugin&#8217;s Gitter
+<a href="https://gitter.im/jenkinsci/external-workspace-manager-plugin">chat</a>.
+Any feedback is welcome, and you may provide it either on the Gitter chat, or on
+<a href="https://issues.jenkins-ci.org">Jira</a> by using the <em>external-workspace-manager-plugin</em> component.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="links"><a class="anchor" href="#links"></a>Links</h3>
+<div class="paragraph">
+<p><a href="https://gitter.im/jenkinsci/external-workspace-manager-plugin?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link"><span class="image"><img src="https://badges.gitter.im/jenkinsci/external-workspace-manager-plugin.svg" alt="title: &quot;Gitter&quot;"></span></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/jenkinsci/external-workspace-manager-plugin">Project repository</a></p>
+</li>
+<li>
+<p><a href="/blog/2016/05/23/external-workspace-manager-plugin/">Project intro blog post</a></p>
+</li>
+<li>
+<p><a href="/blog/2016/06/30/ewm-alpha-version/">Alpha version announcement</a></p>
+</li>
+<li>
+<p><a href="https://summerofcode.withgoogle.com/">GSoC page</a></p>
+</li>
+<li>
+<p><a href="/projects/gsoc/">Jenkins GSoC Page</a></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- starting partial author.html.haml -->
+<div id="about-the-author">
+<b class="author about-header">
+About the Author
+</b>
+<table class="author box">
+<tr>
+<td>
+<img alt="Alexandru Somai" class="author logo" src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/images/logos/transparent/transparent.svg">
+</td>
+<td>
+<b class="author name">
+Alexandru Somai
+</b>
+<p>
+This author has no biography defined.
+See social media links referenced below.
+</p>
+<ul class="author social-media-buttons">
+<li class="author">
+<a href="https://github.com/alexsomai" target="_blank">
+GitHub
+</a>
+</li>
+<li class="author">
+<a href="https://twitter.com/alex_somai" target="_blank">
+Twitter
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ending partial author.html.haml -->
+</div>
+</div>
+</div>
+
+
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/anchor-js/anchor.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/tether/js/tether.min.js"></script>
+<script src="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/assets/bower/bootstrap/js/bootstrap.min.js"></script>
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="box">
+<a href="https://github.com/jenkins-infra/jenkins.io/edit/master/content//blog/2016/2016-08-09-ewm-beta-version.adoc" title="Edit /blog/2016/2016-08-09-ewm-beta-version.adoc on GitHub">
+Improve this page
+</a>
+|
+<a href="https://github.com/jenkins-infra/jenkins.io/commits/master/content//blog/2016/2016-08-09-ewm-beta-version.adoc" title="View /blog/2016/2016-08-09-ewm-beta-version.adoc history on GitHub">
+Page history
+</a>
+</p>
+<div class="license-box">
+<div id="creativecommons">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+<p>
+<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+</p>
+</a>
+<p>
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+</p>
+</div>
+</div>
+</div>
+<div class="links col-md-8">
+<div class="container">
+<div class="row">
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Resources</h5>
+<ul class="resources">
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/events">
+Events
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/doc">
+Documentation
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/node">
+Blog
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Solutions</h5>
+<ul>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/android">
+Android
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/c">
+C/C++
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/docker">
+Docker
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/embedded">
+Embedded
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/github">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/java">
+Java
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/pipeline">
+Continuous Delivery
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/python">
+Python
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/solutions/ruby">
+Ruby
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Project</h5>
+<ul class="project">
+<li>
+<a href="https://issues.jenkins-ci.org">
+Issue tracker
+</a>
+</li>
+<li>
+<a href="https://wiki.jenkins.io">
+Wiki
+</a>
+</li>
+<li>
+<a href="https://github.com/jenkinsci">
+GitHub
+</a>
+</li>
+<li>
+<a href="https://ci.jenkins.io">
+Jenkins on Jenkins
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="area col-md-3">
+<div class="div-mar">
+<h5>Community</h5>
+<ul class="community">
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">
+Users mailing list
+</a>
+</li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">
+Developers mailing list
+</a>
+</li>
+<li>
+<a href="https://twitter.com/jenkinsci">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://reddit.com/r/jenkinsci">
+Reddit
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/merchandise">
+Merchandise
+</a>
+</li>
+<li>
+<a href="https://gilesgas.github.io/jenkins.io/WEBSITE-432-styleguide-and-contributing-guide-updates/awards">
+Awards
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-000000-0', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+
+</script>
+
+<script>
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+</script>
+</body>
+</html>
