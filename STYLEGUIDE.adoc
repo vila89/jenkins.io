@@ -1,6 +1,13 @@
+:toc:
+:toclevels: 3
+
+
 = Jenkins Documentation Style Guide
 
+toc::[]
+
 CAUTION: This document is still a work in progress.
+
 
 == Terminology
 
