@@ -12,15 +12,15 @@ CAUTION: This document is still a work in progress.
 == Purpose of this guide
 
 The purpose of this guide is to cover all aspects on how to write content for
-the `jenkins.io` site. Unlike the <<contributing>> guide, this
-STYLEGUIDE covers details about how to use Jenkins-specific terminology, general
-comments about phraseology and writing style, as well as all aspects of AsciiDoc
-syntax which are relevant to this site.
+the `jenkins.io` site. Unlike the link:CONTRIBUTING.adoc[CONTRIBUTING] guide,
+this STYLEGUIDE covers details about how to use Jenkins-specific terminology,
+general comments about phraseology and writing style, as well as all aspects of
+AsciiDoc syntax which are relevant to this site.
 
 For details about how to get set up to contribute to the `jenkins.io` site and
 broader aspects such as a description of the `jenkins.io` documentation
 structure and how to construct properly functioning content on the site, see the
-<<contributing>> guide.
+link:CONTRIBUTING.adoc[CONTRIBUTING] guide.
 
 
 == Terminology

@@ -17,7 +17,7 @@ are important for creating properly functioning content on this site. This
 guide, however, does not provide details on AsciiDoc and Haml syntax.
 
 For details about Jenkins-specific terminology, writing style and using AsciiDoc
-syntax on this site, see the <<styleguide>>.
+syntax on this site, see the link:STYLEGUIDE.adoc[STYLEGUIDE].
 
 
 == Forking and cloning this repository
